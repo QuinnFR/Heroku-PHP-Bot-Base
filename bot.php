@@ -183,7 +183,7 @@ $in = [[
                             ['text' => "ok", 'switch_inline_query_current_chat' => "switch"],['text' => "ok", 'switch_inline_query_current_chat' => "switch"]
                         ]]]
             ]];
-if($text_inline == 'try'){
+if($text_inline == 'v'){
 $telegram->answerInlineQuery($inline_query_id, $results = $in, $cache_time = 0, $is_personal = false, $next_offset = null, $switch_pm_text = null, $switch_pm_parameter = null);}
 
 
