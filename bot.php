@@ -192,23 +192,6 @@ $join_key = json_encode([
            ['text'=>'VMOS FAQ❓️','url'=>'https://t.me/Frequently_Asked_Question']],
            [['text'=>'Support Chat 💬','url'=>'https://t.me/VMOS_Support_Chat_Official']]]]);
 
-$sorry = file_get_contents("https://api.telegram.org/bot$token/getChatMember?chat_id=$chat_id&user_id=".$owner);
-if($type == 'group' or $type == 'supergroup' && (strpos($sorry,'"status":"left"') or strpos($sorry,'"Bad Request: USER_ID_INVALID"') or strpos($sorry,'"status":"kicked"'))!== false){
-$telegram->typing($chat_id, $action = 'typing');
-sleep(2);
-$pin_not = $telegram->sendMessage($chat_id, $text = $leave, $parse_mode = "HTML", $replyMarkup = $join_key)->result->message_id;
-sleep(3);
-$telegram->pin($chat_id, $message_id = $pin_not);
-$telegram->leaveChat($chat_id);
-return false;}
-
-$join = file_get_contents("https://api.telegram.org/bot$token/getChatMember?chat_id=$Channel_ID&user_id=".$from_id);
-if($text == '/start' && $type == 'private' && (strpos($join,'"status":"left"') or strpos($join,'"Bad Request: USER_ID_INVALID"') or strpos($join,'"status":"kicked"'))!== false){
-$telegram->typing($chat_id, $action = 'typing');
-sleep(2);
-$telegram->sendMessage($chat_id, $text = $welcome_vmos, $parse_mode = "HTML", $replyMarkup = $join_key);
-$telegram->sendMessage($chat_id = $owner, $text = "Mention: $mention\nTime: $new_time\nName: $first_name", $parse_mode = "HTML", $replyMarkup = null);
-return false;}
 
 
 if($text == '/start' && $type == 'private'){
