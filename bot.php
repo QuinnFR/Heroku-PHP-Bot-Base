@@ -22,8 +22,6 @@ ob_start();
 
 include 'iTelegram.php';
 include 'class/Telegram.class.php';
-include 'messages.php';
-include 'forward.php';
 
 $admin = "1136071279"; 
 //Enter your id number
