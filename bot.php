@@ -159,8 +159,8 @@ $count_members = $url_count ['result'];
 $in = [[
                 'type' => 'article',
                 'id' =>base64_encode(rand(5,555)),
-                'thumb_url'=>"https://telegra.ph/file/aeff14fd95fcb41429a36.jpg",
-                'title' => "Title",
+                'thumb_url'=>"https://telegra.ph/file/9a0259e325f83b1a050ce.jpg",
+                'title' => "VMOS Pro",
                 'description'=>"How to download our app?",
                 'url'=> "https://www.vmod.com",
                 'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "hello"],
@@ -183,8 +183,9 @@ $in = [[
                             ['text' => "ok", 'switch_inline_query_current_chat' => "switch"],['text' => "ok", 'switch_inline_query_current_chat' => "switch"]
                         ]]]
             ]];
-if($text_inline == 'v'){
+if($text_inline == "try"){
 $telegram->answerInlineQuery($inline_query_id, $results = $in, $cache_time = 0, $is_personal = false, $next_offset = null, $switch_pm_text = null, $switch_pm_parameter = null);}
 
+?>
 
 ?>
