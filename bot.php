@@ -186,6 +186,5 @@ $in = [[
 if($text_inline == "try"){
 $telegram->answerInlineQuery($inline_query_id, $results = $in, $cache_time = 0, $is_personal = false, $next_offset = null, $switch_pm_text = null, $switch_pm_parameter = null);}
 
-?>
 
 ?>
