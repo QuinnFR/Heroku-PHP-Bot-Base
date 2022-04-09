@@ -24,7 +24,6 @@ ob_start();
 include 'class/Telegram.class.php';
 include 'iTelegram.php';
 
-
 $input = file_get_contents('php://input');
 $update = json_decode($input);
 $telegram = new Telegram($token);
@@ -77,6 +76,7 @@ $messageid = $update->callback_query->message->message_id;
 $chat_type = $update->message->chat->type;
 $gpname = $update->callback_query->message->chat->title;
 $namegroup = $update->message->chat->title;
+$text_inlinee = $update->inline_qurey->qurey;
 $text_inline = $update->inline_query->query;
 $inline_query_id = $update->inline_query->id;
 $new_chat_member_id = $update->message->new_chat_member->id;
@@ -206,15 +206,20 @@ $join = file_get_contents("https://api.telegram.org/bot$token/getChatMember?chat
 if($text == '/start' && $type == 'private' && (strpos($join,'"status":"left"') or strpos($join,'"Bad Request: USER_ID_INVALID"') or strpos($join,'"status":"kicked"'))!== false){
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
-$telegram->sendMessage($chat_id, $text = $welcome_vmos, $parse_mode = "HTML", $replyMarkup = $join_key);
-$telegram->sendMessage($chat_id = $owner, $text = "Mention: $mention\nTime: $new_time\nName: $first_name", $parse_mode = "HTML", $replyMarkup = null);
+$telegram->sendMessage($chat_id, $text = $welcome_vmos, $parse_mode = "HTML", $replyMarkup = $join_key)->result->message_id;
 return false;}
 
 
 if($text == '/start' && $type == 'private'){
+$telegram->unpin($chat_id);
     $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
-$telegram->sendMessage($chat_id, $text = "Well, since you've joined, let's get started 🙂", $parse_mode = "HTML", $replyMarkup = null);}
+$wl = $telegram->sendMessage($chat_id, $text = "Well, since you've joined, let's get started 🙂", $parse_mode = "HTML", $replyMarkup = $null)->result->message_id;
+sleep(3);
+$pin = $telegram->editMessageText($chat_id, $message_id = $wl, $text = $welcome, $replyMarkup = $welcome_key)->result->message_id;
+sleep(3);
+$telegram->pin($chat_id, $message_id = $pin);
+}
 
 if($new){
 $telegram->Mute_New_Chat_Members($chat_id, $new_chat_member_id, $time);}
@@ -267,7 +272,7 @@ After the activation is successful, <s>theoretically there is no need to activat
 Everything here:
 https://www.vmos.cn/zhushou.htm";
 
-  
+           
 
 if($text == "/keyboard" && $type =='private'){
 $os = json_encode([
@@ -334,14 +339,14 @@ if($text == "/check"){
 }}
 
 
-if($text == 'vmos'){
+if($text == '/key'){
 $telegram->sendMessageInlineKeyboard($chat_id, $text = "$day $clock $hello ⏰ $new_time", $parse_mode = 'HTML', $replyMarkup = null);}
 
 $in = [[
                 'type' => 'article',
                 'id' =>base64_encode(rand(5,555)),
-                'thumb_url'=>"https://telegra.ph/file/9a0259e325f83b1a050ce.jpg",
-                'title' => "VMOS Pro",
+                'thumb_url'=>"https://telegra.ph/file/aeff14fd95fcb41429a36.jpg",
+                'title' => "Title",
                 'description'=>"How to download our app?",
                 'url'=> "https://www.vmod.com",
                 'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "hello"],
@@ -364,7 +369,9 @@ $in = [[
                             ['text' => "ok", 'switch_inline_query_current_chat' => "switch"],['text' => "ok", 'switch_inline_query_current_chat' => "switch"]
                         ]]]
             ]];
-if($text_inline == "try"){
+if($text_inline == 'try'){
 $telegram->answerInlineQuery($inline_query_id, $results = $in, $cache_time = 0, $is_personal = false, $next_offset = null, $switch_pm_text = null, $switch_pm_parameter = null);}
+
+
 
 ?>
