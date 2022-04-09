@@ -83,18 +83,19 @@ public function sendMessageLite($chat_id, $text){
          'chat_id'=>$chat_id,
          'text'=>$text]);}
 
-public function sendMessageInlineKeyboard($chat_id, $text, $parse_mode, $replyMarkup){
+public function sendMessageInlineKeyboard($chat_id, $text, $replyMarkup){
          return $this->bot('sendMessage',[
          'chat_id'=>$chat_id,
          'text'=>$text,
          'protect_content'=>true,
-         'parse_mode'=>$parse_mode,
+         'parse_mode'=>'HTML',
          'reply_markup' =>$replyMarkup]);}
 
 public function sendPhoto($chat_id, $photo, $caption = null){
             return $this->bot('sendphoto',[
                'chat_id'=>$chat_id,
                'photo'=>$photo,
+               'parse_mode'=>'HTML',
                'protect_content'=>true,
                'caption'=>$caption]);}
 
@@ -102,6 +103,7 @@ public function sendPhotoViaID($chat_id, $photo, $caption = null){
             return $this->bot('sendphoto',[
                'chat_id'=>$chat_id,
                'photo'=>$photo,
+               'parse_mode'=>'HTML',
                'protect_content'=>true,
                'caption'=>$caption]);}
 
@@ -110,23 +112,26 @@ public function sendAudio($chat_id, $audio, $caption, $title ,$performer = null)
         'chat_id'=>$chat_id,
         'audio'=>$audio,
         'caption'=>$caption,
+        'parse_mode'=>'HTML',
         'protect_content'=>true,
         'title'=>$title,
         'performer'=>$performer]);}
 
-public function sendDocument($chat_id, $document, $caption, $parse_mode, $replyMarkup){
+public function sendDocument($chat_id, $document, $caption, $replyMarkup){
           return $this->bot('senddocument',[
               'chat_id'=>$chat_id,
               'document'=>$document,
               'caption'=>$caption,
+       
               'protect_content'=>true,
-              'parse_mode'=>$parse_mode,
+              'parse_mode'=>'HTMl',
               'reply_markup' =>$replyMarkup]);}
 
 public function sendVideo($chat_id, $video, $caption){
  return $this->bot('sendvideo',[
                    'chat_id'=>$chat_id,
                    'video'=>$video,
+                   'parse_mode'=>'HTML',
                    'protect_content'=>true,
                    'caption'=>$caption]);}
 
@@ -134,6 +139,7 @@ public function sendVoice($chat_id, $voice, $caption){
  return $this->bot('sendvoice',[
                    'chat_id'=>$chat_id,
                    'voice'=>$voice,
+                   'parse_mode'=>'HTML',
                    'protect_content'=>true,
                    'caption'=>$caption]);}
 
@@ -204,7 +210,7 @@ public function editMessageTextCallBack(
             'chat_id' => $chat_id,
             'message_id' => $message_id,
             'text' => $text,
-            'parse_mode' => $parse_mode,
+            'parse_mode' => 'HTML',
             'protect_content'=>true,
             'disable_web_page_preview' => $disablePreview,
             'reply_markup' => $replyMarkup,
