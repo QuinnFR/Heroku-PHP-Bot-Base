@@ -215,7 +215,7 @@ if($text == '/start' && $type == 'private'){
 $telegram->unpin($chat_id);
     $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
-$wl = $telegram->sendMessage($chat_id, $text = "Well, since you've joined, let's get started 🙂", $parse_mode = "HTML", $replyMarkup = $null)->result->message_id;
+$wl = $telegram->sendMessage($chat_id, $text = "Well, since you've joined, let's get started 🙂", $parse_mode = "HTML", $replyMarkup = null)->result->message_id;
 sleep(3);
 $pin = $telegram->editMessageText($chat_id, $message_id = $wl, $text = $welcome, $replyMarkup = $welcome_key)->result->message_id;
 sleep(3);
