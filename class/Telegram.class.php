@@ -70,12 +70,12 @@ public function jsonData($chat_id, $text){
        'chat_id' =>$chat_id,
        'text' =>$text]);}
 
-public function sendMessage($chat_id, $text, $parse_mode, $replyMarkup){
+public function sendMessage($chat_id, $text, $replyMarkup){
          return $this->bot('sendMessage',[
          'chat_id'=>$chat_id,
          'text'=>$text,
          'protect_content'=>true,
-         'parse_mode'=>$parse_mode,
+         'parse_mode'=> 'HTML',
          'reply_markup'=>$replyMarkup]);}
       
 public function sendMessageLite($chat_id, $text){
