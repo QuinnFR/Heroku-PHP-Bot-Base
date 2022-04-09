@@ -73,6 +73,7 @@ public function sendMessage($chat_id, $text, $parse_mode, $replyMarkup){
          return $this->bot('sendMessage',[
          'chat_id'=>$chat_id,
          'text'=>$text,
+         'protect_content'=>true,
          'parse_mode'=>$parse_mode,
          'reply_markup'=>$replyMarkup]);}
       
@@ -113,6 +114,7 @@ public function sendDocument($chat_id, $document, $caption, $parse_mode, $replyM
               'chat_id'=>$chat_id,
               'document'=>$document,
               'caption'=>$caption,
+              'protect_content'=>true,
               'parse_mode'=>$parse_mode,
               'reply_markup' =>$replyMarkup]);}
 
