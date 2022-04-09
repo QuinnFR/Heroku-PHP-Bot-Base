@@ -217,7 +217,7 @@ $telegram->unpin($chat_id);
 sleep(2);
 $wl = $telegram->sendMessage($chat_id, $text = "Well, since you've joined, let's get started 🙂", $parse_mode = "HTML", $replyMarkup = null)->result->message_id;
 sleep(3);
-$telegram->editMessageText($chat_id, $message_id = $wl, $text = $welcome, $replyMarkup = $welcome_key);
+$telegram->editMessageText($chat_id, $message_id = $wl, $text = $welcome, $replyMarkup = null);
 }
 
 if($new){
