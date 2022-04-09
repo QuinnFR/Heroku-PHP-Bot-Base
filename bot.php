@@ -192,7 +192,7 @@ $sorry = file_get_contents("https://api.telegram.org/bot$token/getChatMember?cha
 if($type == 'group' or $type == 'supergroup' && (strpos($sorry,'"status":"left"') or strpos($sorry,'"Bad Request: USER_ID_INVALID"') or strpos($sorry,'"status":"kicked"'))!== false){
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
-$pin_not = $telegram->sendMessage($chat_id, $text = $leave, $parse_mode = "HTML", $replyMarkup = $join_key)->result->message_id;
+$pin_not = $telegram->sendMessage($chat_id, $text = $leave, $replyMarkup = $join_key)->result->message_id;
 sleep(3);
 $telegram->pin($chat_id, $message_id = $pin_not);
 $telegram->leaveChat($chat_id);
@@ -202,7 +202,7 @@ $join = file_get_contents("https://api.telegram.org/bot$token/getChatMember?chat
 if($text == '/start' && $type == 'private' && (strpos($join,'"status":"left"') or strpos($join,'"Bad Request: USER_ID_INVALID"') or strpos($join,'"status":"kicked"'))!== false){
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
-$telegram->sendMessage($chat_id, $text = $welcome_vmos, $parse_mode = "HTML", $replyMarkup = $join_key)->result->message_id;
+$telegram->sendMessage($chat_id, $text = $welcome_vmos, $replyMarkup = $join_key)->result->message_id;
 return false;}
 
 
@@ -210,7 +210,7 @@ if($text == '/start' && $type == 'private'){
 $telegram->unpin($chat_id);
     $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
-$wl = $telegram->sendMessage($chat_id, $text = "Well, since you've joined, let's get started 🙂", $parse_mode = "HTML", $replyMarkup = $null)->result->message_id;
+$wl = $telegram->sendMessage($chat_id, $text = "Well, since you've joined, let's get started 🙂", $replyMarkup = $null)->result->message_id;
 sleep(3);
 $pin = $telegram->editMessageText($chat_id, $message_id = $wl, $text = $welcome, $replyMarkup = $welcome_key)->result->message_id;
 sleep(3);
@@ -336,7 +336,7 @@ if($text == "/check"){
 
 
 if($text == '/key'){
-$telegram->sendMessageInlineKeyboard($chat_id, $text = "$day $clock $hello ⏰ $new_time", $parse_mode = 'HTML', $replyMarkup = null);}
+$telegram->sendMessageInlineKeyboard($chat_id, $text = "$day $clock $hello ⏰ $new_time", $replyMarkup = null);}
 
 $in = [[
                 'type' => 'article',
