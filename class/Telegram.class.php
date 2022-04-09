@@ -49,6 +49,7 @@ class Telegram {
 		return $this->bot('editMessageReplyMarkup',[
             'chat_id'=>$chatid,
             'message_id'=>$msgid,
+            'protect_content'=>true,
             'reply_markup'=>$reply
 		]);
 	}
@@ -86,6 +87,7 @@ public function sendMessageInlineKeyboard($chat_id, $text, $parse_mode, $replyMa
          return $this->bot('sendMessage',[
          'chat_id'=>$chat_id,
          'text'=>$text,
+         'protect_content'=>true,
          'parse_mode'=>$parse_mode,
          'reply_markup' =>$replyMarkup]);}
 
@@ -93,12 +95,14 @@ public function sendPhoto($chat_id, $photo, $caption = null){
             return $this->bot('sendphoto',[
                'chat_id'=>$chat_id,
                'photo'=>$photo,
+               'protect_content'=>true,
                'caption'=>$caption]);}
 
 public function sendPhotoViaID($chat_id, $photo, $caption = null){
             return $this->bot('sendphoto',[
                'chat_id'=>$chat_id,
                'photo'=>$photo,
+               'protect_content'=>true,
                'caption'=>$caption]);}
 
 public function sendAudio($chat_id, $audio, $caption, $title ,$performer = null){
@@ -106,6 +110,7 @@ public function sendAudio($chat_id, $audio, $caption, $title ,$performer = null)
         'chat_id'=>$chat_id,
         'audio'=>$audio,
         'caption'=>$caption,
+        'protect_content'=>true,
         'title'=>$title,
         'performer'=>$performer]);}
 
@@ -122,12 +127,14 @@ public function sendVideo($chat_id, $video, $caption){
  return $this->bot('sendvideo',[
                    'chat_id'=>$chat_id,
                    'video'=>$video,
+                   'protect_content'=>true,
                    'caption'=>$caption]);}
 
 public function sendVoice($chat_id, $voice, $caption){
  return $this->bot('sendvoice',[
                    'chat_id'=>$chat_id,
                    'voice'=>$voice,
+                   'protect_content'=>true,
                    'caption'=>$caption]);}
 
 public function alret($alretcall, $text, $showAlert = false)
@@ -180,6 +187,7 @@ public function editMessageText(
             'message_id' => $message_id,
             'text' => $text,
             'parse_mode' =>'HTML',
+            'protect_content'=>true,
             'reply_markup' => $replyMarkup,
         ]);
     }
@@ -197,6 +205,7 @@ public function editMessageTextCallBack(
             'message_id' => $message_id,
             'text' => $text,
             'parse_mode' => $parse_mode,
+            'protect_content'=>true,
             'disable_web_page_preview' => $disablePreview,
             'reply_markup' => $replyMarkup,
         ]);
