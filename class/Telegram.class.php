@@ -108,11 +108,13 @@ public function sendAudio($chat_id, $audio, $caption, $title ,$performer = null)
         'title'=>$title,
         'performer'=>$performer]);}
 
-public function sendDocument($chat_id, $document, $caption){
+public function sendDocument($chat_id, $document, $caption, $parse_mode, $replyMarkup){
           return $this->bot('senddocument',[
               'chat_id'=>$chat_id,
               'document'=>$document,
-              'caption'=>$caption]);}
+              'caption'=>$caption,
+              'parse_mode'=>$parse_mode,
+              'reply_markup' =>$replyMarkup]);}
 
 public function sendVideo($chat_id, $video, $caption){
  return $this->bot('sendvideo',[
@@ -151,6 +153,19 @@ public function Mute_New_Chat_Members($chat_id, $new_chat_member_id, $time){
     return $this->bot('deleteMessage', [
          'chat_id'=> $chat_id,
          'message_id'=>$message_id ]);}
+
+public function pin($chat_id, $message_id){
+    return $this->bot('pinChatMessage', [
+         'chat_id'=> $chat_id,
+         'message_id'=>$message_id ]);}
+
+public function unpin($chat_id){
+    return $this->bot('unpinAllChatMessages', [
+         'chat_id'=> $chat_id]);}
+
+public function leaveChat($chat_id){
+    return $this->bot('LeaveChat', [
+         'chat_id'=> $chat_id ]);}
 
 public function editMessageText(
         $chat_id,
