@@ -33,7 +33,6 @@ $user_id = $message->from->id;
 $message_id = $message->message_id;
 $text = $message->text;
 $type = $message->chat->type;
-$message->from->first_name;
 $user = $message->from->username;
 $reply= $message->reply_to_message->text;
 $replyid = $message->reply_to_message->from->id;
@@ -76,7 +75,6 @@ $messageid = $update->callback_query->message->message_id;
 $chat_type = $update->message->chat->type;
 $gpname = $update->callback_query->message->chat->title;
 $namegroup = $update->message->chat->title;
-$text_inlinee = $update->inline_qurey->qurey;
 $text_inline = $update->inline_query->query;
 $inline_query_id = $update->inline_query->id;
 $new_chat_member_id = $update->message->new_chat_member->id;
@@ -95,8 +93,6 @@ $chat_edit_id = $update->edited_message->chat->id;
 $edit_for_id = $update->edited_message->from->id;
 $edit_chatid = $update->callback_query->edited_message->chat->id;
 $caption = $update->message->caption;
-$chatid3=$update->message->chat->id;
-$fromid3=$update->message->from->id;
 $text = $update->message->text;
 $mid = $update->message->message_id;
 $from_id = $message->from->id;
@@ -369,7 +365,7 @@ $in = [[
                             ['text' => "ok", 'switch_inline_query_current_chat' => "switch"],['text' => "ok", 'switch_inline_query_current_chat' => "switch"]
                         ]]]
             ]];
-if($text_inline == 'try'){
+if($text_inline){
 $telegram->answerInlineQuery($inline_query_id, $results = $in, $cache_time = 0, $is_personal = false, $next_offset = null, $switch_pm_text = null, $switch_pm_parameter = null);}
 
 
