@@ -212,7 +212,6 @@ return false;}
 
 
 if($text == '/start' && $type == 'private'){
-$telegram->unpin($chat_id);
     $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
 $telegram->sendMessage($chat_id, $text = "Well, since you've joined, let's get started 🙂", $parse_mode = "HTML", $replyMarkup = null);}
