@@ -215,10 +215,7 @@ if($text == '/start' && $type == 'private'){
 $telegram->unpin($chat_id);
     $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
-$wl = $telegram->sendMessage($chat_id, $text = "Well, since you've joined, let's get started 🙂", $parse_mode = "HTML", $replyMarkup = null)->result->message_id;
-sleep(3);
-$telegram->editMessageText($chat_id, $message_id = $wl, $text = $welcome, $replyMarkup = null);
-}
+$telegram->sendMessage($chat_id, $text = "Well, since you've joined, let's get started 🙂", $parse_mode = "HTML", $replyMarkup = null);}
 
 if($new){
 $telegram->Mute_New_Chat_Members($chat_id, $new_chat_member_id, $time);}
