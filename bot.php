@@ -279,7 +279,7 @@ $os = json_encode([
            ["text"=>"Delete","callback_data"=>"Delete"]]]]);
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
-$telegram->sendMessageInlineKeyboard($chat_id, $text = "Please Choice your os Android System", $parse_mode = "HTML", $replyMarkup = $os);}
+$telegram->sendMessageInlineKeyboard($chat_id, $text = "Please Choice your os Android System", $replyMarkup = $os);}
 if($data == "12"){
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
@@ -298,19 +298,19 @@ if($data == "11"){
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
 $telegram->alret($alretcall, $text = "For Android devices 📱", $showAlert = false);
-$telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAICxGJNbqI_1MRQxh634_QkBbiH0Hc3AAImDAACvjlAUq4HtTqh1TtRIwQ", $caption = $vmos_pro, $parse_mode = "HTML", $replyMarkup = $os);}
+$telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAICxGJNbqI_1MRQxh634_QkBbiH0Hc3AAImDAACvjlAUq4HtTqh1TtRIwQ", $caption = $vmos_pro, $replyMarkup = $os);}
 
 
 
 if($text == '/vmos'){
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
-$telegram->sendMessage($chat_id, $text = $pm, $parse_mode = "HTML", $replyMarkup = $cn);}
+$telegram->sendMessage($chat_id, $text = $pm, $replyMarkup = $cn);}
 
 elseif(preg_match("/(last|update)/", $text) && $type =='private'){
 $telegram->typing($chat_id, $action = 'document');
 sleep(2);
-$telegram->sendDocument($chat_id, $document = "BQACAgQAAxkBAAICxGJNbqI_1MRQxh634_QkBbiH0Hc3AAImDAACvjlAUq4HtTqh1TtRIwQ", $caption = $vmos_pro, $parse_mode = "HTML", $replyMarkup = null);}
+$telegram->sendDocument($chat_id, $document = "BQACAgQAAxkBAAICxGJNbqI_1MRQxh634_QkBbiH0Hc3AAImDAACvjlAUq4HtTqh1TtRIwQ", $caption = $vmos_pro, $replyMarkup = null);}
 
 if($data == "Delete"){
 $telegram->alret($alretcall, $text = "OK Delete 🗑", $showAlert = false);
@@ -321,17 +321,17 @@ if($text =='/json' and $re){
 $telegram->jsonData($chat_id, $text = json_encode($update, 448));}
 
 if($text == "/members"){
-        $telegram->sendMessage($chat_id, $text = "The number of group members: $count_members", $parse_mode = "HTML", $replyMarkup = $key);}
+        $telegram->sendMessage($chat_id, $text = "The number of group members: $count_members", $replyMarkup = $key);}
 
 
 if($text == "/member"){
 $jsonn = $telegram->getChatMember($chat_id, $user_id);
 	if($jsonn->result->status == 'creator' || $jsonn -> result -> status == 'administrator'){
-        $telegram->sendMessage($chat_id, $text = "The number of group members: $count_members", $parse_mode = "HTML", $replyMarkup = $key);}}
+        $telegram->sendMessage($chat_id, $text = "The number of group members: $count_members", $replyMarkup = $key);}}
 
 if(in_array($jsonn->result->status??"",["administrator","creator"])){
 if($text == "/check"){
-  $telegram->sendMessage($chat_id, $text = 'Hello', $parse_mode ='HTML');
+  $telegram->sendMessage($chat_id, $text = 'Hello');
 }}
 
 
