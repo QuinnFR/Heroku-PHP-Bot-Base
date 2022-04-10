@@ -132,15 +132,15 @@ private function apiRequestJson($method, $parameters) {
         ]);
     }
 
-    public function answerCallbackQuery($alretcall , $text , $alert){
+    public public function answerCallbackQuery($alretcall , $text , $alert){
         return $this->bot('answerCallbackQuery',[
             'callback_query_id' => $alretcall,
             'text' => $text,
             'show_alert' => $alert
         ]);
     }
-    function edit_replay($chatid , $msgid ,$reply){
-		return $this->bot('editMessageReplyMarkup',[
+    public function edit_replay($chatid , $msgid ,$reply){
+	return $this->bot('editMessageReplyMarkup',[
             'chat_id'=>$chatid,
             'message_id'=>$msgid,
             'protect_content'=>true,
@@ -148,196 +148,179 @@ private function apiRequestJson($method, $parameters) {
 		]);
 	}
 
-public function Random_msg_top($alretcall, $random_alret){
- return $this->bot('answercallbackquery',
-['callback_query_id' =>$alretcall,
-'text'=>$random_alret,]);}
+    public function Random_msg_top($alretcall, $random_alret){
+        return $this->bot('answercallbackquery',[
+            'callback_query_id' =>$alretcall,
+            'text'=>$random_alret,]);}
 
 
-public function typing($chat_id, $action = 'typing'){ 
-       return $this->bot("sendChatAction",[
-       'chat_id'=>$chat_id,
-       'action'=>$action]);}
+    Public function typing($chat_id, $action = 'typing'){ 
+        return $this->bot("sendChatAction",[
+            'chat_id'=>$chat_id,
+            'action'=>$action]);}
 
-public function jsonData($chat_id, $text){
+    public function jsonData($chat_id, $text){
        return $this->bot('sendMessage',[
-       'chat_id' =>$chat_id,
-       'text' =>$text]);}
+            'chat_id' =>$chat_id,
+            'text' =>$text]);}
 
-public function sendMessage($chat_id, $text, $replyMarkup){
+    public function sendMessage($chat_id, $text, $replyMarkup){
          return $this->bot('sendMessage',[
-         'chat_id'=>$chat_id,
-         'text'=>$text,
-         'protect_content'=>true,
-         'parse_mode'=> 'HTML',
-         'reply_markup'=>$replyMarkup]);}
+            'chat_id'=>$chat_id,
+            'text'=>$text,
+            'protect_content'=>true,
+            'parse_mode'=> 'HTML',
+            'reply_markup'=>$replyMarkup]);}
       
-public function sendMessageLite($chat_id, $text){
+    public function sendMessageLite($chat_id, $text){
          return $this->bot('sendMessage',[
-         'chat_id'=>$chat_id,
-         'text'=>$text]);}
+            'chat_id'=>$chat_id,
+            'text'=>$text]);}
 
-public function sendMessageInlineKeyboard($chat_id, $text, $replyMarkup){
+    public function sendMessageInlineKeyboard($chat_id, $text, $replyMarkup){
          return $this->bot('sendMessage',[
-         'chat_id'=>$chat_id,
-         'text'=>$text,
-         'protect_content'=>true,
-         'parse_mode'=>'HTML',
-         'reply_markup' =>$replyMarkup]);}
+            'chat_id'=>$chat_id,
+            'text'=>$text,
+            'protect_content'=>true,
+            'parse_mode'=>'HTML',
+            'reply_markup' =>$replyMarkup]);}
 
-public function sendPhoto($chat_id, $photo, $caption = null){
-            return $this->bot('sendphoto',[
-               'chat_id'=>$chat_id,
-               'photo'=>$photo,
-               'parse_mode'=>'HTML',
-               'protect_content'=>true,
-               'caption'=>$caption]);}
+    public function sendPhoto($chat_id, $photo, $caption = null){
+          return $this->bot('sendphoto',[
+             'chat_id'=>$chat_id,
+             'photo'=>$photo,
+             'parse_mode'=>'HTML',
+             'protect_content'=>true,
+             'caption'=>$caption]);}
 
-public function sendPhotoViaID($chat_id, $photo, $caption = null){
-            return $this->bot('sendphoto',[
-               'chat_id'=>$chat_id,
-               'photo'=>$photo,
-               'parse_mode'=>'HTML',
-               'protect_content'=>true,
-               'caption'=>$caption]);}
+    public function sendPhotoViaID($chat_id, $photo, $caption = null){
+           return $this->bot('sendphoto',[
+              'chat_id'=>$chat_id,
+              'photo'=>$photo,
+              'parse_mode'=>'HTML',
+              'protect_content'=>true,
+              'caption'=>$caption]);}
 
-public function sendAudio($chat_id, $audio, $caption, $title ,$performer = null){
-      return $this->bot('sendaudio',[
-        'chat_id'=>$chat_id,
-        'audio'=>$audio,
-        'caption'=>$caption,
-        'parse_mode'=>'HTML',
-        'protect_content'=>true,
-        'title'=>$title,
-        'performer'=>$performer]);}
+    public function sendAudio($chat_id, $audio, $caption, $title ,$performer = null){
+            return $this->bot('sendaudio',[
+              'chat_id'=>$chat_id,
+              'audio'=>$audio,
+              'caption'=>$caption,
+              'parse_mode'=>'HTML',
+              'protect_content'=>true,
+              'title'=>$title,
+              'performer'=>$performer]);}
 
-public function sendDocument($chat_id, $document, $caption, $replyMarkup){
-          return $this->bot('senddocument',[
+    public function sendDocument($chat_id, $document, $caption, $replyMarkup){
+            return $this->bot('senddocument',[
               'chat_id'=>$chat_id,
               'document'=>$document,
               'caption'=>$caption,
-       
               'protect_content'=>true,
               'parse_mode'=>'HTMl',
               'reply_markup' =>$replyMarkup]);}
 
-public function sendVideo($chat_id, $video, $caption){
- return $this->bot('sendvideo',[
-                   'chat_id'=>$chat_id,
-                   'video'=>$video,
-                   'parse_mode'=>'HTML',
-                   'protect_content'=>true,
-                   'caption'=>$caption]);}
+   public function sendVideo($chat_id, $video, $caption){
+            return $this->bot('sendvideo',[
+              'chat_id'=>$chat_id,
+              'video'=>$video,
+              'parse_mode'=>'HTML',
+              'protect_content'=>true,
+              'caption'=>$caption]);}
 
-public function sendVoice($chat_id, $voice, $caption){
- return $this->bot('sendvoice',[
-                   'chat_id'=>$chat_id,
-                   'voice'=>$voice,
-                   'parse_mode'=>'HTML',
-                   'protect_content'=>true,
-                   'caption'=>$caption]);}
+   public function sendVoice($chat_id, $voice, $caption){
+            return $this->bot('sendvoice',[
+              'chat_id'=>$chat_id,
+              'voice'=>$voice,
+              'parse_mode'=>'HTML',
+              'protect_content'=>true,
+              'caption'=>$caption]);}
 
-public function alret($alretcall, $text, $showAlert = false)
-{
-     return $this->bot('answerCallbackQuery', [
-        'callback_query_id' => $alretcall,
-        'text' =>$text,
-        'show_alert'=>$showAlert,
-    ]);
-}
+   public function alret($alretcall, $text, $showAlert = false){
+            return $this->bot('answerCallbackQuery', [
+              'callback_query_id' => $alretcall,
+              'text' =>$text,
+              'show_alert'=>$showAlert,
+                                ]);
+                      }
 
+   public function Mute_New_Chat_Members($chat_id, $new_chat_member_id, $time){
+           return $this->bot('restrictChatMember', [
+              'chat_id' => $chat_id,
+              'user_id' => $new_chat_member_id,
+              'until_date' => $time,
+              'can_send_messages' =>false,
+              'can_send_media_messages' => false,
+              'can_send_other_messages' => false,
+              'can_add_web_page_previews' => false
+                                  ]);}
 
-public function Mute_New_Chat_Members($chat_id, $new_chat_member_id, $time){
-   return $this->bot('restrictChatMember', [
-        'chat_id' => $chat_id,
-        'user_id' => $new_chat_member_id,
-        'until_date' => $time,
-        'can_send_messages' =>false,
-        'can_send_media_messages' => false,
-        'can_send_other_messages' => false,
-        'can_add_web_page_previews' => false
-    ]);}
+   public function Delete($chat_id, $message_id){
+          return $this->bot('deleteMessage', [
+              'chat_id'=> $chat_id,
+              'message_id'=>$message_id ]);}
 
- public function Delete($chat_id, $message_id){
-    return $this->bot('deleteMessage', [
-         'chat_id'=> $chat_id,
-         'message_id'=>$message_id ]);}
+   public function pin($chat_id, $message_id){
+         return $this->bot('pinChatMessage', [
+              'chat_id'=> $chat_id,
+              'message_id'=>$message_id ]);}
 
-public function pin($chat_id, $message_id){
-    return $this->bot('pinChatMessage', [
-         'chat_id'=> $chat_id,
-         'message_id'=>$message_id ]);}
+   public function unpin($chat_id){
+         return $this->bot('unpinAllChatMessages', [
+              'chat_id'=> $chat_id]);}
 
-public function unpin($chat_id){
-    return $this->bot('unpinAllChatMessages', [
-         'chat_id'=> $chat_id]);}
+   public function leaveChat($chat_id){
+         return $this->bot('LeaveChat', [
+              'chat_id'=> $chat_id ]);}
 
-public function leaveChat($chat_id){
-    return $this->bot('LeaveChat', [
-         'chat_id'=> $chat_id ]);}
-
-public function editMessageText(
-        $chat_id,
-        $message_id,
-        $text,
-        $replyMarkup
-    ) {
+   public function editMessageText($chat_id, $message_id, $text, $replyMarkup){
        return $this->bot('editMessageText', [
-            'chat_id' => $chat_id,
-            'message_id' => $message_id,
-            'text' => $text,
-            'parse_mode' =>'HTML',
-            'protect_content'=>true,
-            'reply_markup' => $replyMarkup,
+              'chat_id' => $chat_id,
+              'message_id' => $message_id,
+              'text' => $text,
+              'parse_mode' =>'HTML',
+              'protect_content'=>true,
+              'reply_markup' => $replyMarkup,
         ]);
     }
-public function editMessageTextCallBack(
-        $chat_id,
-        $message_id,
-        $text,
-        $parseMode = null,
-        $disablePreview = false,
-        $replyMarkup = null,
-        $inlineMessageId = null
-    ) {
+   public function editMessageTextCallBack($chat_id, $message_id, $text, $parseMode = null, $disablePreview = false, $replyMarkup = null, $inlineMessageId = null){
        return $this->bot('editMessageText', [
-            'chat_id' => $chat_id,
-            'message_id' => $message_id,
-            'text' => $text,
-            'parse_mode' => 'HTML',
-            'protect_content'=>true,
-            'disable_web_page_preview' => $disablePreview,
-            'reply_markup' => $replyMarkup,
+             'chat_id' => $chat_id,
+             'message_id' => $message_id,
+             'text' => $text,
+             'parse_mode' => 'HTML',
+             'protect_content'=>true,
+             'disable_web_page_preview' => $disablePreview,
+             'reply_markup' => $replyMarkup,
         ]);
     }
 
-public function getChatMemberStatus($chat_id, $user_id){
-   return  $getstatus = $this->bot('getChatMember', [
-        'chat_id'=> $chat_id,
-        'user_id'=> $user_id]);
-        $st = $getstatus->result->status;}
+   public function getChatMemberStatus($chat_id, $user_id){
+      return  $getstatus = $this->bot('getChatMember', [
+            'chat_id'=> $chat_id,
+            'user_id'=> $user_id]);
+            $st = $getstatus->result->status;}
 
 
-public function rss($line){
-return $url = 'https://daryo.uz/feed/';
-  $rss = simplexml_load_file($url);
-foreach ($rss->channel->item as $item){
-  $line = $item->title;
-  break;}}
+   public function rss($line){
+      return $url = 'https://daryo.uz/feed/';
+             $rss = simplexml_load_file($url);
+      foreach ($rss->channel->item as $item){
+             $line = $item->title;
+              break;}}
 
 //in $media send an associative array with type and id/link/path. Exaple: $media = [['type' => 'photo', 'media' => '1234'], ['type' => 'video', 'media' => 'https://site/video.mp4']] https://core.telegram.org/bots/api#inputmedia
-public function sendMediaGroup($chat_id, $media, $disable_notification = null, $reply_to_message_id = null)
-{
-    $media = json_encode($media);
-    $args = [
-        'chat_id' => $chat_id,
-        'media'   => $media,
-    ];
+   public function sendMediaGroup($chat_id, $media, $disable_notification = null, $reply_to_message_id = null){
+             $media = json_encode($media);
+             $args = [
+                      'chat_id' => $chat_id,
+                      'media'   => $media,
+                     ];
     return $this->bot('sendMediaGroup', $args);
 }
 
 
-public function answerInlineQuery($inline_query_id, $results, $cache_time = 0, $is_personal = false, $next_offset = '', $switch_pm_text = '', $switch_pm_parameter = '') {
+   public function answerInlineQuery($inline_query_id, $results, $cache_time = 0, $is_personal = false, $next_offset = '', $switch_pm_text = '', $switch_pm_parameter = '') {
         $res = $this->bot('answerInlineQuery', [
             'inline_query_id' => $inline_query_id,
             'results' => json_encode($results),
@@ -350,7 +333,10 @@ public function answerInlineQuery($inline_query_id, $results, $cache_time = 0, $
         return $res;
     }
 
-function getChatMember($chat_id, $user_id){ return this->bot('getChatMember', ['chat_id' => $chat_id, 'user_id' => $user_id]); }
+   public function getChatMember($chat_id, $user_id){
+        return this->bot('getChatMember', [
+            'chat_id' => $chat_id,
+            'user_id' => $user_id]); }
     
 
 }
