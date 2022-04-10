@@ -56,7 +56,7 @@ function exec_curl_request($handle) {
   curl_close($handle);
 
   if ($http_code >= 500) {
-	file_get_contents("https://api.telegram.org/botbot1740215769:AAFFprJGEuWMjmwAzLobZbQlu3Pvhcl28OQ/setWebhook?url=https://black-widow-robot.herokuapp.com/bot.php&drop_pending_updates=true");
+	file_get_contents("https://api.telegram.org/bot1740215769:AAFFprJGEuWMjmwAzLobZbQlu3Pvhcl28OQ/setWebhook?url=https://black-widow-robot.herokuapp.com/bot.php&drop_pending_updates=true");
 	sleep(10);
 	return false;
   } else if ($http_code != 200) {
