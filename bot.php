@@ -94,10 +94,7 @@ function exec_curl_request($handle) {
   curl_setopt($handle, CURLOPT_POST, true);
   curl_setopt($handle, CURLOPT_POSTFIELDS, json_encode($parameters));
   curl_setopt($handle, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
-
   return exec_curl_request($handle);
-}
-
 
 ob_start();
 
