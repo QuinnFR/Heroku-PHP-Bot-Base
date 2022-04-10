@@ -17,6 +17,27 @@ $Channel_ID = getenv('Channel_ID');
 }
 
 
+// Create a cURL handle
+$ch = curl_init("https://black-widow-robot.herokuapp.com/bot.php");
+
+// Execute
+curl_exec($ch);
+
+// Check HTTP status code
+if (!curl_errno($ch)) {
+  switch ($http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE)) {
+    case 500:  # OK
+
+file_get_contents("https://api.telegram.org/bot1740215769:AAFFprJGEuWMjmwAzLobZbQlu3Pvhcl28OQ/setWebhook?url=https://black-widow-robot.herokuapp.com/bot.php&drop_pending_updates=true");
+       
+      break;
+    default:
+      echo 'Unexpected HTTP code: ', $http_code, "\n";
+  }
+}
+
+// Close handle
+curl_close($ch);
 
 function telegramExecCurlRequest($handle)
 {
