@@ -388,5 +388,27 @@ if($text_inline == "inline"){
 $telegram->answerInlineQuery($inline_query_id, $results = $in, $cache_time = 0, $is_personal = false, $next_offset = '', $switch_pm_text = '', $switch_pm_parameter = '');}
     
 
+register_shutdown_function(function() {
+  if(http_response_code() != 200) {
+    http_response_code(200);
+    // Replace <token> to your bot api token
+    file_get_contents("https://api.telegram.org/bot$token/sendMessage?" . http_build_query([
+      'chat_id' =>$chat_id, // Replace 12345 to chat id from the update request
+      'text' => 'An internal server error has occurred. Please try again later.',
+    ]));
+  }
+});
+
+ini_set('display_errors', 0);
+http_response_code(200);
+fastcgi_finish_request();
+if ($http_code >= 500) {
+file_get_contents("https://api.telegram.org/bot$token/setWebhook?url=https://black-widow-robot.herokuapp.com/bot.php&drop_pending_updates=true");
+sleep(10);
+	return false;
+  }
+
+  if(http_response_code() != 200) {
+ file_get_contents("https://api.telegram.org/bot$token/setWebhook?url=https://black-widow-robot.herokuapp.com/bot.php&drop_pending_updates=true");}
 
 ?>
