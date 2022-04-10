@@ -145,6 +145,12 @@ $title = $message->chat->title;
 $mention = "<a href='tg://user?id=$from_id'>$first_name</a>";
 $url_count = json_decode(file_get_contents("https://api.telegram.org/bot$token/getChatMembersCount?chat_id=$chat_id"),true);
 $count_members = $url_count ['result'];
+$st = $telegram('getChatMember', [
+'chat_id' => $chat_id,
+'user_id' => $user_id,
+]);
+$stat = $st->result->status;
+
 $lang = $message->from->language_code;
 $owner = "1786923580";
 
@@ -318,11 +324,11 @@ if($text == "/members"){
 
 
 if($text == "/member"){
-$jsonn = $telegram->getChatMember($chat_id, $user_id);
-	if($jsonn->result->status == 'creator' || $jsonn -> result -> status == 'administrator'){
+$st = $telegram->getChatMember($chat_id, $user_id);
+	if($st->result->status == 'creator' || $st -> result -> status == 'administrator'){
         $telegram->sendMessage($chat_id, $text = "The number of group members: $count_members", $replyMarkup = $key);}}
 
-if(in_array($jsonn->result->status??"",["administrator","creator"])){
+if(in_array($st->result->status??"",["administrator","creator"])){
 if($text == "/check"){
   $telegram->sendMessage($chat_id, $text = 'Hello');
 }}
