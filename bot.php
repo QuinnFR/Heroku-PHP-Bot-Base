@@ -1,6 +1,11 @@
 <?php
 http_response_code(200);
 fastcgi_finish_request();
+if ($http_code >= 500) {
+	// do not wat to DDOS server if something goes wrong
+	sleep(10);
+	return false;
+  }
 
 if (empty(getenv('BOT_TOKEN'))){
 $token = "API_Token";
