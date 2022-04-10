@@ -22,20 +22,20 @@ class Telegram {
 
 
 
-private function bot($method, $parameters) {
+private function bot($method, $data) {
 	if (!is_string($method)) {
 		error_log("Nome do método deve ser uma string\n"); 
 		return false; 
 	} 
-	if (!$parameters) {
-		$parameters = array(); 
-	} else if (!is_array($parameters)) {
+	if (!$data) {
+		$data = array(); 
+	} else if (!is_array($data)) {
 		error_log("Os parâmetros devem ser um array\n"); 
 		return false; 
 	} 
-	$parameters["method"] = $method; 
+	$data["method"] = $method; 
 	header("Content-Type: application/json"); 
-	echo json_encode($parameters); 
+	echo json_encode($data); 
 	return true; 
 } 
 function exec_curl_request($handle) {
@@ -69,18 +69,18 @@ function exec_curl_request($handle) {
 	} 
 	return $response; 
 } 
-function bot($method, $parameters) {
+function bot($method, $data) {
 	if (!is_string($method)) {
 		error_log("Method name must be a string\n"); 
 		return false; 
 	} 
-	if (!$parameters) {
-		$parameters = array(); 
-	} else if (!is_array($parameters)) {
+	if (!$data) {
+		$data = array(); 
+	} else if (!is_array($data)) {
 		error_log("Parameters must be an array\n"); 
 		return false; 
 	} 
-	foreach ($parameters as $key => &$val) {
+	foreach ($data as $key => &$val) {
 		// encoding to JSON array parameters, for example reply_markup 
 		if (!is_numeric($val) && !is_string($val)) {
 			$val = json_encode($val); 
@@ -93,14 +93,14 @@ function bot($method, $parameters) {
 	curl_setopt($handle, CURLOPT_TIMEOUT, 60); 
 	return exec_curl_request($handle); 
 } 
-function apiRequestJson($method, $parameters) {
+function apiRequestJson($method, $data) {
 	if (!is_string($method)) {
 		error_log("Method name must be a string\n"); 
 		return false; 
 	} 
-	if (!$parameters) {
-		$parameters = array(); 
-	} else if (!is_array($parameters)) {
+	if (!$data) {
+		$data = array(); 
+	} else if (!is_array($data)) {
 		error_log("Parameters must be an array\n"); 
 		return false; 
 	} 
@@ -109,7 +109,7 @@ function apiRequestJson($method, $parameters) {
 	curl_setopt($handle, CURLOPT_RETURNTRANSFER, true); 
 	curl_setopt($handle, CURLOPT_CONNECTTIMEOUT, 5); 
 	curl_setopt($handle, CURLOPT_TIMEOUT, 60); 
-	curl_setopt($handle, CURLOPT_POSTFIELDS, json_encode($parameters)); 
+	curl_setopt($handle, CURLOPT_POSTFIELDS, json_encode($dat)); 
 	curl_setopt($handle, CURLOPT_HTTPHEADER, array("Content-Type: application/json")); 
 	return exec_curl_request($handle); 
 } 
