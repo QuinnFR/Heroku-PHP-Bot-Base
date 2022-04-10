@@ -281,8 +281,6 @@ $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
 $telegram->sendMessageInlineKeyboard($chat_id, $text = "Please Choice your os Android System", $replyMarkup = $os);}
 if(isset($update) && $data == "12"){
-$telegram->typing($chat_id, $action = 'typing');
-sleep(2);
 $telegram->alret($alretcall, $text = "For Android 12 Only Assistant app 📱", $showAlert = false);
 $telegram->editMessageText($chat_id = $chatid, $message_id = $messageid, $text = $os12, $replyMarkup = $os);}
 
@@ -295,8 +293,6 @@ $media = [[
 $telegram->sendMediaGroup($chat_id, $media, $disable_notification = null, $reply_to_message_id = null);}
                             
 if($data == "11"){
-$telegram->typing($chat_id, $action = 'typing');
-sleep(2);
 $telegram->alret($alretcall, $text = "For Android devices 📱", $showAlert = false);
 $telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAICxGJNbqI_1MRQxh634_QkBbiH0Hc3AAImDAACvjlAUq4HtTqh1TtRIwQ", $caption = $vmos_pro, $replyMarkup = $os);}
 
