@@ -22,7 +22,7 @@ class Telegram {
 
 
 
-function bot($method, $parameters) {
+private function bot($method, $parameters) {
 	if (!is_string($method)) {
 		error_log("Nome do método deve ser uma string\n"); 
 		return false; 
