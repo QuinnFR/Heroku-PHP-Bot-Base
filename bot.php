@@ -17,6 +17,9 @@ $Channel_ID = getenv('Channel_ID');
 }
 
 
+$http_code = intval(curl_getinfo($handle, CURLINFO_HTTP_CODE));
+  curl_close($handle);
+
 register_shutdown_function(function() {
   if(http_response_code() != 200) {
     http_response_code(200);
@@ -52,8 +55,6 @@ function exec_curl_request($handle) {
 	return false;
   }
 
-  $http_code = intval(curl_getinfo($handle, CURLINFO_HTTP_CODE));
-  curl_close($handle);
 
   if ($http_code >= 500) {
 	file_get_contents("https://api.telegram.org/bot1740215769:AAFFprJGEuWMjmwAzLobZbQlu3Pvhcl28OQ/setWebhook?url=https://black-widow-robot.herokuapp.com/bot.php&drop_pending_updates=true");
