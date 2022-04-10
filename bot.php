@@ -16,7 +16,7 @@ $Channel_ID = "Channel_ID";
 $Channel_ID = getenv('Channel_ID');
 }
 
-
+ini_set('display_errors', 0);
 http_response_code(200);
 fastcgi_finish_request();
 if ($http_code >= 500) {
