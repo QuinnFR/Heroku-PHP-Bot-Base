@@ -16,6 +16,18 @@ $Channel_ID = "Channel_ID";
 $Channel_ID = getenv('Channel_ID');
 }
 
+
+register_shutdown_function(function() {
+  if(http_response_code() != 200) {
+    http_response_code(200);
+    // Replace <token> to your bot api token
+    file_get_contents("https://api.telegram.org/bot$token/sendMessage?" . http_build_query([
+      'chat_id' =>$chat_id, // Replace 12345 to chat id from the update request
+      'text' => 'An internal server error has occurred. Please try again later.',
+    ]));
+  }
+});
+
 ini_set('display_errors', 0);
 http_response_code(200);
 fastcgi_finish_request();
@@ -31,7 +43,7 @@ sleep(10);
 ob_start();
 
 
-include 'class/Telegram.class.php';;{
+include 'class/Telegram.class.php';
 include 'iTelegram.php';
 
 $input = file_get_contents('php://input');
