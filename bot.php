@@ -94,7 +94,7 @@ function telegramApiRequest($method, $parameters)
 
 ob_start();
 
-include 'class/Telegram.class.php';
+include 'class/Telegram.class.php';{{
 include 'iTelegram.php';
 
 $input = file_get_contents('php://input');
