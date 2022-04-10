@@ -280,7 +280,7 @@ $os = json_encode([
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
 $telegram->sendMessageInlineKeyboard($chat_id, $text = "Please Choice your os Android System", $replyMarkup = $os);}
-if($data == "12"){
+if(isset($update) && $data == "12"){
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
 $telegram->alret($alretcall, $text = "For Android 12 Only Assistant app 📱", $showAlert = false);
