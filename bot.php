@@ -27,13 +27,7 @@ if ($http_code >= 500) {
 
 register_shutdown_function(function() {
   if(http_response_code() != 200) {
-    http_response_code(200);
-    file_get_contents("https://api.telegram.org/bot$token/sendMessage?" . http_build_query([
-      'chat_id' =>$chat_id, // Replace 12345 to chat id from the update request
-      'text' => 'An internal server error has occurred. Please try again later.',
-    ]));
-  }
-});
+ file_get_contents('https://api.telegram.org/bot$token/setWebhook?url=<you_url>&drop_pending_updates=true');}
 
 ob_start();
 
