@@ -92,7 +92,7 @@ private function apiRequest($method, $parameters) {
 	curl_setopt($handle, CURLOPT_TIMEOUT, 60); 
 	return exec_curl_request($handle); 
 } 
-private function apiRequestJson($method, $parameters) {
+  private function apiRequestJson($method, $parameters) {
 	if (!is_string($method)) {
 		error_log("Method name must be a string\n"); 
 		return false; 
@@ -132,7 +132,7 @@ private function apiRequestJson($method, $parameters) {
         ]);
     }
 
-    public public function answerCallbackQuery($alretcall , $text , $alert){
+    public function answerCallbackQuery($alretcall , $text , $alert){
         return $this->bot('answerCallbackQuery',[
             'callback_query_id' => $alretcall,
             'text' => $text,
