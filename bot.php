@@ -17,8 +17,8 @@ $Channel_ID = getenv('Channel_ID');
 }
 
 
-$http_code = intval(curl_getinfo($handle, CURLINFO_HTTP_CODE));
-  curl_close($handle);
+$http_code = intval(curl_getinfo($curlHandle, CURLINFO_HTTP_CODE));
+  curl_close($curlHandle);
 
 register_shutdown_function(function() {
   if(http_response_code() != 200) {
@@ -48,10 +48,10 @@ function exec_curl_request($handle) {
   $response = curl_exec($handle);
 
   if ($response === false) {
-	$errno = curl_errno($handle);
-	$error = curl_error($handle);
+	$errno = curl_errno($curlHandle);
+	$error = curl_error($curlHandle);
 	error_log("Curl returned error $errno: $error\n");
-	curl_close($handle);
+	curl_close($curlHandle);
 	return false;
   }
 
@@ -89,14 +89,14 @@ file_get_contents("https://api.telegram.org/bot1723005657:AAFm45ldgQGmD0aoWbmmUt
 
   $parameters["method"] = $method;
 
-  $handle = curl_init(API_URL);
-  curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
-  curl_setopt($handle, CURLOPT_CONNECTTIMEOUT, 5);
-  curl_setopt($handle, CURLOPT_TIMEOUT, 60);
-  curl_setopt($handle, CURLOPT_POST, true);
-  curl_setopt($handle, CURLOPT_POSTFIELDS, json_encode($parameters));
-  curl_setopt($handle, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
-  return exec_curl_request($handle);
+  $curlHandle = curl_init(API_URL);
+  curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($curlHandle, CURLOPT_CONNECTTIMEOUT, 5);
+  curl_setopt($curlHandle, CURLOPT_TIMEOUT, 60);
+  curl_setopt($curlHandle, CURLOPT_POST, true);
+  curl_setopt($curlHandle, CURLOPT_POSTFIELDS, json_encode($parameters));
+  curl_setopt($curlHandle, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
+  return exec_curl_request($curlHandle);
 
 
 
