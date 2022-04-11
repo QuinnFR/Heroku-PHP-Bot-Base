@@ -208,9 +208,6 @@ sleep(3);
 $telegram->pin($chat_id, $message_id = $pin);
 }
 
-if($text == '/unpin'){
-$telegram->unpin($chat_id);}
-
 if($new){
 $telegram->Mute_New_Chat_Members($chat_id, $new_chat_member_id, $time);}
 
