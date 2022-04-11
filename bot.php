@@ -153,8 +153,7 @@ $welcome_vmos = "Welcome $mention Howdy?
 I'm Flaming 🔥 ~& Kitty ッ🥀 Robot please join before asking using me ;)";
 
 $welcome = "Welcome to my Club<a href='https://telegra.ph/file/d8ff390e2a0ddfb5e4370.jpg'> ⁭⁭⁭</a><a href='tg://user?id=$from_id'>$first_name</a> 📱
-Please Read the <a href='https://t.me/Bots_Programing_Tutorial'>Rules</a> and etiquette first to avoid ban, then read the Pinned Message and FAQ channel
-After this send /keyboard";
+Please Read the <a href='https://t.me/Bots_Programing_Tutorial'>Bots Channel contain</a> before asking me";
 
 $leave = "Sorry <a href='https://telegra.ph/file/69044f4a93315d80f971b.jpg'> ⁭⁭⁭</a><a href='tg://chat?id=$chat_id'>$title</a> 💛
 I can't find the <u>Flaming 🔥 ~& Kitty ッ🥀</u> here so I can't stay neither";
@@ -262,7 +261,7 @@ https://www.vmos.cn/zhushou.htm";
 
            
 
-if($text == "/keyboard" && $type =='private'){
+if($text == "/keyboar" && $type =='private'){
 $os = json_encode([
            'inline_keyboard'=>[
            [["text"=>"Android 12 🤖","callback_data"=>"12"],
@@ -290,7 +289,7 @@ $telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAICxGJNbqI
 
 
 
-if($text == '/vmos'){
+if($text == '/vmoss'){
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
 $telegram->sendMessage($chat_id, $text = $pm, $replyMarkup = $cn);}
