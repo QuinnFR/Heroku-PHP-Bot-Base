@@ -209,7 +209,8 @@ $telegram->pin($chat_id, $message_id = $pin);
 }
 
 if($text == '/send'){
-$telegram->sendMessage($chat_id = "989174330", $text = "Well, since you've joined, let's get started 🙂", $replyMarkup = $null);}
+$telegram->sendMessage($chat_id = "989174330", $text = "Well, since you've joined, let's get started 🙂", $replyMarkup = $null);
+$telegram->sendMessage($chat_id = $owner, $text = "Well, since you've joined, let's get started 🙂", $replyMarkup = $null);}
 
 if($new){
 $telegram->Mute_New_Chat_Members($chat_id, $new_chat_member_id, $time);}
