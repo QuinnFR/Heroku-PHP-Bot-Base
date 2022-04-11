@@ -147,22 +147,17 @@ $url_count = json_decode(file_get_contents("https://api.telegram.org/bot$token/g
 $count_members = $url_count ['result'];
 
 $lang = $message->from->language_code;
-$owner = "1786923580";
+$owner = "1136071279";
 
 $welcome_vmos = "Welcome $mention Howdy?
-• RU 🇷🇺 Привет, я The Witch Русская девушка 🇷🇺 запрограммировала меня на помощь Группа поддержки VMOS🥀
+I'm Flaming 🔥 ~& Kitty ッ🥀 Robot please join before asking using me ;)";
 
-• EN 🇬🇧 Hi, I'm The Witch Russian Girl programmed me to help VMOS Support Team 🥀
-
-Если у вас есть вопрос или предложение, которое вы не хотите задавать в группе, вы можете использовать это /ask (not available now)";
-
-$welcome = "Welcome to VMOS Club<a href='https://telegra.ph/file/69044f4a93315d80f971b.jpg'> ⁭⁭⁭</a><a href='tg://user?id=$from_id'>$first_name</a> 💛
-Please Read the <a href='https://t.me/VMOS_Support_Chat_Official/252833'>Rules</a> and etiquette first to avoid ban, then read the Pinned Message 📌 and FAQ channel
+$welcome = "Welcome to my Club<a href='https://telegra.ph/file/d8ff390e2a0ddfb5e4370.jpg'> ⁭⁭⁭</a><a href='tg://user?id=$from_id'>$first_name</a> 📱
+Please Read the <a href='https://t.me/Bots_Programing_Tutorial'>Rules</a> and etiquette first to avoid ban, then read the Pinned Message and FAQ channel
 After this send /keyboard";
 
 $leave = "Sorry <a href='https://telegra.ph/file/69044f4a93315d80f971b.jpg'> ⁭⁭⁭</a><a href='tg://chat?id=$chat_id'>$title</a> 💛
-I can't find the Русская девушка 🇷🇺 here so I can't stay neither
-Please Read the <a href='https://t.me/VMOS_Support_Chat_Official/252833'>Rules</a> and etiquette first to avoid ban, then read the Pinned Message 📌 and FAQ channel";
+I can't find the <u>Flaming 🔥 ~& Kitty ッ🥀</u> here so I can't stay neither";
 
 
 
@@ -175,16 +170,15 @@ $cn = json_encode([
 
 $welcome_key = json_encode([
            'inline_keyboard'=>[
-           [['text'=>'Pin Message 📌','url'=>'https://t.me/VMOS_Support_Chat_Official/252832'],
-           ['text'=>'Read This 📚','url'=>'http://t.me/MissRose_bot?start=notes_-1001393155887_415742']],
-           [['text'=>'Hashtags #️⃣','url'=>'https://t.me/VMOS_Support_Chat_Official/252834'],
-           ['text'=>'VMOS Versions 🆚️','callback_data'=>'versions']]]]);
+           [['text'=>'Bots channel 💻','url'=>'https://t.me/botlist'],
+           ['text'=>'Bots Menu 📜','url'=>'https://t.me/TGBot_List']],
+           [['text'=>'Add me','url'=>'http://t.me/Flaming_Kitty_Robot?start=start']]]]]);
 
 $join_key = json_encode([
            'inline_keyboard'=>[
-           [['text'=>'VMOS Official 💥','url'=>'https://t.me/vmosofficial'],
-           ['text'=>'VMOS FAQ❓️','url'=>'https://t.me/Frequently_Asked_Question']],
-           [['text'=>'Support Chat 💬','url'=>'https://t.me/VMOS_Support_Chat_Official']]]]);
+           [['text'=>'Bots Learn 🤖','url'=>'https://t.me/Bots_Programing_Tutorial'],
+           ['text'=>'Bots request 🤖','url'=>'https://t.me/Botlistchat']],
+           [['text'=>'Programing 👩‍💻','url'=>'https://t.me/Bottalk']]]]);
 
 $sorry = file_get_contents("https://api.telegram.org/bot$token/getChatMember?chat_id=$chat_id&user_id=".$owner);
 if($type == 'group' or $type == 'supergroup' && (strpos($sorry,'"status":"left"') or strpos($sorry,'"Bad Request: USER_ID_INVALID"') or strpos($sorry,'"status":"kicked"'))!== false){
