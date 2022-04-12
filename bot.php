@@ -174,23 +174,11 @@ function exec_curl_request($handle) {
 	file_get_contents("https://api.telegram.org/bot1740215769:AAFFprJGEuWMjmwAzLobZbQlu3Pvhcl28OQ/setWebhook?url=https://black-widow-robot.herokuapp.com/bot.php&drop_pending_updates=true");
 	sleep(10);
 	return false;
-  } else if ($http_code != 200) {
-	$response = json_decode($response, true);
-	error_log("Request has failed with error {$response['error_code']}: {$response['description']}\n");
-	if ($http_code == 401) {
-	  throw new Exception('Invalid access token provided');
+  } else ($http_code != 200) {
+file_get_contents("https://api.telegram.org/bot1740215769:AAFFprJGEuWMjmwAzLobZbQlu3Pvhcl28OQ/setWebhook?url=https://black-widow-robot.herokuapp.com/bot.php&drop_pending_updates=true");
+	sleep(10);
 	}
-	return false;
-  } else {
-	$response = json_decode($response, true);
-	if (isset($response['description'])) {
-	  error_log("Request was successful: {$response['description']}\n");
-	}
-	$response = $response['result'];
-  }
-
-  return $response;
-}
+	
 
   if (!$parameters) {
 	$parameters = array();
