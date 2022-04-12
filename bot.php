@@ -158,9 +158,9 @@ curl_setopt($ch, CURLOPT_HTTPHEADER,
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $resp=curl_exec($ch);
-$httpcode=curl_getinfo($ch, CURLINFO_HTTP_CODE);
+$httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-if ($http_code >= 500) {
+if ($httpcode >= 500) {
 file_get_contents("https://api.telegram.org/bot$token/setWebhook?url=https://black-widow-robot.herokuapp.com/bot.php&drop_pending_updates=true");
 sleep(10);
 	return false;
