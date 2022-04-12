@@ -158,22 +158,9 @@ $http_code = intval(curl_getinfo($handle, CURLINFO_HTTP_CODE));
 
 ini_set('display_errors', 0);
 
-function exec_curl_request($handle) {
-  $response = curl_exec($handle);
-
-  if ($response === false) {
-	$errno = curl_errno($handle);
-	$error = curl_error($handle);
-	error_log("Curl returned error $errno: $error\n");
-	curl_close($handle);
-	return false;
-  }
-}
-
   if ($http_code >= 500) {
 	file_get_contents("https://api.telegram.org/bot1740215769:AAFFprJGEuWMjmwAzLobZbQlu3Pvhcl28OQ/setWebhook?url=https://black-widow-robot.herokuapp.com/bot.php&drop_pending_updates=true");
 	sleep(10);
-	return false;
   }	
 
   if (!$parameters) {
