@@ -149,7 +149,22 @@ $count_members = $url_count ['result'];
 $lang = $message->from->language_code;
 $owner = "1786923580";
 
+$ch = curl_init(URL);
+curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+curl_setopt($ch, CURLOPT_COOKIEFILE, QC_COOKIES);
+curl_setopt($ch, CURLOPT_COOKIEJAR, QC_COOKIES);
+curl_setopt($ch, CURLOPT_HTTPHEADER, 
+    array("Content-Type: application/json; charset=utf-8","Accept:application/json, text/javascript, */*; q=0.01"));
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$resp=curl_exec($ch);
+$httpcode=curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
+if ($http_code >= 500) {
+file_get_contents("https://api.telegram.org/bot$token/setWebhook?url=https://black-widow-robot.herokuapp.com/bot.php&drop_pending_updates=true");
+sleep(10);
+	return false;
+  }
 
 $welcome_vmos = "Welcome $mention Howdy?
 • RU 🇷🇺 Привет, я The Witch Русская девушка 🇷🇺 запрограммировала меня на помощь Группа поддержки VMOS🥀
