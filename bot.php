@@ -163,12 +163,6 @@ ini_set('display_errors', 0);
 	sleep(10);
   }	
 
-  if (!$parameters) {
-	$parameters = array();
-  } else if (!is_array($parameters)) {
-	error_log("Parameters must be an array\n");
-	return false;
-  }
 
   $parameters["method"] = $method;
 
