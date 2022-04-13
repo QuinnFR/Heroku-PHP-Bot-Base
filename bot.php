@@ -151,7 +151,7 @@ $owner = "1786923580";
 
 
 if($text =="info" ){
-$get = json_decode(file_get_contents("http://api.telegram.org/bot".API_KEY."/getChatMembersCount?chat_id=$chat_id"));
+$get = json_decode(file_get_contents("http://api.telegram.org/bot$token/getChatMembersCount?chat_id=$chat_id"));
 $men = $get-> result;
 $title = $message->chat->title;
 $message_id = $update->message->message_id;
