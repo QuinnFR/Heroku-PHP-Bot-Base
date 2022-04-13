@@ -35,7 +35,7 @@ function bot($method,$datas=[]){
 }
 ob_start();
 
-include 'class/Telegram.class2.php';
+include 'function.php';
 
 $input = file_get_contents('php://input');
 $update = json_decode($input);
