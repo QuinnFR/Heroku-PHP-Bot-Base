@@ -1,9 +1,9 @@
 <?php
 
-if (empty(getenv('BOT_TOKEN'))){
-$token = "API_Token";
+if (empty(getenv('BOT_TOKEN2'))){
+$token2 = "API_Token";
 } else {
-$token = getenv('BOT_TOKEN');
+$token2 = getenv('BOT_TOKEN2');
 }
 if (empty(getenv('ADMIN'))){
 $ADMIN = "ID_ADMIN";
@@ -11,9 +11,9 @@ $ADMIN = "ID_ADMIN";
 $ADMIN = getenv('ADMIN');
 }
 if (empty(getenv('Channel_ID'))){
-$Channel_ID = "Channel_ID";
+$Channel_ID2 = "Channel_ID2";
 } else {
-$Channel_ID = getenv('Channel_ID');
+$Channel_ID2 = getenv('Channel_ID2');
 }
 
 ob_start();
