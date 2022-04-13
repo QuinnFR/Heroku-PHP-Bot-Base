@@ -1,6 +1,25 @@
 <?php
-
+ini_set('display_errors', 0);
 ob_start();
+
+if (empty(getenv('BOT_TOKEN'))){
+$token = "API_Token";
+} else {
+$token = getenv('BOT_TOKEN');
+}
+if (empty(getenv('ADMIN'))){
+$ADMIN = "ID_ADMIN";
+} else {
+$ADMIN = getenv('ADMIN');
+}
+if (empty(getenv('Channel_ID'))){
+$Channel_ID = "Channel_ID";
+} else {
+$Channel_ID = getenv('Channel_ID');
+}
+
+$input = file_get_contents('php://input');
+$update = json_decode($input);
 
 include 'class/Telegram.class.php';
 include 'iTelegram.php';
