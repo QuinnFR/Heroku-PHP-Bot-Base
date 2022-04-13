@@ -19,7 +19,6 @@ $Channel_ID = getenv('Channel_ID');
 
 $input = file_get_contents('php://input');
 $update = json_decode($input);
-$telegram = new Telegram($token);
 $chatId = $update['message']['chat']['id'] ?? $update['callback_query']['message']['chat']['id'] ?? '';
 
 register_shutdown_function(function () use($token, $chatId) {
