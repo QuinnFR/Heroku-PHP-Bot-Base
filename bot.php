@@ -163,7 +163,7 @@ $link2 = $link;
 $link = bot("exportChatInviteLink",['chat_id'=>$chat_id])->result;
 $link2 = $link;
 }
-bot('sendmessage',[
+$telegram->('sendmessage',[
 'chat_id' => $chat_id,
 'text' => " - اهلا بك عزيزي اليك معلومات المجموعه",
 'reply_to_message_id' =>$message->message_id, 
