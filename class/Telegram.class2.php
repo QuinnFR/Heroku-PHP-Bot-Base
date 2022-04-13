@@ -26,7 +26,7 @@
         ]);
     }
      function edit_replay($chatid , $msgid ,$reply){
-	return $this->bot('editMessageReplyMarkup',[
+	return bot('editMessageReplyMarkup',[
             'chat_id'=>$chatid,
             'message_id'=>$msgid,
             'protect_content'=>true,
