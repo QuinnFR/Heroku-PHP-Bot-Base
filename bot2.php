@@ -1,5 +1,6 @@
 <?php
 
+
 if (empty(getenv('BOT_TOKEN2'))){
 $token2 = "API_Token";
 } else {
@@ -16,6 +17,23 @@ $Channel_ID2 = "Channel_ID2";
 $Channel_ID2 = getenv('Channel_ID2');
 }
 
+define('API_KEY',"$token2");
+//type the token
+$admin = ""; 
+//Enter your id number
+function apiRequest($method,$datas=[]){
+    $url = "https://api.telegram.org/bot".API_KEY."/".$method;
+    $ch = curl_init();
+    curl_setopt($ch,CURLOPT_URL,$url);
+    curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+    curl_setopt($ch,CURLOPT_POSTFIELDS,$datas);
+    $res = curl_exec($ch);
+    if(curl_error($ch)){
+        var_dump(curl_error($ch));
+    }else{
+        return json_decode($res);
+    }
+}
 ob_start();
 
 include 'class/Telegram.class2.php';
@@ -181,35 +199,35 @@ $join_key = json_encode([
 
 $sorry = file_get_contents("https://api.telegram.org/bot$token/getChatMember?chat_id=$chat_id&user_id=".$owner);
 if($type == 'group' or $type == 'supergroup' && (strpos($sorry,'"status":"left"') or strpos($sorry,'"Bad Request: USER_ID_INVALID"') or strpos($sorry,'"status":"kicked"'))!== false){
-$telegram->typing($chat_id, $action = 'typing');
+typing($chat_id, $action = 'typing');
 sleep(2);
-$pin_not = $telegram->sendMessage($chat_id, $text = $leave, $replyMarkup = $join_key)->result->message_id;
+$pin_not = sendMessage($chat_id, $text = $leave, $replyMarkup = $join_key)->result->message_id;
 sleep(3);
-$telegram->pin($chat_id, $message_id = $pin_not);
-$telegram->leaveChat($chat_id);
+pin($chat_id, $message_id = $pin_not);
+leaveChat($chat_id);
 return false;}
 
 $join = file_get_contents("https://api.telegram.org/bot$token/getChatMember?chat_id=$Channel_ID&user_id=".$from_id);
 if($text == '/start' && $type == 'private' && (strpos($join,'"status":"left"') or strpos($join,'"Bad Request: USER_ID_INVALID"') or strpos($join,'"status":"kicked"'))!== false){
-$telegram->typing($chat_id, $action = 'typing');
+typing($chat_id, $action = 'typing');
 sleep(2);
-$telegram->sendMessage($chat_id, $text = $welcome_vmos, $replyMarkup = $join_key)->result->message_id;
+sendMessage($chat_id, $text = $welcome_vmos, $replyMarkup = $join_key)->result->message_id;
 return false;}
 
 
 if($text == '/start' && $type == 'private'){
-$telegram->unpin($chat_id);
-    $telegram->typing($chat_id, $action = 'typing');
+unpin($chat_id);
+ typing($chat_id, $action = 'typing');
 sleep(2);
-$wl = $telegram->sendMessage($chat_id, $text = "Well, since you've joined, let's get started 🙂", $replyMarkup = $null)->result->message_id;
+$wl = sendMessage($chat_id, $text = "Well, since you've joined, let's get started 🙂", $replyMarkup = $null)->result->message_id;
 sleep(3);
-$pin = $telegram->editMessageText($chat_id, $message_id = $wl, $text = $welcome, $replyMarkup = $welcome_key)->result->message_id;
+$pin = editMessageText($chat_id, $message_id = $wl, $text = $welcome, $replyMarkup = $welcome_key)->result->message_id;
 sleep(3);
-$telegram->pin($chat_id, $message_id = $pin);
+pin($chat_id, $message_id = $pin);
 }
 
 if($new){
-$telegram->Mute_New_Chat_Members($chat_id, $new_chat_member_id, $time);}
+Mute_New_Chat_Members($chat_id, $new_chat_member_id, $time);}
 
 $pm = "Please <a href='tg://user?id=$user_id'>$first_name</a> click here";
 $chinese_vmos = "<a href='tg://user?id=$user_id'>$frist_name</a> VMOS Chinese Version 🇨🇳 Support Root and Gapps but Android 5.1
@@ -284,46 +302,46 @@ $media = [[
 $telegram->sendMediaGroup($chat_id, $media, $disable_notification = null, $reply_to_message_id = null);}
                             
 if($data == "11"){
-$telegram->alret($alretcall, $text = "For Android devices 📱", $showAlert = false);
-$telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAICxGJNbqI_1MRQxh634_QkBbiH0Hc3AAImDAACvjlAUq4HtTqh1TtRIwQ", $caption = $vmos_pro, $replyMarkup = $os);}
+alret($alretcall, $text = "For Android devices 📱", $showAlert = false);
+sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAICxGJNbqI_1MRQxh634_QkBbiH0Hc3AAImDAACvjlAUq4HtTqh1TtRIwQ", $caption = $vmos_pro, $replyMarkup = $os);}
 
 
 
 if($text == '/vmoss'){
-$telegram->typing($chat_id, $action = 'typing');
+typing($chat_id, $action = 'typing');
 sleep(2);
-$telegram->sendMessage($chat_id, $text = $pm, $replyMarkup = $cn);}
+sendMessage($chat_id, $text = $pm, $replyMarkup = $cn);}
 
 elseif(preg_match("/(last|update)/", $text) && $type =='private'){
-$telegram->typing($chat_id, $action = 'document');
+typing($chat_id, $action = 'document');
 sleep(2);
-$telegram->sendDocument($chat_id, $document = "BQACAgQAAxkBAAICxGJNbqI_1MRQxh634_QkBbiH0Hc3AAImDAACvjlAUq4HtTqh1TtRIwQ", $caption = $vmos_pro, $replyMarkup = null);}
+sendDocument($chat_id, $document = "BQACAgQAAxkBAAICxGJNbqI_1MRQxh634_QkBbiH0Hc3AAImDAACvjlAUq4HtTqh1TtRIwQ", $caption = $vmos_pro, $replyMarkup = null);}
 
 if($data == "Delete"){
-$telegram->alret($alretcall, $text = "OK Delete 🗑", $showAlert = false);
-$telegram->Delete($chat_id = $chatid, $message_id = $messageid);}
+alret($alretcall, $text = "OK Delete 🗑", $showAlert = false);
+Delete($chat_id = $chatid, $message_id = $messageid);}
 
 
 if($text =='/json' and $re){
-$telegram->jsonData($chat_id, $text = json_encode($update, 448));}
+jsonData($chat_id, $text = json_encode($update, 448));}
 
 if($text == "/members"){
-        $telegram->sendMessage($chat_id, $text = "The number of group members: $count_members", $replyMarkup = $key);}
+  sendMessage($chat_id, $text = "The number of group members: $count_members", $replyMarkup = $key);}
 
 
 if($text == "/member"){
-$st = $telegram->getChatMember($chat_id, $user_id);
+$st = getChatMember($chat_id, $user_id);
 	if($st->result->status == 'creator' || $st -> result -> status == 'administrator'){
-        $telegram->sendMessage($chat_id, $text = "The number of group members: $count_members", $replyMarkup = $key);}}
+        sendMessage($chat_id, $text = "The number of group members: $count_members", $replyMarkup = $key);}}
 
 if(in_array($st->result->status??"",["administrator","creator"])){
 if($text == "/check"){
-  $telegram->sendMessage($chat_id, $text = 'Hello');
+ sendMessage($chat_id, $text = 'Hello');
 }}
 
 
 if($text == '/key'){
-$telegram->sendMessageInlineKeyboard($chat_id, $text = "$day $clock $hello ⏰ $new_time", $replyMarkup = null);}
+sendMessageInlineKeyboard($chat_id, $text = "$day $clock $hello ⏰ $new_time", $replyMarkup = null);}
 
 $in = [[
                 'type' => 'article',
@@ -354,7 +372,7 @@ $in = [[
             ]];
 
 if($text_inline == "inline"){
-$telegram->answerInlineQuery($inline_query_id, $results = $in, $cache_time = 0, $is_personal = false, $next_offset = '', $switch_pm_text = '', $switch_pm_parameter = '');}
+answerInlineQuery($inline_query_id, $results = $in, $cache_time = 0, $is_personal = false, $next_offset = '', $switch_pm_text = '', $switch_pm_parameter = '');}
     
 
 ?>
