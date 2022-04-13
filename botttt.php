@@ -1,24 +1,7 @@
 <?php
 ini_set('display_errors', 0);
 
-if (empty(getenv('BOT_TOKEN'))){
-$token = "API_Token";
-} else {
-$token = getenv('BOT_TOKEN');
-}
-if (empty(getenv('ADMIN'))){
-$ADMIN = "ID_ADMIN";
-} else {
-$ADMIN = getenv('ADMIN');
-}
-if (empty(getenv('Channel_ID'))){
-$Channel_ID = "Channel_ID";
-} else {
-$Channel_ID = getenv('Channel_ID');
-}
 
-$input = file_get_contents('php://input');
-$update = json_decode($input);
 $chatId = $update['message']['chat']['id'] ?? $update['callback_query']['message']['chat']['id'] ?? '';
 
 register_shutdown_function(function () use($token, $chatId) {
