@@ -22,7 +22,7 @@ define('API_KEY',"$token2");
 $admin = ""; 
 //Enter your id number
 function bot($method,$datas=[]){
-    $url = "https://api.telegram.org/bot".API_KEY."/".$method;
+    $url = "https://api.telegram.org/bot".$token2."/".$method;
     $ch = curl_init();
     curl_setopt($ch,CURLOPT_URL,$url);
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
