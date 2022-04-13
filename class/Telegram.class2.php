@@ -15,14 +15,14 @@
 
 
     public function forwardMessage($from, $to, $message_id){
-        return $this->bot('forwardMessage' , [
+        return bot('forwardMessage' , [
             'chat_id'  => $to,
             'from_chat_id' =>$chat_id,
             'message_id' => $message_id,
         ]);
     }
     public function copyMessage($from , $to , $message_id , $reply = null,$reply_to_message_id = null){
-        return $this->bot('copyMessage' , [
+        return bot('copyMessage' , [
             'chat_id'  => $to,
             'from_chat_id' => $from,
             'message_id' => $message_id,
@@ -32,7 +32,7 @@
     }
 
     public function answerCallbackQuery($alretcall , $text , $alert){
-        return $this->bot('answerCallbackQuery',[
+        return bot('answerCallbackQuery',[
             'callback_query_id' => $alretcall,
             'text' => $text,
             'show_alert' => $alert
@@ -48,23 +48,23 @@
 	}
 
     public function Random_msg_top($alretcall, $random_alret){
-        return $this->bot('answercallbackquery',[
+        return bot('answercallbackquery',[
             'callback_query_id' =>$alretcall,
             'text'=>$random_alret,]);}
 
 
     Public function typing($chat_id, $action = 'typing'){ 
-        return $this->bot("sendChatAction",[
+        return bot("sendChatAction",[
             'chat_id'=>$chat_id,
             'action'=>$action]);}
 
     public function jsonData($chat_id, $text){
-       return $this->bot('sendMessage',[
+       return bot('sendMessage',[
             'chat_id' =>$chat_id,
             'text' =>$text]);}
 
     public function sendMessage($chat_id, $text, $replyMarkup){
-         return $this->bot('sendMessage',[
+         return bot('sendMessage',[
             'chat_id'=>$chat_id,
             'text'=>$text,
             'protect_content'=>true,
@@ -72,12 +72,12 @@
             'reply_markup'=>$replyMarkup]);}
       
     public function sendMessageLite($chat_id, $text){
-         return $this->bot('sendMessage',[
+         return bot('sendMessage',[
             'chat_id'=>$chat_id,
             'text'=>$text]);}
 
     public function sendMessageInlineKeyboard($chat_id, $text, $replyMarkup){
-         return $this->bot('sendMessage',[
+         return bot('sendMessage',[
             'chat_id'=>$chat_id,
             'text'=>$text,
             'protect_content'=>true,
@@ -85,7 +85,7 @@
             'reply_markup' =>$replyMarkup]);}
 
     public function sendPhoto($chat_id, $photo, $caption = null){
-          return $this->bot('sendphoto',[
+          return bot('sendphoto',[
              'chat_id'=>$chat_id,
              'photo'=>$photo,
              'parse_mode'=>'HTML',
@@ -93,7 +93,7 @@
              'caption'=>$caption]);}
 
     public function sendPhotoViaID($chat_id, $photo, $caption = null){
-           return $this->bot('sendphoto',[
+           return bot('sendphoto',[
               'chat_id'=>$chat_id,
               'photo'=>$photo,
               'parse_mode'=>'HTML',
@@ -101,7 +101,7 @@
               'caption'=>$caption]);}
 
     public function sendAudio($chat_id, $audio, $caption, $title ,$performer = null){
-            return $this->bot('sendaudio',[
+            return bot('sendaudio',[
               'chat_id'=>$chat_id,
               'audio'=>$audio,
               'caption'=>$caption,
@@ -111,7 +111,7 @@
               'performer'=>$performer]);}
 
     public function sendDocument($chat_id, $document, $caption, $replyMarkup){
-            return $this->bot('senddocument',[
+            return bot('senddocument',[
               'chat_id'=>$chat_id,
               'document'=>$document,
               'caption'=>$caption,
@@ -120,7 +120,7 @@
               'reply_markup' =>$replyMarkup]);}
 
    public function sendVideo($chat_id, $video, $caption){
-            return $this->bot('sendvideo',[
+            return bot('sendvideo',[
               'chat_id'=>$chat_id,
               'video'=>$video,
               'parse_mode'=>'HTML',
@@ -128,7 +128,7 @@
               'caption'=>$caption]);}
 
    public function sendVoice($chat_id, $voice, $caption){
-            return $this->bot('sendvoice',[
+            return bot('sendvoice',[
               'chat_id'=>$chat_id,
               'voice'=>$voice,
               'parse_mode'=>'HTML',
@@ -136,7 +136,7 @@
               'caption'=>$caption]);}
 
    public function alret($alretcall, $text, $showAlert = false){
-            return $this->bot('answerCallbackQuery', [
+            return bot('answerCallbackQuery', [
               'callback_query_id' => $alretcall,
               'text' =>$text,
               'show_alert'=>$showAlert,
@@ -144,7 +144,7 @@
                       }
 
    public function Mute_New_Chat_Members($chat_id, $new_chat_member_id, $time){
-           return $this->bot('restrictChatMember', [
+           return bot('restrictChatMember', [
               'chat_id' => $chat_id,
               'user_id' => $new_chat_member_id,
               'until_date' => $time,
@@ -155,25 +155,25 @@
                                   ]);}
 
    public function Delete($chat_id, $message_id){
-          return $this->bot('deleteMessage', [
+          return bot('deleteMessage', [
               'chat_id'=> $chat_id,
               'message_id'=>$message_id ]);}
 
    public function pin($chat_id, $message_id){
-         return $this->bot('pinChatMessage', [
+         return bot('pinChatMessage', [
               'chat_id'=> $chat_id,
               'message_id'=>$message_id ]);}
 
    public function unpin($chat_id){
-         return $this->bot('unpinAllChatMessages', [
+         return bot('unpinAllChatMessages', [
               'chat_id'=> $chat_id]);}
 
    public function leaveChat($chat_id){
-         return $this->bot('LeaveChat', [
+         return bot('LeaveChat', [
               'chat_id'=> $chat_id ]);}
 
    public function editMessageText($chat_id, $message_id, $text, $replyMarkup){
-       return $this->bot('editMessageText', [
+       return bot('editMessageText', [
               'chat_id' => $chat_id,
               'message_id' => $message_id,
               'text' => $text,
@@ -183,7 +183,7 @@
         ]);
     }
    public function editMessageTextCallBack($chat_id, $message_id, $text, $parseMode = null, $disablePreview = false, $replyMarkup = null, $inlineMessageId = null){
-       return $this->bot('editMessageText', [
+       return bot('editMessageText', [
              'chat_id' => $chat_id,
              'message_id' => $message_id,
              'text' => $text,
@@ -195,7 +195,7 @@
     }
 
    public function getChatMemberStatus($chat_id, $user_id){
-      return  $getstatus = $this->bot('getChatMember', [
+      return  $getstatus = bot('getChatMember', [
             'chat_id'=> $chat_id,
             'user_id'=> $user_id]);
             $st = $getstatus->result->status;}
@@ -215,12 +215,12 @@
                       'chat_id' => $chat_id,
                       'media'   => $media,
                      ];
-    return $this->bot('sendMediaGroup', $args);
+    return bot('sendMediaGroup', $args);
 }
 
 
    public function answerInlineQuery($inline_query_id, $results, $cache_time = 0, $is_personal = false, $next_offset = '', $switch_pm_text = '', $switch_pm_parameter = '') {
-        $res = $this->bot('answerInlineQuery', [
+        $res = bot('answerInlineQuery', [
             'inline_query_id' => $inline_query_id,
             'results' => json_encode($results),
             'cache_time' => $cache_time,
@@ -233,7 +233,7 @@
     }
 
    public function getChatMember($chat_id, $user_id){
-        return this->bot('getChatMember', [
+        return bot('getChatMember', [
             'chat_id' => $chat_id,
             'user_id' => $user_id]); }
     
