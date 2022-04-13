@@ -18,7 +18,7 @@ $Channel_ID2 = getenv('Channel_ID2');
 
 ob_start();
 
-include 'class/Telegram.class.php';
+include 'class/Telegram.class2.php';
 include 'iTelegram.php';
 
 $input = file_get_contents('php://input');
