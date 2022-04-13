@@ -1,18 +1,5 @@
 <?php
 
-    public function bot($method , $data){
-        $url = 'https://api.telegram.org/bot'.$token2.'/'.$method;
-        $ch = curl_init($url);
-
-        curl_setopt($ch,CURLOPT_RETURNTRANSFER , TRUE);
-        curl_setopt($ch , CURLOPT_POSTFIELDS , $data);
-
-        $res = curl_exec($ch);
-        curl_close($ch);
-        return json_decode($res);
-    }
-
-
 
     public function forwardMessage($from, $to, $message_id){
         return bot('forwardMessage' , [
