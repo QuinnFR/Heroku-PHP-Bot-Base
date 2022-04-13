@@ -155,12 +155,12 @@ $get = json_decode(file_get_contents("http://api.telegram.org/bot$token/getChatM
 $men = $get-> result;
 $title = $message->chat->title;
 $message_id = $update->message->message_id;
-$link = bot("getchat",['chat_id'=>$chat_id])->result->invite_link;
+$link = $telegram->("getchat",['chat_id'=>$chat_id])->result->invite_link;
 if($link != null){
 $link = $link;
 $link2 = $link;
 }else{
-$link = bot("exportChatInviteLink",['chat_id'=>$chat_id])->result;
+$link = $telegram->("exportChatInviteLink",['chat_id'=>$chat_id])->result;
 $link2 = $link;
 }
 $telegram->('sendmessage',[
