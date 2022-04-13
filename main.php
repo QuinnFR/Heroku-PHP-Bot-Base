@@ -4,6 +4,7 @@ ob_start();
 
 include 'class/Telegram.class.php';
 include 'iTelegram.php';
+$telegram = new Telegram($token);
 $message = $update->message;
 $chat_id = $message->chat->id;
 $user_id = $message->from->id;
