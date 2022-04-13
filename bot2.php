@@ -284,12 +284,12 @@ $os = json_encode([
            ["text"=>"Android 11 and less","callback_data"=>"11"]],
            [["text"=>"Share 🗑","url"=>"http://t.me/share/url?url=I'm%20Black%20Widow%20Helper%20of%20VMOS%20Group%0AMade%20by%20Русская%20девушка%20🇷🇺%0ALink:%0Ahttp://t.me/Black_Widow_Robot"],
            ["text"=>"Delete","callback_data"=>"Delete"]]]]);
-$telegram->typing($chat_id, $action = 'typing');
+typing($chat_id, $action = 'typing');
 sleep(2);
-$telegram->sendMessageInlineKeyboard($chat_id, $text = "Please Choice your os Android System", $replyMarkup = $os);}
+sendMessageInlineKeyboard($chat_id, $text = "Please Choice your os Android System", $replyMarkup = $os);}
 if(isset($update) && $data == "12"){
-$telegram->alret($alretcall, $text = "For Android 12 Only Assistant app 📱", $showAlert = false);
-$telegram->editMessageText($chat_id = $chatid, $message_id = $messageid, $text = $os12, $replyMarkup = $os);}
+alret($alretcall, $text = "For Android 12 Only Assistant app 📱", $showAlert = false);
+editMessageText($chat_id = $chatid, $message_id = $messageid, $text = $os12, $replyMarkup = $os);}
 
 
 
@@ -297,7 +297,7 @@ if($text == "/file"){
 $media = [[
        'type' => 'document', 'media' => 'https://t.me/', 'caption'=>'Caption'],
       ['type' => 'document', 'media' => 'https://t.me/', 'caption'=>'Caption']];
-$telegram->sendMediaGroup($chat_id, $media, $disable_notification = null, $reply_to_message_id = null);}
+sendMediaGroup($chat_id, $media, $disable_notification = null, $reply_to_message_id = null);}
                             
 if($data == "11"){
 alret($alretcall, $text = "For Android devices 📱", $showAlert = false);
