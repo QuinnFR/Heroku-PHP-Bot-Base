@@ -1,6 +1,6 @@
 <?php
 
-    private function bot($method , $data){
+    public function bot($method , $data){
         $url = 'https://api.telegram.org/bot'.$token2.'/'.$method;
         $ch = curl_init($url);
 
