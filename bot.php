@@ -150,32 +150,6 @@ $lang = $message->from->language_code;
 $owner = "1786923580";
 
 
-if($text =="info" ){
-$get = json_decode(file_get_contents("http://api.telegram.org/bot$token/getChatMembersCount?chat_id=$chat_id"));
-$men = $get-> result;
-$title = $message->chat->title;
-$message_id = $update->message->message_id;
-$link = $telegram->("getchat",['chat_id'=>$chat_id])->result->invite_link;
-if($link != null){
-$link = $link;
-$link2 = $link;
-}else{
-$link = $telegram->("exportChatInviteLink",['chat_id'=>$chat_id])->result;
-$link2 = $link;
-}
-$telegram->('sendmessage',[
-'chat_id' => $chat_id,
-'text' => " - اهلا بك عزيزي اليك معلومات المجموعه",
-'reply_to_message_id' =>$message->message_id, 
-'parse_mode'=>"markdown",'disable_web_page_preview'=>true,
-"reply_markup"=> json_encode([
-"inline_keyboard"=>[
-[['text' => 'الاسم' , callback_data => '###'],['text' =>''.$title.'' , callback_data => '###']],
-[['text' => 'عدد الاعضاء' , callback_data => '###'],['text' =>''.$mem.'' , callback_data => '###']],
-[['text' => 'رسائل الكروب' , callback_data => '###'],['text' =>''.$message_id.'' , callback_data => '###']],
-[['text' => 'رابط الكروب' , url => ''.$link.''],['text' =>'المطور' , url => 't.me/motazaldrsy']],
-]])]);}
-
 $welcome_vmos = "Welcome $mention Howdy?
 • RU 🇷🇺 Привет, я The Witch Русская девушка 🇷🇺 запрограммировала меня на помощь Группа поддержки VMOS🥀
 
