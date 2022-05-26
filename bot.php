@@ -332,7 +332,7 @@ if($text == "/check"){
 
 
 if($text == '/key'){
-$telegram->sendMessageInlineKeyboard($chat_id, $text = "$day $clock ⏰ $new_time", $replyMarkup = null);}
+$telegram->sendMessageInlineKeyboard($chat_id, $text = "$day $clock $new_time", $replyMarkup = null);}
 
 $in = [[
                 'type' => 'article',
