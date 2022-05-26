@@ -216,8 +216,6 @@ sleep(3);
 $telegram->pin($chat_id, $message_id = $pin);
 }
 
-if($text == "h"){
-file_get_contents("https://api.telegram.org/bot1723005657:AAFxH-es1F5tWc6_ZQaMqVmpH1U5tMtVGkE/sendMessage?chat_id=-1001658965255&disable_web_page_preview=True&text=\%23\Hello%20\%23\Text&parse_mode=MarkdownV2");}
 
 if($new){
 $telegram->Mute_New_Chat_Members($chat_id, $new_chat_member_id, $time);}
@@ -231,7 +229,7 @@ Features:
                  3. Free no need to pay";
 
 $vmos_pro = "<a href='tg://user?id=$user_id'>$first_name</a> Update VMOS Pro Chinese Version
-VMOS Pro 2.3.2
+VMOS Pro 2.5.0
 <b>Android OS:</b> Support ROMs 5.1 32-Bit, 4.4 32-Bit, 7.1 64-Bit lite, 7.1 32-Bit, 9 64-Bit and more like <a href='https://t.me/Frequently<i>Asked</i>Question/68'>Custom ROMs</a> for  <a href='https://t.me/Frequently<i>Asked</i>Question/35'>More information about architecture</a>
 <b>Features:</b>
   1. Root: not free
@@ -296,7 +294,7 @@ $telegram->sendMediaGroup($chat_id, $media, $disable_notification = null, $reply
                             
 if($data == "11"){
 $telegram->alret($alretcall, $text = "For Android devices 📱", $showAlert = false);
-$telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAICxGJNbqI_1MRQxh634_QkBbiH0Hc3AAImDAACvjlAUq4HtTqh1TtRIwQ", $caption = $vmos_pro, $replyMarkup = $os);}
+$telegram->sendDocument($chat_id = $chatid, $document = "https://t.me/VMOS_Apks/10", $caption = $vmos_pro, $replyMarkup = $os);}
 
 
 
@@ -308,7 +306,7 @@ $telegram->sendMessage($chat_id, $text = $pm, $replyMarkup = $cn);}
 elseif(preg_match("/(last|update)/", $text) && $type =='private'){
 $telegram->typing($chat_id, $action = 'document');
 sleep(2);
-$telegram->sendDocument($chat_id, $document = "BQACAgQAAxkBAAICxGJNbqI_1MRQxh634_QkBbiH0Hc3AAImDAACvjlAUq4HtTqh1TtRIwQ", $caption = $vmos_pro, $replyMarkup = null);}
+$telegram->sendDocument($chat_id, $document = "https://t.me/VMOS_Apks/10", $caption = $vmos_pro, $replyMarkup = null);}
 
 if($data == "Delete"){
 $telegram->alret($alretcall, $text = "OK Delete 🗑", $showAlert = false);
