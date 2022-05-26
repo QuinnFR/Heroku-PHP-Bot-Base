@@ -298,7 +298,7 @@ $telegram->sendDocument($chat_id = $chatid, $document = "https://t.me/VMOS_Apks/
 
 
 
-if($text == '/vmos'){
+if($text == '/vmos' || $text == '/vmos@Black_Widow_Robot'){
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
 $telegram->sendMessage($chat_id, $text = $pm, $replyMarkup = $cn);}
