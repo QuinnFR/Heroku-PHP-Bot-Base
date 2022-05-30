@@ -229,13 +229,13 @@ Features:
                  3. Free no need to pay";
 
 $vmos_pro = "<a href='tg://user?id=$user_id'>$first_name</a> Update VMOS Pro Chinese Version
-VMOS Pro 2.5.0
+VMOS Pro 2.5.6
 <b>Android OS:</b> Support ROMs 5.1 32-Bit, 4.4 32-Bit, 7.1 64-Bit lite, 7.1 32-Bit, 9 64-Bit and more like <a href='https://t.me/Frequently<i>Asked</i>Question/68'>Custom ROMs</a> for  <a href='https://t.me/Frequently<i>Asked</i>Question/35'>More information about architecture</a>
 <b>Features:</b>
   1. Root: not free
   2. Gapps: free <u>enable Service button in vm settings </u>
   3. <a href='https://t.me/Frequently_Asked_Question/50'>Socks5 Proxy </a>
-<b>Change Log:</b> <a href='https://t.me/Frequently_Asked_Question/241'>Read Change log from here please </a>
+<b>Change Log:</b> <a href='https://t.me/Frequently_Asked_Question/246'>Read Change log from here please </a>
 
 • if you can't see option for enable root or Google Services <a href='https://t.me/Frequently_Asked_Question/72'>Help yourself by reading this</a>";
 
@@ -306,7 +306,7 @@ $telegram->sendMessage($chat_id, $text = $pm, $replyMarkup = $cn);}
 elseif(preg_match("/(last|update)/", $text) && $type =='private'){
 $telegram->typing($chat_id, $action = 'document');
 sleep(2);
-$telegram->sendDocument($chat_id, $document = "https://t.me/VMOS_Apks/10", $caption = $vmos_pro, $replyMarkup = null);}
+$telegram->sendDocument($chat_id, $document = "https://t.me/VMOS_Apks/11", $caption = $vmos_pro, $replyMarkup = null);}
 
 if($data == "Delete"){
 $telegram->alret($alretcall, $text = "OK Delete 🗑", $showAlert = false);
