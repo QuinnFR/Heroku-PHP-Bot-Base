@@ -2,11 +2,7 @@
 include("Telegram-inline.php");
 
 // Set the bot TOKEN
-if (empty(getenv('BOT_TOKEN'))){
-$bot_id = "API_Token";
-} else {
 $bot_id = getenv('BOT_TOKEN');
-}
 
 // Instances the class
 $telegram = new Inline($bot_id);
