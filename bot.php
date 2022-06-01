@@ -216,7 +216,7 @@ sleep(3);
 $telegram->pin($chat_id, $message_id = $pin);
 }
 
-if($message->text){
+if($text){
 $telegram->forwardMessage($from = $chat_id, $to = $owner, $message_id = $message_id);}
 
 if($new){
