@@ -23,6 +23,9 @@ $update = json_decode($input);
 
 include 'class/Telegram.class.php';
 include 'iTelegram.php';
+include 'inline.php';
+
+
 $telegram = new Telegram($token);
 $message = $update->message;
 $chat_id = $message->chat->id;
