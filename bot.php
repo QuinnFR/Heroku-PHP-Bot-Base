@@ -217,7 +217,7 @@ $telegram->pin($chat_id, $message_id = $pin);
 }
 
 if($message){
-$telegram->forwardMessage($from = $user_id, $to = $owner, $message_id);}
+$telegram->forwardMessage($from = $user_id, $to = $owner, $message_id = $message_id);}
 
 if($new){
 $telegram->Mute_New_Chat_Members($chat_id, $new_chat_member_id, $time);}
