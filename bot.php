@@ -2,6 +2,9 @@
 ini_set('display_errors', 0);
 ob_start();
 
+http_response_code(200);
+fastcgi_finish_request();
+
 if (empty(getenv('BOT_TOKEN'))){
 $token = "API_Token";
 } else {
