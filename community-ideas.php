@@ -9,17 +9,17 @@ fastcgi_finish_request();
 if (empty(getenv('BOT_TOKEN2'))){
 $token = "API_Token";
 } else {
-$token = getenv('BOT_TOKEN');
+$token = getenv('BOT_TOKEN2');
 }
-if (empty(getenv('ADMIN'))){
+if (empty(getenv('ADMIN2'))){
 $ADMIN = "ID_ADMIN";
 } else {
-$ADMIN = getenv('ADMIN');
+$ADMIN = getenv('ADMIN2');
 }
-if (empty(getenv('Channel_ID'))){
+if (empty(getenv('Channel_ID2'))){
 $Channel_ID = "Channel_ID";
 } else {
-$Channel_ID = getenv('Channel_ID');
+$Channel_ID = getenv('Channel_ID2');
 }
 
 $input = file_get_contents('php://input');
