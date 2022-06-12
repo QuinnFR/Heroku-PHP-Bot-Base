@@ -358,7 +358,7 @@ $in = [[
         'reply_markup' => [ 'inline_keyboard' => [ [ ['text' => "ok", 'switch_inline_query_current_chat' => "switch"],['text' => "ok", 'switch_inline_query_current_chat' => "switch"] ]]] ]];
 
 
-if($text_inline == "inline"){
+if($text_inline = "inline"){
 $telegram->answerInlineQuery($inline_query_id, $results = $in, $cache_time = 0, $is_personal = false, $next_offset = '', $switch_pm_text = '', $switch_pm_parameter = '');}
 
 
