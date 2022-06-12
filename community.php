@@ -303,7 +303,7 @@ $telegram->sendDocument($chat_id = $chatid, $document = "https://t.me/VMOS_Apks/
 
 
 
-if($text == '/vmos' || $text == '/vmos@Black_Widow_Robot'){
+if($text == '/vmos' || $text == '/vmos@Community_Ideas_Robot'){
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
 $telegram->sendMessage($chat_id, $text = $pm, $replyMarkup = $cn);}
@@ -311,7 +311,7 @@ $telegram->sendMessage($chat_id, $text = $pm, $replyMarkup = $cn);}
 elseif(preg_match("/(last|update)/", $text) && $type =='private'){
 $telegram->typing($chat_id, $action = 'document');
 sleep(2);
-$telegram->sendDocument($chat_id, $document = "https://t.me/VMOS_Apks/11", $caption = $vmos_pro, $replyMarkup = null);}
+$telegram->sendDocument($chat_id, $document = "https://t.me/VMOS_Apks/11", $caption = $caption, $replyMarkup = null);}
 
 if($data == "Delete"){
 $telegram->alret($alretcall, $text = "OK Delete 🗑", $showAlert = false);
