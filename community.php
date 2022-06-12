@@ -152,6 +152,10 @@ $mention = "<a href='tg://user?id=$from_id'>$first_name</a>";
 $url_count = json_decode(file_get_contents("https://api.telegram.org/bot$token/getChatMembersCount?chat_id=$chat_id"),true);
 $count_members = $url_count ['result'];
 
+$message_id_cn = $update->channel_post->message_id;
+$chat_id_cn = $update->channel_post->chat->id;
+$caption_cn = $update->channel_post->caption;
+
 $lang = $message->from->language_code;
 $owner = "1786923580";
 
@@ -311,7 +315,7 @@ $telegram->sendMessage($chat_id, $text = $pm, $replyMarkup = $cn);}
 elseif(preg_match("/(last|update)/", $text) && $type =='private'){
 $telegram->typing($chat_id, $action = 'document');
 sleep(2);
-$telegram->sendDocument($chat_id, $document = "https://t.me/VMOS_Apks/11", $caption = $caption, $replyMarkup = null);}
+$telegram->sendDocument($chat_id_cn, $document = "https://t.me/VMOS_Apks/11", $caption = $caption_cn, $replyMarkup = null);}
 
 if($data == "Delete"){
 $telegram->alret($alretcall, $text = "OK Delete 🗑", $showAlert = false);
