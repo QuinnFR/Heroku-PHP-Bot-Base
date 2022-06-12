@@ -338,29 +338,5 @@ if($text == '/key'){
 $telegram->sendMessageInlineKeyboard($chat_id, $text = "$day $clock $new_time", $replyMarkup = null);}
 
 
-$in = [[
-        'type' => 'article',
-        'id' =>'1',
-        'thumb_url'=>"https://telegra.ph/file/aeff14fd95fcb41429a36.jpg",
-        'title' => "Title",
-        'description'=>"How to download our app?",
-        'url'=> "https://www.vmod.com",
-        'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "hello"],
-        'reply_markup' => [ 'inline_keyboard' => [ [ ['text' => "ok", 'switch_inline_query' => "switch"],['text' => "ok", 'switch_inline_query' => "switch"] ]]] ],
-       [
-        'type' => 'article',
-        'id' =>'2',
-        'thumb_url'=>"https://telegra.ph/file/aeff14fd95fcb41429a36.jpg",
-        'title' => "Explain",
-        'description'=>"PGT+ app",
-        'url'=> "https://www.google.com",
-        'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "hello"],
-        'reply_markup' => [ 'inline_keyboard' => [ [ ['text' => "ok", 'switch_inline_query_current_chat' => "switch"],['text' => "ok", 'switch_inline_query_current_chat' => "switch"] ]]] ]];
-
-
-if($text_inline = "inline"){
-$telegram->answerInlineQuery($inline_query_id, $results = $in, $cache_time = 0, $is_personal = false, $next_offset = '', $switch_pm_text = '', $switch_pm_parameter = '');}
-
-
 
 ?>
