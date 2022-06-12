@@ -152,7 +152,7 @@ $url_count = json_decode(file_get_contents("https://api.telegram.org/bot$token/g
 $count_members = $url_count ['result'];
 
 $lang = $message->from->language_code;
-$owner = "1786923580";
+$owner = "1987049771";
 
 
 $welcome_vmos = "Welcome $mention Howdy?
