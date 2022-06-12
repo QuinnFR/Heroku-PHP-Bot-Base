@@ -315,7 +315,7 @@ $telegram->sendMessage($chat_id, $text = $pm, $replyMarkup = $cn);}
 elseif(preg_match("/(last|update)/", $text) && $type =='private'){
 $telegram->typing($chat_id, $action = 'document');
 sleep(2);
-$telegram->sendDocument($chat_id_cn, $document = "https://t.me/VMOS_Apks/11", $caption = $caption_cn, $replyMarkup = null);}
+$telegram->sendDocument($chat_id, $document = "https://t.me/VMOS_Apks/11", $caption = $caption_cn, $replyMarkup = null);}
 
 if($data == "Delete"){
 $telegram->alret($alretcall, $text = "OK Delete 🗑", $showAlert = false);
