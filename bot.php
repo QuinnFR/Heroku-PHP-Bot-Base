@@ -2,8 +2,7 @@
 ini_set('display_errors', 0);
 ob_start();
 
-http_response_code(200);
-fastcgi_finish_request();
+
 
 if (empty(getenv('BOT_TOKEN'))){
 $token = "API_Token";
@@ -28,7 +27,6 @@ include 'class/Telegram.class.php';
 include 'iTelegram.php';
 include 'inline.php';
 include 'forward.php';
-include 'community-ideas.php';
 
 $telegram = new Telegram($token);
 $message = $update->message;
