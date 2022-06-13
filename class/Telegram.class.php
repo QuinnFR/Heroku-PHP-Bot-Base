@@ -143,6 +143,14 @@ class Telegram {
               'protect_content'=>true,
               'caption'=>$caption]);}
 
+public function sendsticker($chat_id, $sticker, $replyMarkup){
+            return $this->bot('sendSticker',[
+              'chat_id'=>$chat_id,
+              'sticker'=>$sticker,
+              'parse_mode'=>'HTML',
+              'protect_content'=>true,
+              'reply_markup' =>$replyMarkup]);}
+
    public function alret($alretcall, $text, $showAlert = false){
             return $this->bot('answerCallbackQuery', [
               'callback_query_id' => $alretcall,
