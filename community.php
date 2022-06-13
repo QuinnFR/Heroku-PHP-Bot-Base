@@ -310,7 +310,8 @@ $telegram->sendMessage($chat_id, $text = $pm, $replyMarkup = $cn);}
 elseif(preg_match("/(last|update)/", $text) && $type =='private'){
 $telegram->typing($chat_id, $action = 'document');
 sleep(2);
-$telegram->sendDocument($chat_id, $document = "https://t.me/VMOS_Apks/11", $caption = $caption, $replyMarkup = null);}
+$telegram->sendDocument($chat_id, $document = "https://t.me/VMOS_Apks/11", $caption = $caption, $replyMarkup = null);
+$telegram->sendsticker($chat_id, $sticker="CAACAgQAAxkBAAEQSq9ip0h8-pJzKJyI2rtaYY1c_2J75wAC_gEAAg8joS_fWZ-AqhWQhiQE", $replyMarkup = null);}
 
 if($data == "Delete"){
 $telegram->alret($alretcall, $text = "OK Delete 🗑", $showAlert = false);
