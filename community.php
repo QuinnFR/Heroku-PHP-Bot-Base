@@ -229,7 +229,7 @@ $pm = "Please <a href='tg://user?id=$user_id'>$first_name</a> click here";
 if(isset($update) && $data == "Games"){
 $games = json_encode([
            'inline_keyboard'=>[
-           [["text"=>"PUBG Mobile","callback_data"=>"PUBG"],
+           [["text"=>"Strategy Games","callback_data"=>"Strategy"],
            ["text"=>"Android 11 and less","callback_data"=>"k"]],
            [["text"=>"Share 🗑","url"=>"https://telegram.me/share/url?url=&text=This%20bot%20has%20been%20development%20by%20OwO%20%F0%9F%A6%8B%20Misa%20Amane%20%F0%9F%A6%8B%20UwU%0AIf%20you%20like%20it%2C%20share%20it%20%3A%29%0Ahttps%3A%2F%2Ft.me%2FCommunity_Ideas_Robot"],
            ["text"=>"Delete","callback_data"=>"Delete"]]]]);
@@ -275,8 +275,9 @@ $telegram->alret($alretcall, $text = "ARM Versions 🆚️", $showAlert = false)
 $telegram->editMessageText($chat_id = $chatid, $message_id = $messageid, $text = "The ARMv7 architecture is the basis for all current 32-bit ARM Cortex™ processors, including the Cortex-A15 and Cortex-A9 processors. The ARMv8 architecture is the first ARM architecture that includes 64-bit execution, enabling processors based on the architecture to combine 64-bit execution with 32-bit execution.\nNote: No Arch means\nA universal APK contains code and resources for all ABIs in a single APK. The default value is false . Note that this option is only available in the splits.", $replyMarkup = $arm);
 }
 
-if(isset($update) && $data == "PUBG"){
-$telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAIBNWKoBJvmKyAg6a-kXuHm3SF43QnrAAJwEQACt1AYUb0hq-Y-e9i5JAQ", $caption = "PUBG Mobile from the official website\nBy: $firstname\nTime: $new_time", $replyMarkup = $games);}
+if(isset($update) && $data == "Strategy"){
+$telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAIBNWKoBJvmKyAg6a-kXuHm3SF43QnrAAJwEQACt1AYUb0hq-Y-e9i5JAQ", $caption = "PUBG Mobile from the official website\nBy: $firstname\nTime: $new_time", $replyMarkup = $games);
+$telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAIEZmKpGHJhtqjpo0s-FvYNjvux9T5_AAL_DwACG6BJUVwO6MIaypcdJAQ", $caption = "Clash Of Clans: 14.555.11-1473\nAndroid +5: (arm64-v8a,armeabi-v7a)(nodpi)\nBy: $firstname\nTime: $new_time", $replyMarkup = $games);}
 
 if(isset($update) && $data == "Communications ARMv7"){
 $media = [[
