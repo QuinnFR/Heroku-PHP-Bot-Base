@@ -245,13 +245,7 @@ foreach ($rss->channel->item as $item){
   break;
 }  
 if($data=="k"){
-  $telegram->('answerCallbackQuery',[
-    'callback_query_id'=>$alretcall,
-    'chat_id'=>$chat_id, 
-    'text'=>"📰 $line",
-   'show_alert'=>true,
-   'parse_mode'=>'html',
-  ]);
+  $telegram->alret($alretcall, $text = $line, $showAlert = true);
 }
 
 if(isset($update) && $data == "Apps"){
