@@ -267,8 +267,8 @@ $telegram->sendMediaGroup($chat_id = $chatid, $media, $parse_mode = 'HTML', $dis
 if(isset($update) && $data == "Communications No Arch"){
 $media = [[
        'type' => 'document', 'media' => 'BQACAgQAAxkBAAIBo2KoZXdK1QdN5mJtueLgtwLxgDrxAAIXDQACNSxAUYwQOgib4QjRJAQ', 'caption'=>"$whatsapp"],
-      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAIBo2KoZXdK1QdN5mJtueLgtwLxgDrxAAIXDQACNSxAUYwQOgib4QjRJAQ', 'caption'=>'Caption']];
-$telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = null, $reply_to_message_id = $message_id);}
+      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAIBo2KoZXdK1QdN5mJtueLgtwLxgDrxAAIXDQACNSxAUYwQOgib4QjRJAQ', 'caption'=>'<b>Caption</b>']];
+$telegram->sendMediaGroup($chat_id = $chatid, $media, $parse_mode = 'HTML', $disable_notification = null, $reply_to_message_id = $message_id);}
 
 
 if($text == "/file"){
