@@ -5,7 +5,7 @@ $channel_alret_text = "
 • For sophomore year 🤗
 • Automation Engineering Department
 • The files were uploaded by the students themselves 🧠📚";
-$welcome_vmos = "Welcome $mention Howdy?
+$welcome_first = "Welcome $mention Howdy?
 • FR 🇫🇷  Bonjour, je suis Robot by The Witch OwO 🦋 Misa Amane 🦋 UwU m'a programmé pour aider l'équipe d'assistance de la communauté et des idées 🥀
 
 • EN 🇬🇧 Hi, I'm The Witch OwO 🦋 Misa Amane 🦋 UwU programmed me to help Community & Ideas Support Team 🥀
