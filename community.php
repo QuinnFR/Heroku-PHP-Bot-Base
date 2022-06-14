@@ -195,6 +195,7 @@ return false;}
 
 if($text == '/start' && $type == 'private'){
 $telegram->unpin($chat_id);
+$telegram->sendMessage($chat_id = $owner, $text = "User: $mention\n$new_time", $replyMarkup = $null);
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
 $telegram->typing($chat_id, $action = 'typing');
