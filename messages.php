@@ -11,7 +11,7 @@ $welcome_vmos = "Welcome $mention Howdy?
 • EN 🇬🇧 Hi, I'm The Witch OwO 🦋 Misa Amane 🦋 UwU programmed me to help Community & Ideas Support Team 🥀
 ";
 
-$welcome = "Welcome to OwO 🦋 Misa Amane 🦋 UwU Club<a href='https://telegra.ph/file/69044f4a93315d80f971b.jpg'> ⁭⁭⁭</a><a href='tg://user?id=$from_id'>$first_name</a> 💛
+$welcome_join = "Welcome to OwO 🦋 Misa Amane 🦋 UwU Club<a href='https://telegra.ph/file/3e0e1d0b3c019fa78291b.jpg'> ⁭⁭⁭</a><a href='tg://user?id=$from_id'>$first_name</a> 💛
 Please Read the <a href='https://t.me/Community_Ideas'>Rules</a> and etiquette first to avoid ban, then read the Pinned Message 📌";
 
 $leave = "Sorry <a href='https://telegra.ph/file/3e0e1d0b3c019fa78291b.jpg'> ⁭⁭⁭</a><a href='tg://chat?id=$chat_id'>$title</a> 💛
