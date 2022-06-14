@@ -210,7 +210,7 @@ $telegram->Mute_New_Chat_Members($chat_id, $new_chat_member_id, $time);}
 $pm = "Please <a href='tg://user?id=$user_id'>$first_name</a> click here";
 
 if(isset($update) && $data == "Games"){
-$Games = json_encode([
+$games = json_encode([
            'inline_keyboard'=>[
            [["text"=>"Actually","callback_data"=>"12"],
            ["text"=>"Android 11 and less","callback_data"=>"11"]],
@@ -218,10 +218,10 @@ $Games = json_encode([
            ["text"=>"Delete","callback_data"=>"Delete"]]]]);
 
 $telegram->alret($alretcall, $text = "new version of public games 🎮", $showAlert = false);
-$telegram->sendMessage($chat_id, $text = "Please Choice your game", $replyMarkup = null);
+$telegram->sendMessage($chat_id, $text = "Please Choice your game", $replyMarkup = $games);
 $telegram->sendMessage($chat_id, $text = $welcome_vmos, $replyMarkup = $join_key);
-$telegram->editMessageText($chat_id = $chatid, $message_id = $messageid, $text = "Please Choice your game", $replyMarkup = $Games);
-$telegram->sendMessageInlineKeyboard($chat_id, $text = "$day $clock $new_time", $replyMarkup = null);
+$telegram->editMessageText($chat_id = $chatid, $message_id = $messageid, $text = "Please Choice your game", $replyMarkup = $games);
+$telegram->sendMessageInlineKeyboard($chat_id, $text = "Please Choice your game", $replyMarkup = $games);
 }
 
 if($text == "/file"){
