@@ -24,6 +24,7 @@ $Channel_ID = getenv('Channel_ID2');
 
 $input = file_get_contents('php://input');
 $update = json_decode($input);
+$telegram = new Telegram($token);
 
 include 'class/Telegram.class.php';
 include 'iTelegram.php';
