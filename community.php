@@ -210,7 +210,7 @@ $telegram->Mute_New_Chat_Members($chat_id, $new_chat_member_id, $time);}
 
 $pm = "Please <a href='tg://user?id=$user_id'>$first_name</a> click here";
 
-if($data == "Games" && $type =='private'){
+if($data == "Games"){
 $Games = json_encode([
            'inline_keyboard'=>[
            [["text"=>"Android 12 🤖","callback_data"=>"12"],
