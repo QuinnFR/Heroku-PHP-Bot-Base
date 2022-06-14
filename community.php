@@ -218,9 +218,10 @@ $Games = json_encode([
            ["text"=>"Delete","callback_data"=>"Delete"]]]]);
 
 $telegram->alret($alretcall, $text = "new version of public games 🎮", $showAlert = false);
-$telegram->sendMessage($chat_id, $text = "Please Choice your game", $replyMarkup = $Games);
+$telegram->sendMessage($chat_id, $text = "Please Choice your game", $replyMarkup = null);
 $telegram->sendMessage($chat_id, $text = $welcome_vmos, $replyMarkup = $join_key);
 $telegram->editMessageText($chat_id = $chatid, $message_id = $messageid, $text = "Please Choice your game", $replyMarkup = $Games);
+$telegram->sendMessageInlineKeyboard($chat_id, $text = "$day $clock $new_time", $replyMarkup = null);
 }
 
 if($text == "/file"){
