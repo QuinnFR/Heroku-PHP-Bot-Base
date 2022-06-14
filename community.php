@@ -272,6 +272,22 @@ $media = [[
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAIBo2KoZXdK1QdN5mJtueLgtwLxgDrxAAIXDQACNSxAUYwQOgib4QjRJAQ', 'caption'=>'Caption', 'parse_mode'=>'HTML']];
 $telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = null, $reply_to_message_id = $message_id);}
 
+if(isset($update) && $data == "Stories Makers"){
+$media = [[
+       'type' => 'document', 'media' => 'BQACAgQAAxkBAAICX2KojxvXEsFka-Bmif5xVldwN3rnAAJQDQACLlNAUQEnoItABHkEJAQ', 'caption'=>"INSTORIES: INSTA STORIES MAKER V4.3.0 [PRO]", 'parse_mode'=>'HTML'],
+      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICYmKoj6ABqfdj4uyJ6vthpv-dbD2HAAJTDQACLlNAUdkjntzhNoe6JAQ', 'caption'=>"INSPIRY - INSTA STORY TEMPLATES V5.3 [PRO]", 'parse_mode'=>'markdown'],
+      ['type' => 'document', 'media' => '', 'caption'=>"", 'parse_mode'=>'HTML'],
+      ['type' => 'document', 'media' => '', 'caption'=>'', 'parse_mode'=>'HTML']];
+$telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = null, $reply_to_message_id = $message_id);}
+
+if(isset($update) && $data == "vpn"){
+$media = [[
+       'type' => 'document', 'media' => 'BQACAgQAAxkBAAICZWKokJJgZb-VkaC6SBILMzkR5YPaAAJUDQACLlNAURmmPYWEiP-OJAQ', 'caption'=>"Power VPN Fast Secure Unlimited VPN PRO v1.99 build 318 AOSP No", 'parse_mode'=>'HTML'],
+      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICaGKokReLWZ4x6ytzqu4thIlMoZIOAAJWDQACLlNAUdi0KyLItU-3JAQ', 'caption'=>"VPNHUB: UNLIMITED & SECURE V3.16.12 [PRO] [MOD]", 'parse_mode'=>'markdown'],
+      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICa2Koka0dBvXKu9_Yq0UgMoBzDL7VAAJXDQACLlNAUa8vIVThl8v3JAQ', 'caption'=>"Go VPN 1.9.4 Mod", 'parse_mode'=>'HTML'],
+      ['type' => 'document', 'media' => '', 'caption'=>'', 'parse_mode'=>'HTML']];
+$telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = null, $reply_to_message_id = $message_id);}
+
 
 if($text == "/file"){
 $media = [[
