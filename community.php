@@ -218,8 +218,7 @@ $Games = json_encode([
            ["text"=>"Delete","callback_data"=>"Delete"]]]]);
 
 $telegram->alret($alretcall, $text = "new version of public games 🎮", $showAlert = false);
-$telegram->sendMessage($chat_id, $text = "Well, since you've joined, let's get started 🙂", $replyMarkup = $null);
-sleep(3);}
+$telegram->sendMessage($chat_id, $text = "Well, since you've joined, let's get started 🙂", $replyMarkup = $Games);}
 
 
 if($text == "/file"){
