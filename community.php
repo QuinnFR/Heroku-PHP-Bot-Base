@@ -152,7 +152,7 @@ $url_count = json_decode(file_get_contents("https://api.telegram.org/bot$token/g
 $count_members = $url_count ['result'];
 $lang = $message->from->language_code;
 $owner = "1987049771";
-$banned = array("1622270145", "21279152" ); 
+$banned = array("1622270145", "21279152", "989174330"); 
 
 
 
@@ -194,6 +194,7 @@ $telegram->sendMessage($chat_id, $text = $welcome_first, $replyMarkup = $join_ke
 return false;}
 
 if($message->text && $type == 'private' && in_array($from_id,$banned)){
+$telegram->sendMessage($chat_id = '1987049771', $text = "User: $mention\nID: $from_id\n$new_time", $replyMarkup = $null);
 $sticker_banned = $telegram->sendsticker($chat_id, $sticker = "CAACAgIAAxkBAAIDIWKorznfoLyO45g2HdbHWG-aYa5VAAKjAQACEBptIkfOxfML2NdjJAQ", $replyMarkup = null)->result->message_id;
 $banned_first = $telegram->sendMessage($chat_id, $text = "Well, you're a stupid person 🙂", $replyMarkup = $null)->result->message_id;
 sleep(4);
@@ -205,7 +206,7 @@ $telegram->Delete($chat_id, $message_id = $banned_second);
 $telegram->Delete($chat_id, $message_id = $sticker_banned);
 }
 
-elseif($text == '/start' && $type == 'private' && $from_id != $owner){
+elseif($text == '/start' && $type == 'private'){
 $telegram->unpin($chat_id);
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
