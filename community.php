@@ -1,4 +1,3 @@
-
 <?php
 ini_set('display_errors', 0);
 ob_start();
@@ -243,10 +242,11 @@ if(isset($update) && $data == "Architectural"){
 $arm = json_encode([
            'inline_keyboard'=>[
            [["text"=>"ARMv7","callback_data"=>"Communications ARMv7"],
-           ["text"=>"ARMv8","callback_data"=>"Communications ARMv8"]]]]);
+           ["text"=>"ARMv8","callback_data"=>"Communications ARMv8"]],
+           [["text"=>"No Arch","callback_data"=>"Communications No Arch"],]]);
 
 $telegram->alret($alretcall, $text = "ARM Version", $showAlert = false);
-$telegram->editMessageText($chat_id = $chatid, $message_id = $messageid, $text = "The ARMv7 architecture is the basis for all current 32-bit ARM Cortex™ processors, including the Cortex-A15 and Cortex-A9 processors. The ARMv8 architecture is the first ARM architecture that includes 64-bit execution, enabling processors based on the architecture to combine 64-bit execution with 32-bit execution.", $replyMarkup = $arm);
+$telegram->editMessageText($chat_id = $chatid, $message_id = $messageid, $text = "The ARMv7 architecture is the basis for all current 32-bit ARM Cortex™ processors, including the Cortex-A15 and Cortex-A9 processors. The ARMv8 architecture is the first ARM architecture that includes 64-bit execution, enabling processors based on the architecture to combine 64-bit execution with 32-bit execution.\nNote: No Arch means\nA universal APK contains code and resources for all ABIs in a single APK. The default value is false . Note that this option is only available in the splits.", $replyMarkup = $arm);
 }
 
 if(isset($update) && $data == "PUBG"){
