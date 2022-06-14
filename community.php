@@ -230,7 +230,7 @@ if(isset($update) && $data == "Games"){
 $games = json_encode([
            'inline_keyboard'=>[
            [["text"=>"PUBG Mobile","callback_data"=>"PUBG"],
-           ["text"=>"Android 11 and less","callback_data"=>"K"]],
+           ["text"=>"Android 11 and less","callback_data"=>"k"]],
            [["text"=>"Share 🗑","url"=>"https://telegram.me/share/url?url=&text=This%20bot%20has%20been%20development%20by%20OwO%20%F0%9F%A6%8B%20Misa%20Amane%20%F0%9F%A6%8B%20UwU%0AIf%20you%20like%20it%2C%20share%20it%20%3A%29%0Ahttps%3A%2F%2Ft.me%2FCommunity_Ideas_Robot"],
            ["text"=>"Delete","callback_data"=>"Delete"]]]]);
 
