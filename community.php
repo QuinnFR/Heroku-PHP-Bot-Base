@@ -127,7 +127,7 @@ $day = date('d-M Y',strtotime('0 hour'));
 $clock = date('H:i', strtotime('0 hour'));
 $new_time = date("Y-m-d H:i:s", strtotime('+0 hours'));
 $channel = "";
-$random_msg_top = array("Only the Root not free :)","invite your friends 🧡","If you linked tell us 💛");
+$random_msg_top = array("Share the bot with your frinds :)","invite your friends 🧡","If you linked tell us 💛");
 $Random = $random_msg_top[array_rand($random_msg_top,1)];
 $caption = $message->caption;
 $document = $message->document; 
@@ -193,7 +193,7 @@ sleep(2);
 $telegram->sendMessage($chat_id, $text = $welcome_first, $replyMarkup = $join_key)->result->message_id;
 return false;}
 
-if($message->text && $type == 'private' && $from_id != $owner && in_array($from_id,$banned)){
+if($message->text && $type == 'private' && in_array($from_id,$banned)){
 $sticker_banned = $telegram->sendsticker($chat_id, $sticker = "CAACAgIAAxkBAAIDIWKorznfoLyO45g2HdbHWG-aYa5VAAKjAQACEBptIkfOxfML2NdjJAQ", $replyMarkup = null)->result->message_id;
 $banned_first = $telegram->sendMessage($chat_id, $text = "Well, you're a stupid person 🙂", $replyMarkup = $null)->result->message_id;
 sleep(4);
@@ -248,6 +248,8 @@ $apps = json_encode([
            ["text"=>"Delete","callback_data"=>"Delete"]]]]);
 
 $telegram->alret($alretcall, $text = "Apps 📲", $showAlert = false);
+sleep(4);
+$telegram->alret($alretcall, $text = $Random, $showAlert = false);
 $telegram->sendMessage($chat_id = $chatid, $text = "Please Choice your apps", $replyMarkup = $apps);
 }
 
