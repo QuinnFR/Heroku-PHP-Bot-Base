@@ -61,5 +61,11 @@ After the activation is successful, <s>theoretically there is no need to activat
 Everything here:
 https://www.vmos.cn/zhushou.htm";
 
+$chinese_vmos = "<a href='tg://user?id=$user_id'>$frist_name</a> VMOS Chinese Version 🇨🇳 Support Root and Gapps but Android 5.1
+Android OS: 5.1
+Features:
+                 1. Root
+                 2. Gapps
+                 3. Free no need to pay";
 
 ?>
