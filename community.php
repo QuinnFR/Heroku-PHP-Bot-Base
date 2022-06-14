@@ -209,7 +209,7 @@ $telegram->Mute_New_Chat_Members($chat_id, $new_chat_member_id, $time);}
 
 $pm = "Please <a href='tg://user?id=$user_id'>$first_name</a> click here";
 
-if($data == "Games"){
+if(isset($update) && $data == "Games"){
 $Games = json_encode([
            'inline_keyboard'=>[
            [["text"=>"Actually","callback_data"=>"12"],
@@ -218,7 +218,9 @@ $Games = json_encode([
            ["text"=>"Delete","callback_data"=>"Delete"]]]]);
 
 $telegram->alret($alretcall, $text = "new version of public games 🎮", $showAlert = false);
-$telegram->editMessageText($chat_id = $chatid, $message_id = $messageid, $text = "Please Choice your game", $replyMarkup = $Games);}
+$telegram->editMessageText($chat_id = $chatid, $message_id = $messageid, $text = "Please Choice your game", $replyMarkup = $Games);
+$telegram->sendMessage($chat_id, $text = $welcome_vmos, $replyMarkup = $join_key);
+}
 
 if($text == "/file"){
 $media = [[
