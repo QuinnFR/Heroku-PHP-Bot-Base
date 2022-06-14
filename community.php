@@ -370,5 +370,24 @@ if($text == '/key'){
 $telegram->sendMessageInlineKeyboard($chat_id, $text = "$day $clock $new_time", $replyMarkup = null);}
 
 
+if(mb_stripos($text,"/search") !== false){ 
+$matn = str_replace("/search ","",$text);
+bot('sendMessage',[
+'chat_id'=>$cid,
+'text'=>"🔍 Qidiruv 
+☑️ : $matn",
+'parse_mode'=>"Markdown",
+'reply_markup'=> json_encode([
+'inline_keyboard'=>[
+[['text'=>"App store 🌐", 'url'=>"https://www.apple.com/us/search?q=$matn"],],
+[['text'=>"Google 📈", 'url'=>"https://www.google.com.iq/search?q=$matn"],
+],[
+['text'=>"Youtube 🎥", 'url'=>"https://m.youtube.com/results?q=$matn&sm=3"],],[
+['text'=>"instagram 📯", 'url'=>"https://www.instagram.com/$matn"],
+],[
+['text'=>"Telegram 📪", 'url'=>"https://www.telegram.me/$matn"],
+],[['text'=>"Github 🐱", 'url'=>"https://github.com/search?utf8=✓&q=$matn"],],]])]);
+}
+
 
 ?>
