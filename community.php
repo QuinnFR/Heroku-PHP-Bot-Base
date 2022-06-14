@@ -216,8 +216,8 @@ if(isset($update) && $data == "Games"){
 $games = json_encode([
            'inline_keyboard'=>[
            [["text"=>"PUBG Mobile","callback_data"=>"PUBG"],
-           ["text"=>"Android 11 and less","callback_data"=>"11"]],
-           [["text"=>"Share 🗑","url"=>"http://t.me/share/url?url=I'm%20Black%20Widow%20Helper%20of%20VMOS%20Group%0AMade%20by%20Русская%20девушка%20🇷🇺%0ALink:%0Ahttp://t.me/Black_Widow_Robot"],
+           ["text"=>"Android 11 and less","callback_data"=>"K"]],
+           [["text"=>"Share 🗑","url"=>"https://telegram.me/share/url?url=&text=This%20bot%20has%20been%20development%20by%20OwO%20%F0%9F%A6%8B%20Misa%20Amane%20%F0%9F%A6%8B%20UwU%0AIf%20you%20like%20it%2C%20share%20it%20%3A%29%0Ahttps%3A%2F%2Ft.me%2FCommunity_Ideas_Robot"],
            ["text"=>"Delete","callback_data"=>"Delete"]]]]);
 
 $telegram->alret($alretcall, $text = "new version of public games 🎮", $showAlert = false);
