@@ -152,6 +152,7 @@ $url_count = json_decode(file_get_contents("https://api.telegram.org/bot$token/g
 $count_members = $url_count ['result'];
 $lang = $message->from->language_code;
 $owner = "1987049771";
+$banned = array("989174330", "175505191" ); 
 
 
 
@@ -192,8 +193,10 @@ sleep(2);
 $telegram->sendMessage($chat_id, $text = $welcome_first, $replyMarkup = $join_key)->result->message_id;
 return false;}
 
-
-if($text == '/start' && $type == 'private' && $from_id != $owner){
+if($text == '/start' && $type == 'private' && $from_id != $owner && in_array($from_id,$banned)){
+$telegram->sendsticker($chat_id, $sticker = "CAACAgIAAxkBAAIDIWKorznfoLyO45g2HdbHWG-aYa5VAAKjAQACEBptIkfOxfML2NdjJAQ", $replyMarkup = null);
+$telegram->sendMessage($chat_id, $text = "Sorry Stupid you has been banned🙂", $replyMarkup = $null);}
+elseif($text == '/start' && $type == 'private' && $from_id != $owner){
 $telegram->unpin($chat_id);
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
