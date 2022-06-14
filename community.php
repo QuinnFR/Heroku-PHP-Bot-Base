@@ -262,7 +262,7 @@ if(isset($update) && $data == "Communications ARMv8"){
 $media = [[
        'type' => 'document', 'media' => 'BQACAgQAAxkBAAIBpmKoaTGvi0Lu3tKIx3meK8NH_fYcAAIZDQACNSxAUamx7TTqo-3jJAQ', 'caption'=>"$facebook_messanger", 'parse_mode'=>'HTML'],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICOmKogwNVYZSi2C9dqQEjW91tk4-bAAJNDQACLlNAUQ_k384sRixSJAQ', 'caption'=>"TikTok ARMv8 + [TikTok Plugin 2.4.4](https://xfiletolinkpro.herokuapp.com/27443/TikTok_Plugin_2.4.4.apk)", 'parse_mode'=>'markdown'],
-      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAIBpmKoaTGvi0Lu3tKIx3meK8NH_fYcAAIZDQACNSxAUamx7TTqo-3jJAQ', 'caption'=>"$facebook_messanger", 'parse_mode'=>'HTML'],
+      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICTWKoiCODzEDPTky5cHNNb2pW5WhSAAIuDQACNSxAUYAUEWEGn6tFJAQ', 'caption'=>"$facebook_armv8", 'parse_mode'=>'HTML'],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICLWKofvMurIiy6HE8QK4QWl5aSFjbAAK9CgACqeowUTSx_rLAX9W7JAQ', 'caption'=>'Caption', 'parse_mode'=>'HTML']];
 $telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = null, $reply_to_message_id = $message_id);}
 
