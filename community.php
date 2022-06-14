@@ -152,7 +152,7 @@ $url_count = json_decode(file_get_contents("https://api.telegram.org/bot$token/g
 $count_members = $url_count ['result'];
 $lang = $message->from->language_code;
 $owner = "1987049771";
-$banned = array("1622270145", "21279152"); 
+$banned = array("1622270145", "21279152", "575505287"); 
 
 
 
