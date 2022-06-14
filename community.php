@@ -292,7 +292,7 @@ if(isset($update) && $data == "Communications No Arch"){
 $media = [[
        'type' => 'document', 'media' => 'BQACAgQAAxkBAAIBo2KoZXdK1QdN5mJtueLgtwLxgDrxAAIXDQACNSxAUYwQOgib4QjRJAQ', 'caption'=>"$whatsapp", 'parse_mode'=>'HTML'],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICrmKoo3eKIARpz34_KRLLcJD_aJzrAAK3DQACrvcAAVGM1Jg_KmX_9yQE', 'caption'=>"Version: 2.0.0\nMinimum OS: 5.0\nBase: 8.7.4\n<a href='https://telegra.ph/OwlGram---List-of-Features-03-04'>Features</a>\n#universal #stable", 'parse_mode'=>'HTML'],
-      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAIBo2KoZXdK1QdN5mJtueLgtwLxgDrxAAIXDQACNSxAUYwQOgib4QjRJAQ', 'caption'=>'Caption', 'parse_mode'=>'HTML']];
+      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAIDsWKovEUUtIgOCjCekQ14gs4avtBKAAJnDgACNSxIUWrfYDsR_LzXJAQ', 'caption'=>"App: Discord\nVersion: 126.15 - Stable (126015)\narm64-v8a + armeabi + armeabi-v7a + mips + mips64 + x86 + x86_64 (nodpi)\nRequired Android +5", 'parse_mode'=>'HTML']];
 $telegram->alret($alretcall, $text = "There's no Arch means those apks works on all devices", $showAlert = false);
 $telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = null, $reply_to_message_id = $message_id);}
 
