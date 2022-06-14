@@ -220,7 +220,7 @@ $Games = json_encode([
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
 $telegram->sendMessageInlineKeyboard($chat_id, $text = "Please Choice your game", $replyMarkup = $Games);}
-if(isset($update) && $data == "12"){
+if(isset($update) && $data == "Games"){
 $telegram->alret($alretcall, $text = "new version of public games 🎮", $showAlert = false);
 $telegram->editMessageText($chat_id = $chatid, $message_id = $messageid, $text = $os12, $replyMarkup = $Games);}
 
