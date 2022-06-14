@@ -193,9 +193,8 @@ $telegram->sendMessage($chat_id, $text = $welcome_first, $replyMarkup = $join_ke
 return false;}
 
 
-if($text == '/start' && $type == 'private'){
+if($text == '/start' && $type == 'private' && $from_id != $owner){
 $telegram->unpin($chat_id);
-$telegram->sendMessage($chat_id = $owner, $text = "User: $mention\n$new_time", $replyMarkup = $null);
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
 $telegram->typing($chat_id, $action = 'typing');
@@ -206,6 +205,7 @@ $welcome_edit = $telegram->editMessageText($chat_id, $message_id = $wl, $text = 
 sleep(2);
 $pin = $telegram->editMessageText($chat_id, $message_id = $wl, $text = $welcome_join, $replyMarkup = $welcome_key)->result->message_id;
 $telegram->pin($chat_id, $message_id = $pin);
+$telegram->sendMessage($chat_id = $owner, $text = "User: $mention\n$new_time", $replyMarkup = $null);
 }
 
 if($new){
