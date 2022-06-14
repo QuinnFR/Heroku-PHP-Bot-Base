@@ -201,8 +201,7 @@ sleep(2);
 $wl = $telegram->sendMessage($chat_id, $text = "Well, since you've joined, let's get started 🙂", $replyMarkup = $null)->result->message_id;
 sleep(3);
 $pin = $telegram->editMessageText($chat_id, $message_id = $wl, $text = $welcome, $replyMarkup = $welcome_key)->result->message_id;
-sleep(3);
-$telegram->pin($chat_id, $message_id = $pin);
+
 }
 
 if($new){
