@@ -165,14 +165,14 @@ $cn = json_encode([
 
 $welcome_key = json_encode([
            'inline_keyboard'=>[
-           [['text'=>'My Group 💬','url'=>'https://t.me/Community_Ideas'],
-           ['text'=>'Read This 📚','url'=>'https://t.me/Community_Ideas/107']],
+           [['text'=>'My Group 💬','url'=>'https://t.me/+WSXAm6DJiKw2MDVk'],
+           ['text'=>'Read This 📚','url'=>'https://t.me/+WSXAm6DJiKw2MDVk']],
            [['text'=>'Games 🎮','callback_data'=>'Games'],
            ['text'=>'Apps 📲','callback_data'=>'Apps']]]]);
 
 $join_key = json_encode([
            'inline_keyboard'=>[
-           [['text'=>'Join to Community & Ideas 💻🧠','url'=>'https://t.me/Community_Ideas'],
+           [['text'=>'Join to Community & Ideas 💻🧠','url'=>'https://t.me/+WSXAm6DJiKw2MDVk'],
            ['text'=>'Dev 👩‍💻','url'=>'tg://openmessage?user_id=1987049771']],
            [['text'=>'Share 🔗','url'=>'https://telegram.me/share/url?url=&text=This%20bot%20has%20been%20development%20by%20OwO%20%F0%9F%A6%8B%20Misa%20Amane%20%F0%9F%A6%8B%20UwU%0AIf%20you%20like%20it%2C%20share%20it%20%3A%29%0Ahttps%3A%2F%2Ft.me%2FCommunity_Ideas_Robot']]]]);
 
