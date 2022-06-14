@@ -230,6 +230,8 @@ $apps = json_encode([
            'inline_keyboard'=>[
            [["text"=>"Communications 💬","callback_data"=>"Architectural"],
            ["text"=>"Stories Makers 📹","callback_data"=>"Stories Makers"]],
+           [["text"=>"VPN Apps 📲","callback_data"=>"vpn"],
+           ["text"=>"Tools 🛠","callback_data"=>"Tools"]],
            [["text"=>"Share 🔗","url"=>"https://telegram.me/share/url?url=&text=This%20bot%20has%20been%20development%20by%20OwO%20%F0%9F%A6%8B%20Misa%20Amane%20%F0%9F%A6%8B%20UwU%0AIf%20you%20like%20it%2C%20share%20it%20%3A%29%0Ahttps%3A%2F%2Ft.me%2FCommunity_Ideas_Robot"],
            ["text"=>"Delete","callback_data"=>"Delete"]]]]);
 
@@ -255,6 +257,13 @@ $media = [[
        'type' => 'document', 'media' => 'https://t.me/', 'caption'=>'Caption'],
       ['type' => 'document', 'media' => 'https://t.me/', 'caption'=>'Caption']];
 $telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = null, $reply_to_message_id = $message_id);}
+
+if(isset($update) && $data == "Communications ARMv8"){
+$media = [[
+       'type' => 'document', 'media' => 'https://t.me/', 'caption'=>'Caption'],
+      ['type' => 'document', 'media' => 'https://t.me/', 'caption'=>'Caption']];
+$telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = null, $reply_to_message_id = $message_id);}
+
 
 if($text == "/file"){
 $media = [[
