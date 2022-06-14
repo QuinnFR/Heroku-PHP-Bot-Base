@@ -246,8 +246,8 @@ foreach ($rss->channel->item as $item){
 }  
 if($data=="k"){
   $telegram->('answerCallbackQuery',[
-    'callback_query_id'=>$cqid,
-    'chat_id'=>$ccid, 
+    'callback_query_id'=>$alretcall,
+    'chat_id'=>$chat_id, 
     'text'=>"📰 $line",
    'show_alert'=>true,
    'parse_mode'=>'html',
