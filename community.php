@@ -222,7 +222,7 @@ $telegram->sendMessage($chat_id = $chatid, $text = "Please Choice your game", $r
 }
 
 if(isset($update) && $data == "PUBG"){
-$telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAIBNWKoBJvmKyAg6a-kXuHm3SF43QnrAAJwEQACt1AYUb0hq-Y-e9i5JAQ", $caption = "PUBG Mobile from the official website, $replyMarkup = $games);}
+$telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAIBNWKoBJvmKyAg6a-kXuHm3SF43QnrAAJwEQACt1AYUb0hq-Y-e9i5JAQ", $caption = "PUBG Mobile from the official website", $replyMarkup = $games);}
 
 if($text == "/file"){
 $media = [[
