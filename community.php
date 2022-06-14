@@ -260,13 +260,13 @@ $telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = nu
 
 if(isset($update) && $data == "Communications ARMv8"){
 $media = [[
-       'type' => 'document', 'media' => 'BQACAgQAAxkBAAIBpmKoaTGvi0Lu3tKIx3meK8NH_fYcAAIZDQACNSxAUamx7TTqo-3jJAQ', 'caption'=>'Facebook Orca Messanger: 364.0.0.10.112-302811439\nAndroid 9.0: MinAPI28(arm64-v8a)(nodpi)\n<a href='https://www.apkmirror.com/apk/facebook-2/messenger/'>Facebook Messanger APKMirror Update</a>\n$new_time'],
+       'type' => 'document', 'media' => 'BQACAgQAAxkBAAIBpmKoaTGvi0Lu3tKIx3meK8NH_fYcAAIZDQACNSxAUamx7TTqo-3jJAQ', 'caption'=>"$facebook_messanger"],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAIBpmKoaTGvi0Lu3tKIx3meK8NH_fYcAAIZDQACNSxAUamx7TTqo-3jJAQ', 'caption'=>'Caption']];
 $telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = null, $reply_to_message_id = $message_id);}
 
 if(isset($update) && $data == "Communications No Arch"){
 $media = [[
-       'type' => 'document', 'media' => 'BQACAgQAAxkBAAIBo2KoZXdK1QdN5mJtueLgtwLxgDrxAAIXDQACNSxAUYwQOgib4QjRJAQ', 'caption'=>'Whatsapp: 2.22.13.70-221370000\nAndroid 4.1: Arch (arm64-v8a,armeabi-v7a,x86,x86_64)(nodpi)\n<a href='https://www.apkmirror.com/apk/whatsapp-inc/whatsapp/'>Whatsapp APKMirror Update</a>\n$new_time'],
+       'type' => 'document', 'media' => 'BQACAgQAAxkBAAIBo2KoZXdK1QdN5mJtueLgtwLxgDrxAAIXDQACNSxAUYwQOgib4QjRJAQ', 'caption'=>"$whatsapp"],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAIBo2KoZXdK1QdN5mJtueLgtwLxgDrxAAIXDQACNSxAUYwQOgib4QjRJAQ', 'caption'=>'Caption']];
 $telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = null, $reply_to_message_id = $message_id);}
 
