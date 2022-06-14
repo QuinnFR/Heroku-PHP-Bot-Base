@@ -196,10 +196,12 @@ return false;}
 
 if($text == '/start' && $type == 'private'){
 $telegram->unpin($chat_id);
-    $telegram->typing($chat_id, $action = 'typing');
+$telegram->typing($chat_id, $action = 'typing');
 sleep(2);
+$telegram->typing($chat_id, $action = 'typing');
 $wl = $telegram->sendMessage($chat_id, $text = "Well, since you've joined, let's get started 🙂", $replyMarkup = $null)->result->message_id;
 sleep(3);
+$telegram->typing($chat_id, $action = 'typing');
 $welcome_edit = $telegram->editMessageText($chat_id, $message_id = $wl, $text = $welcome_first, $replyMarkup = $welcome_key)->result->message_id;
 sleep(2);
 $pin = $telegram->editMessageText($chat_id, $message_id = $wl, $text = $welcome_join, $replyMarkup = $welcome_key)->result->message_id;
