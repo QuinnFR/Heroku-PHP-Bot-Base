@@ -212,7 +212,7 @@ $pm = "Please <a href='tg://user?id=$user_id'>$first_name</a> click here";
 if(isset($update) && $data == "Games"){
 $games = json_encode([
            'inline_keyboard'=>[
-           [["text"=>"Actually","callback_data"=>"12"],
+           [["text"=>"PUBG Mobile","callback_data"=>"PUBG"],
            ["text"=>"Android 11 and less","callback_data"=>"11"]],
            [["text"=>"Share 🗑","url"=>"http://t.me/share/url?url=I'm%20Black%20Widow%20Helper%20of%20VMOS%20Group%0AMade%20by%20Русская%20девушка%20🇷🇺%0ALink:%0Ahttp://t.me/Black_Widow_Robot"],
            ["text"=>"Delete","callback_data"=>"Delete"]]]]);
@@ -220,6 +220,9 @@ $games = json_encode([
 $telegram->alret($alretcall, $text = "new version of public games 🎮", $showAlert = false);
 $telegram->sendMessage($chat_id = $chatid, $text = "Please Choice your game", $replyMarkup = $games);
 }
+
+if(isset($update) && $data == "PUBG"){
+$telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAIBNWKoBJvmKyAg6a-kXuHm3SF43QnrAAJwEQACt1AYUb0hq-Y-e9i5JAQ", $caption = "PUBG Mobile from the official website, $replyMarkup = $games);}
 
 if($text == "/file"){
 $media = [[
