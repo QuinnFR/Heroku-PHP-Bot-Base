@@ -258,7 +258,7 @@ $arm = json_encode([
            ["text"=>"ARMv8","callback_data"=>"Communications ARMv8"]],
            [["text"=>"No Arch","callback_data"=>"Communications No Arch"]]]]);
 
-$telegram->alret($alretcall, $text = "ARM Version", $showAlert = false);
+$telegram->alret($alretcall, $text = "ARM Versions 🆚️", $showAlert = false);
 $telegram->editMessageText($chat_id = $chatid, $message_id = $messageid, $text = "The ARMv7 architecture is the basis for all current 32-bit ARM Cortex™ processors, including the Cortex-A15 and Cortex-A9 processors. The ARMv8 architecture is the first ARM architecture that includes 64-bit execution, enabling processors based on the architecture to combine 64-bit execution with 32-bit execution.\nNote: No Arch means\nA universal APK contains code and resources for all ABIs in a single APK. The default value is false . Note that this option is only available in the splits.", $replyMarkup = $arm);
 }
 
@@ -272,6 +272,7 @@ $media = [[
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICgGKomIRUB4FjHc9_n_yMouV6AAGX5wACPQ0AAjUsQFFhiC22T6XB4CQE', 'caption'=>"Instagram: 239.0.0.14.111-363904704\nAndroid 5: minAPI21(armeabi-v7a)(nodpi)\n<a href='https://www.apkmirror.com/apk/instagram/instagram-instagram/'>Instagram APKMirror Update</a>", 'parse_mode'=>'HTML'],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAIChmKom0vFXJUndnl2bnhwM40VNB5rAAI_DQACNSxAURirzSWFBBHuJAQ', 'caption'=>"AeroInsta V19.0.4 Clone DEFAULT Hazar\n<a href='https://aeroinsta.com/'>Areo Instagram</a>", 'parse_mode'=>'HTML'],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICsGKoo3e5CWEV33ml_eC5O0Mek0_qAAK5DQACrvcAAVGQOIKF11YWHyQE', 'caption'=>"Version: 2.0.0\nMinimum OS: 5.0\nBase: 8.7.4\n<a href='https://telegra.ph/OwlGram---List-of-Features-03-04'>Features</a>\n#armv7 #stable", 'parse_mode'=>'HTML']];
+$telegram->alret($alretcall, $text = "Apps for ARMv7 Devices :) 🍸", $showAlert = false);
 $telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = null, $reply_to_message_id = $message_id);}
 
 if(isset($update) && $data == "Communications ARMv8"){
@@ -281,6 +282,7 @@ $media = [[
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICTWKoiCODzEDPTky5cHNNb2pW5WhSAAIuDQACNSxAUYAUEWEGn6tFJAQ', 'caption'=>"$facebook_armv8", 'parse_mode'=>'HTML'],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICg2KomhQAAVYRlhpU04PUIylzSl4E-QACPg0AAjUsQFFD2kjQwCt9MSQE', 'caption'=>"Instagram: 239.0.0.14.111-363904658\nAndroid 6: MinAPI23(arm64-v8a)(nodpi)\n<a href='https://www.apkmirror.com/apk/instagram/instagram-instagram/'>Instagram APKMirror Update</a>", 'parse_mode'=>'HTML'],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICr2Koo3dekbK8VNTgiJo10nDhLi6eAAK4DQACrvcAAVHGWchEHTMv1CQE', 'caption'=>"Version: 2.0.0\nMinimum OS: 5.0\nBase: 8.7.4\n<a href='https://telegra.ph/OwlGram---List-of-Features-03-04'>Features</a>\n#arm64 #stable", 'parse_mode'=>'HTML']];
+$telegram->alret($alretcall, $text = "Apps for ARMv8 Devices :) 📲", $showAlert = false);
 $telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = null, $reply_to_message_id = $message_id);}
 
 if(isset($update) && $data == "Communications No Arch"){
@@ -288,6 +290,7 @@ $media = [[
        'type' => 'document', 'media' => 'BQACAgQAAxkBAAIBo2KoZXdK1QdN5mJtueLgtwLxgDrxAAIXDQACNSxAUYwQOgib4QjRJAQ', 'caption'=>"$whatsapp", 'parse_mode'=>'HTML'],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICrmKoo3eKIARpz34_KRLLcJD_aJzrAAK3DQACrvcAAVGM1Jg_KmX_9yQE', 'caption'=>"Version: 2.0.0\nMinimum OS: 5.0\nBase: 8.7.4\n<a href='https://telegra.ph/OwlGram---List-of-Features-03-04'>Features</a>\n#universal #stable", 'parse_mode'=>'HTML'],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAIBo2KoZXdK1QdN5mJtueLgtwLxgDrxAAIXDQACNSxAUYwQOgib4QjRJAQ', 'caption'=>'Caption', 'parse_mode'=>'HTML']];
+$telegram->alret($alretcall, $text = "There's no Arch means those apks works on all devices", $showAlert = false);
 $telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = null, $reply_to_message_id = $message_id);}
 
 if(isset($update) && $data == "Stories Makers"){
@@ -301,6 +304,7 @@ $media = [[
        'type' => 'document', 'media' => 'BQACAgQAAxkBAAIC6GKoqa19RzabO6Wd3Cn_BVHgrt89AAKPDQACLlNAUa1-l0x-RLLwJAQ', 'caption'=>"Power VPN Fast Secure Unlimited VPN PRO v1.99 build 318 AOSP No", 'parse_mode'=>'HTML'],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICaGKokReLWZ4x6ytzqu4thIlMoZIOAAJWDQACLlNAUdi0KyLItU-3JAQ', 'caption'=>"VPNHUB: UNLIMITED & SECURE V3.16.12 [PRO] [MOD]", 'parse_mode'=>'markdown'],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICa2Koka0dBvXKu9_Yq0UgMoBzDL7VAAJXDQACLlNAUa8vIVThl8v3JAQ', 'caption'=>"Go VPN 1.9.4 Mod", 'parse_mode'=>'HTML']];
+$telegram->alret($alretcall, $text = "Best VPN Apps 🍸🥳", $showAlert = false);
 $telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = null, $reply_to_message_id = $message_id);}
 
 
