@@ -286,7 +286,7 @@ $telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = nu
 
 if(isset($update) && $data == "vpn"){
 $media = [[
-       'type' => 'document', 'media' => 'BQACAgQAAxkBAAICZWKokJJgZb-VkaC6SBILMzkR5YPaAAJUDQACLlNAURmmPYWEiP-OJAQ', 'caption'=>"Power VPN Fast Secure Unlimited VPN PRO v1.99 build 318 AOSP No", 'parse_mode'=>'HTML'],
+       'type' => 'document', 'media' => 'BQACAgQAAxkBAAIC6GKoqa19RzabO6Wd3Cn_BVHgrt89AAKPDQACLlNAUa1-l0x-RLLwJAQ', 'caption'=>"Power VPN Fast Secure Unlimited VPN PRO v1.99 build 318 AOSP No", 'parse_mode'=>'HTML'],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICaGKokReLWZ4x6ytzqu4thIlMoZIOAAJWDQACLlNAUdi0KyLItU-3JAQ', 'caption'=>"VPNHUB: UNLIMITED & SECURE V3.16.12 [PRO] [MOD]", 'parse_mode'=>'markdown'],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICa2Koka0dBvXKu9_Yq0UgMoBzDL7VAAJXDQACLlNAUa8vIVThl8v3JAQ', 'caption'=>"Go VPN 1.9.4 Mod", 'parse_mode'=>'HTML']];
 $telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = null, $reply_to_message_id = $message_id);}
