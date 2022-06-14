@@ -213,14 +213,13 @@ $pm = "Please <a href='tg://user?id=$user_id'>$first_name</a> click here";
 if(isset($update) && $data == "Games"){
 $Games = json_encode([
            'inline_keyboard'=>[
-           [["text"=>"Android 12 🤖","callback_data"=>"12"],
+           [["text"=>"Actually","callback_data"=>"12"],
            ["text"=>"Android 11 and less","callback_data"=>"11"]],
            [["text"=>"Share 🗑","url"=>"http://t.me/share/url?url=I'm%20Black%20Widow%20Helper%20of%20VMOS%20Group%0AMade%20by%20Русская%20девушка%20🇷🇺%0ALink:%0Ahttp://t.me/Black_Widow_Robot"],
            ["text"=>"Delete","callback_data"=>"Delete"]]]]);
 
-$telegram->sendMessageInlineKeyboard($chat_id, $text = "Please Choice your game", $replyMarkup = $Games);
 $telegram->alret($alretcall, $text = "new version of public games 🎮", $showAlert = false);
-$telegram->editMessageText($chat_id = $chatid, $message_id = $messageid, $text = $os12, $replyMarkup = $Games);}
+$telegram->editMessageText($chat_id = $chatid, $message_id = $messageid, $text = "Please Choice your game", $replyMarkup = $Games);}
 
 
 if($text == "/file"){
