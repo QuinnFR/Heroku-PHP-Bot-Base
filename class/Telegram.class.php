@@ -225,7 +225,7 @@ public function sendsticker($chat_id, $sticker, $replyMarkup){
               break;}}
 
 //in $media send an associative array with type and id/link/path. Exaple: $media = [['type' => 'photo', 'media' => '1234'], ['type' => 'video', 'media' => 'https://site/video.mp4']] https://core.telegram.org/bots/api#inputmedia
-   public function sendMediaGroup($chat_id, $media, $parse_mode, $disable_notification = null, $reply_to_message_id = null){
+   public function sendMediaGroup($chat_id, $media, $disable_notification = null, $reply_to_message_id = null){
              $media = json_encode($media);
              $args = [
                       'chat_id' => $chat_id,
