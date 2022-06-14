@@ -230,7 +230,8 @@ public function sendsticker($chat_id, $sticker, $replyMarkup){
              $args = [
                       'chat_id' => $chat_id,
                       'media'   => $media,
-                      'parse_mode' => "HTML",
+                      'parse_mode' => 'HTML',
+                      'protect_content'=>true,
                      ];
     return $this->bot('sendMediaGroup', $args);
 }
