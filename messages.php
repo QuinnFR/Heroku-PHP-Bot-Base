@@ -70,8 +70,5 @@ Android 4.1: Arch (arm64-v8a,armeabi-v7a,x86,x86_64)(nodpi)
 <a href='https://www.apkmirror.com/apk/whatsapp-inc/whatsapp/'>Whatsapp APKMirror Update</a>";
 $new_time";
 
-$facebook_messanger = "Facebook Orca Messanger: 364.0.0.10.112-302811439
-Android 9.0: MinAPI28(arm64-v8a)(nodpi)
-<a href='https://www.apkmirror.com/apk/facebook-2/messenger/'>Facebook Messanger APKMirror Update</a>
-$new_time";
+
 ?>
