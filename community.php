@@ -373,8 +373,8 @@ $telegram->sendMessageInlineKeyboard($chat_id, $text = "$day $clock $new_time", 
 if(mb_stripos($text,"/search") !== false){ 
 $matn = str_replace("/search ","",$text);
 bot('sendMessage',[
-'chat_id'=>$cid,
-'text'=>"🔍 Qidiruv 
+'chat_id'=>$chat_id,
+'text'=>"🔍 Searching
 ☑️ : $matn",
 'parse_mode'=>"Markdown",
 'reply_markup'=> json_encode([
