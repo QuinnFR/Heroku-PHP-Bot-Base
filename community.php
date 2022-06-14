@@ -196,10 +196,10 @@ return false;}
 if($text == '/start' && $type == 'private' && $from_id != $owner && in_array($from_id,$banned)){
 $sticker_banned = $telegram->sendsticker($chat_id, $sticker = "CAACAgIAAxkBAAIDIWKorznfoLyO45g2HdbHWG-aYa5VAAKjAQACEBptIkfOxfML2NdjJAQ", $replyMarkup = null)->result->message_id;
 $banned_first = $telegram->sendMessage($chat_id, $text = "Well, you're a stupid person 🙂", $replyMarkup = $null)->result->message_id;
-sleep(2);
+sleep(4);
 $banned_edit = $telegram->editMessageText($chat_id, $message_id = $banned_first, $text = "Do you know why?", $replyMarkup = null)->result->message_id;
-sleep(2);
-$banned_second = $telegram->editMessageText($chat_id, $message_id = $banned_edit, $text = "Because you think you're smart but you're an idiot :)\n Anyway If you think otherwise, contact the originating developer OwO 🦋 Misa Amane 🦋 UwU", $replyMarkup = null)->result->message_id;
+sleep(4);
+$banned_second = $telegram->editMessageText($chat_id, $message_id = $banned_edit, $text = "Because you think you're smart but you're an idiot :)\nAnyway If you think otherwise, contact the originating developer OwO 🦋 Misa Amane 🦋 UwU", $replyMarkup = null)->result->message_id;
 sleep(4);
 $telegram->Delete($chat_id, $message_id = $banned_second);
 $telegram->Delete($chat_id, $message_id = $sticker_banned);
