@@ -221,8 +221,20 @@ $telegram->alret($alretcall, $text = "new version of public games 🎮", $showAl
 $telegram->sendMessage($chat_id = $chatid, $text = "Please Choice your game", $replyMarkup = $games);
 }
 
+if(isset($update) && $data == "Apps"){
+$apps = json_encode([
+           'inline_keyboard'=>[
+           [["text"=>"Community","callback_data"=>"PUBG"],
+           ["text"=>"Android 11 and less","callback_data"=>"11"]],
+           [["text"=>"Share 🗑","url"=>"http://t.me/share/url?url=I'm%20Black%20Widow%20Helper%20of%20VMOS%20Group%0AMade%20by%20Русская%20девушка%20🇷🇺%0ALink:%0Ahttp://t.me/Black_Widow_Robot"],
+           ["text"=>"Delete","callback_data"=>"Delete"]]]]);
+
+$telegram->alret($alretcall, $text = "Apps 📲", $showAlert = false);
+$telegram->sendMessage($chat_id = $chatid, $text = "Please Choice your apps", $replyMarkup = $apps);
+}
+
 if(isset($update) && $data == "PUBG"){
-$telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAIBNWKoBJvmKyAg6a-kXuHm3SF43QnrAAJwEQACt1AYUb0hq-Y-e9i5JAQ", $caption = "PUBG Mobile from the official website\nBy: $firstname\nBy: $first_name\nTime: $new_time", $replyMarkup = $games);}
+$telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAIBNWKoBJvmKyAg6a-kXuHm3SF43QnrAAJwEQACt1AYUb0hq-Y-e9i5JAQ", $caption = "PUBG Mobile from the official website\nBy: $firstname\nTime: $new_time", $replyMarkup = $games);}
 
 if($text == "/file"){
 $media = [[
