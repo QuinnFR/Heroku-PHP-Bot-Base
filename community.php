@@ -209,17 +209,8 @@ if($new){
 $telegram->Mute_New_Chat_Members($chat_id, $new_chat_member_id, $time);}
 
 $pm = "Please <a href='tg://user?id=$user_id'>$first_name</a> click here";
-$chinese_vmos = "<a href='tg://user?id=$user_id'>$frist_name</a> VMOS Chinese Version 🇨🇳 Support Root and Gapps but Android 5.1
-Android OS: 5.1
-Features:
-                 1. Root
-                 2. Gapps
-                 3. Free no need to pay";
 
-
-           
-
-if($text == "/keyboard" && $type =='private'){
+if($data == "Games" && $type =='private'){
 $os = json_encode([
            'inline_keyboard'=>[
            [["text"=>"Android 12 🤖","callback_data"=>"12"],
