@@ -283,7 +283,7 @@ $welcome_key = json_encode([
            [['text'=>'Games 🎮','callback_data'=>'Games'],
            ['text'=>'Apps 📲','callback_data'=>'Apps']]]]);
 
-$button = $bot->SingleInlineUrlKeyboard("💥طراحی و توسعه توسط آی نئو تیم", "https://t.me/".$channel);
+$button = $telegram>SingleInlineUrlKeyboard("💥طراحی و توسعه توسط آی نئو تیم", "https://t.me/".$channel);
 
 $telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAIBNWKoBJvmKyAg6a-kXuHm3SF43QnrAAJwEQACt1AYUb0hq-Y-e9i5JAQ", $caption = "PUBG Mobile from the official website\nBy: $firstname\nTime: $new_time", $replyMarkup = $button);
 $telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAIEZmKpGHJhtqjpo0s-FvYNjvux9T5_AAL_DwACG6BJUVwO6MIaypcdJAQ", $caption = "Clash Of Clans: 14.555.11-1473\nAndroid +5: (arm64-v8a,armeabi-v7a)(nodpi)\nBy: $firstname\nTime: $new_time", $replyMarkup = $games);}
