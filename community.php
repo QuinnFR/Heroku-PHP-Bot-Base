@@ -260,7 +260,7 @@ $telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = nu
 
 if(isset($update) && $data == "Communications ARMv8"){
 $media = [[
-       'type' => 'document', 'media' => 'BQACAgQAAxkBAAIBpmKoaTGvi0Lu3tKIx3meK8NH_fYcAAIZDQACNSxAUamx7TTqo-3jJAQ', 'caption'=>"$facebook_messanger"],
+       'type' => 'document', 'media' => 'BQACAgQAAxkBAAIBpmKoaTGvi0Lu3tKIx3meK8NH_fYcAAIZDQACNSxAUamx7TTqo-3jJAQ', 'caption'=>"$facebook_messanger", 'parse_mode'=>'HTML'],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAIBpmKoaTGvi0Lu3tKIx3meK8NH_fYcAAIZDQACNSxAUamx7TTqo-3jJAQ', 'caption'=>'Caption']];
 $telegram->sendMediaGroup($chat_id = $chatid, $media, $parse_mode = 'HTML', $disable_notification = null, $reply_to_message_id = $message_id);}
 
