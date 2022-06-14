@@ -255,7 +255,8 @@ $telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAIBNWKoBJv
 if(isset($update) && $data == "Communications ARMv7"){
 $media = [[
        'type' => 'document', 'media' => 'BQACAgQAAxkBAAICPWKog3P77pwkhLVx0Hi2qGbiLDL6AAJODQACLlNAUTsrAAEFl5g2vSQE', 'caption'=>"TikTok ARMv7 + [TikTok Plugin 2.4.4](https://xfiletolinkpro.herokuapp.com/27443/TikTok_Plugin_2.4.4.apk)", 'parse_mode'=>'markdown'],
-      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICR2KohiIdT0c3I94r2xW6Pq614yivAAIrDQACNSxAUVS8IIV0q625JAQ', 'caption'=>"$facebook", 'parse_mode'=>'HTML']];
+      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICR2KohiIdT0c3I94r2xW6Pq614yivAAIrDQACNSxAUVS8IIV0q625JAQ', 'caption'=>"$facebook", 'parse_mode'=>'HTML'],
+      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICgGKomIRUB4FjHc9_n_yMouV6AAGX5wACPQ0AAjUsQFFhiC22T6XB4CQE', 'caption'=>"Instagram: 239.0.0.14.111-363904704\nAndroid 5: minAPI21(armeabi-v7a)(nodpi)\n<a href='https://www.apkmirror.com/apk/instagram/instagram-instagram/'>Instagram APKMirror Update</a>", 'parse_mode'=>'HTML']];
 $telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = null, $reply_to_message_id = $message_id);}
 
 if(isset($update) && $data == "Communications ARMv8"){
@@ -263,7 +264,7 @@ $media = [[
        'type' => 'document', 'media' => 'BQACAgQAAxkBAAIBpmKoaTGvi0Lu3tKIx3meK8NH_fYcAAIZDQACNSxAUamx7TTqo-3jJAQ', 'caption'=>"$facebook_messanger", 'parse_mode'=>'HTML'],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICOmKogwNVYZSi2C9dqQEjW91tk4-bAAJNDQACLlNAUQ_k384sRixSJAQ', 'caption'=>"TikTok ARMv8 + [TikTok Plugin 2.4.4](https://xfiletolinkpro.herokuapp.com/27443/TikTok_Plugin_2.4.4.apk)", 'parse_mode'=>'markdown'],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICTWKoiCODzEDPTky5cHNNb2pW5WhSAAIuDQACNSxAUYAUEWEGn6tFJAQ', 'caption'=>"$facebook_armv8", 'parse_mode'=>'HTML'],
-      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICLWKofvMurIiy6HE8QK4QWl5aSFjbAAK9CgACqeowUTSx_rLAX9W7JAQ', 'caption'=>'Caption', 'parse_mode'=>'HTML']];
+      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICg2KomhQAAVYRlhpU04PUIylzSl4E-QACPg0AAjUsQFFD2kjQwCt9MSQE', 'caption'=>'Instagram: 239.0.0.14.111-363904658\nAndroid 6: MinAPI23(arm64-v8a)(nodpi)\n<a href='https://www.apkmirror.com/apk/instagram/instagram-instagram/'>Instagram APKMirror Update</a>', 'parse_mode'=>'HTML']];
 $telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = null, $reply_to_message_id = $message_id);}
 
 if(isset($update) && $data == "Communications No Arch"){
