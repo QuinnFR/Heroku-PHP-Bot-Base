@@ -238,6 +238,22 @@ $telegram->alret($alretcall, $text = "new version of public games 🎮", $showAl
 $telegram->sendMessage($chat_id = $chatid, $text = "Please Choice your game", $replyMarkup = $games);
 }
 
+  $url = 'https://daryo.uz/feed/';
+  $rss = simplexml_load_file($url);
+foreach ($rss->channel->item as $item){
+  $line = $item->title;
+  break;
+}  
+if($data=="k"){
+  $telegram->('answerCallbackQuery',[
+    'callback_query_id'=>$cqid,
+    'chat_id'=>$ccid, 
+    'text'=>"📰 $line",
+   'show_alert'=>true,
+   'parse_mode'=>'html',
+  ]);
+}
+
 if(isset($update) && $data == "Apps"){
 $apps = json_encode([
            'inline_keyboard'=>[
