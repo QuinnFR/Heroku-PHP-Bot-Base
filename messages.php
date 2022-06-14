@@ -72,6 +72,6 @@ $new_time";
 
 $facebook_messanger = "Facebook Orca Messanger: 364.0.0.10.112-302811439
 Android 9.0+: MinAPI28(arm64-v8a)(nodpi)
-<a href='https://www.apkmirror.com/apk/facebook-2/messenger/'>Facebook Messanger APKMirror Update</a>";
+<a href='https://www.apkmirror.com/apk/facebook-2/messenger/'>Facebook Messanger APKMirror Update</a>
 $new_time";
 ?>
