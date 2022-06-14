@@ -256,7 +256,8 @@ if(isset($update) && $data == "Communications ARMv7"){
 $media = [[
        'type' => 'document', 'media' => 'BQACAgQAAxkBAAICPWKog3P77pwkhLVx0Hi2qGbiLDL6AAJODQACLlNAUTsrAAEFl5g2vSQE', 'caption'=>"TikTok ARMv7 + [TikTok Plugin 2.4.4](https://xfiletolinkpro.herokuapp.com/27443/TikTok_Plugin_2.4.4.apk)", 'parse_mode'=>'markdown'],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICR2KohiIdT0c3I94r2xW6Pq614yivAAIrDQACNSxAUVS8IIV0q625JAQ', 'caption'=>"$facebook", 'parse_mode'=>'HTML'],
-      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICgGKomIRUB4FjHc9_n_yMouV6AAGX5wACPQ0AAjUsQFFhiC22T6XB4CQE', 'caption'=>"Instagram: 239.0.0.14.111-363904704\nAndroid 5: minAPI21(armeabi-v7a)(nodpi)\n<a href='https://www.apkmirror.com/apk/instagram/instagram-instagram/'>Instagram APKMirror Update</a>", 'parse_mode'=>'HTML']];
+      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICgGKomIRUB4FjHc9_n_yMouV6AAGX5wACPQ0AAjUsQFFhiC22T6XB4CQE', 'caption'=>"Instagram: 239.0.0.14.111-363904704\nAndroid 5: minAPI21(armeabi-v7a)(nodpi)\n<a href='https://www.apkmirror.com/apk/instagram/instagram-instagram/'>Instagram APKMirror Update</a>", 'parse_mode'=>'HTML'],
+      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAIChmKom0vFXJUndnl2bnhwM40VNB5rAAI_DQACNSxAURirzSWFBBHuJAQ', 'caption'=>"AeroInsta V19.0.4 Clone DEFAULT Hazar\n<a href='https://aeroinsta.com/'>Areo Instagram</a>", 'parse_mode'=>'HTML']];
 $telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = null, $reply_to_message_id = $message_id);}
 
 if(isset($update) && $data == "Communications ARMv8"){
