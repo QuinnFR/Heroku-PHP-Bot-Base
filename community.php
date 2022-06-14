@@ -224,7 +224,7 @@ $telegram->sendMessage($chat_id = $chatid, $text = "Please Choice your game", $r
 if(isset($update) && $data == "Apps"){
 $apps = json_encode([
            'inline_keyboard'=>[
-           [["text"=>"Community","callback_data"=>"PUBG"],
+           [["text"=>"Communications 💬","callback_data"=>"Architectural"],
            ["text"=>"Android 11 and less","callback_data"=>"11"]],
            [["text"=>"Share 🗑","url"=>"http://t.me/share/url?url=I'm%20Black%20Widow%20Helper%20of%20VMOS%20Group%0AMade%20by%20Русская%20девушка%20🇷🇺%0ALink:%0Ahttp://t.me/Black_Widow_Robot"],
            ["text"=>"Delete","callback_data"=>"Delete"]]]]);
@@ -233,8 +233,24 @@ $telegram->alret($alretcall, $text = "Apps 📲", $showAlert = false);
 $telegram->sendMessage($chat_id = $chatid, $text = "Please Choice your apps", $replyMarkup = $apps);
 }
 
+if(isset($update) && $data == "Architectural"){
+$arm = json_encode([
+           'inline_keyboard'=>[
+           [["text"=>"ARMv7","callback_data"=>"Communications ARMv7"],
+           ["text"=>"ARMv8","callback_data"=>"Communications ARMv8"]]);
+
+$telegram->alret($alretcall, $text = "ARM Version", $showAlert = false);
+$telegram->sendMessage($chat_id = $chatid, $text = "The ARMv7 architecture is the basis for all current 32-bit ARM Cortex™ processors, including the Cortex-A15 and Cortex-A9 processors. The ARMv8 architecture is the first ARM architecture that includes 64-bit execution, enabling processors based on the architecture to combine 64-bit execution with 32-bit execution.", $replyMarkup = $arm);
+}
+
 if(isset($update) && $data == "PUBG"){
 $telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAIBNWKoBJvmKyAg6a-kXuHm3SF43QnrAAJwEQACt1AYUb0hq-Y-e9i5JAQ", $caption = "PUBG Mobile from the official website\nBy: $firstname\nTime: $new_time", $replyMarkup = $games);}
+
+if(isset($update) && $data == "Communications ARMv7"){
+$media = [[
+       'type' => 'document', 'media' => 'https://t.me/', 'caption'=>'Caption'],
+      ['type' => 'document', 'media' => 'https://t.me/', 'caption'=>'Caption']];
+$telegram->sendMediaGroup($chat_id = $chatid, $media, $disable_notification = null, $reply_to_message_id = $message_id);}
 
 if($text == "/file"){
 $media = [[
