@@ -237,7 +237,7 @@ if(isset($update) && $data == "Architectural"){
 $arm = json_encode([
            'inline_keyboard'=>[
            [["text"=>"ARMv7","callback_data"=>"Communications ARMv7"],
-           ["text"=>"ARMv8","callback_data"=>"Communications ARMv8"]]]);
+           ["text"=>"ARMv8","callback_data"=>"Communications ARMv8"]]]]);
 
 $telegram->alret($alretcall, $text = "ARM Version", $showAlert = false);
 $telegram->sendMessage($chat_id = $chatid, $text = "The ARMv7 architecture is the basis for all current 32-bit ARM Cortex™ processors, including the Cortex-A15 and Cortex-A9 processors. The ARMv8 architecture is the first ARM architecture that includes 64-bit execution, enabling processors based on the architecture to combine 64-bit execution with 32-bit execution.", $replyMarkup = $arm);
