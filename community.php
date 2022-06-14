@@ -211,7 +211,7 @@ $telegram->Mute_New_Chat_Members($chat_id, $new_chat_member_id, $time);}
 $pm = "Please <a href='tg://user?id=$user_id'>$first_name</a> click here";
 
 if($data == "Games" && $type =='private'){
-$os = json_encode([
+$Games = json_encode([
            'inline_keyboard'=>[
            [["text"=>"Android 12 🤖","callback_data"=>"12"],
            ["text"=>"Android 11 and less","callback_data"=>"11"]],
@@ -219,10 +219,10 @@ $os = json_encode([
            ["text"=>"Delete","callback_data"=>"Delete"]]]]);
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
-$telegram->sendMessageInlineKeyboard($chat_id, $text = "Please Choice your os Android System", $replyMarkup = $os);}
+$telegram->sendMessageInlineKeyboard($chat_id, $text = "Please Choice your game", $replyMarkup = $Games);}
 if(isset($update) && $data == "12"){
-$telegram->alret($alretcall, $text = "For Android 12 Only Assistant app 📱", $showAlert = false);
-$telegram->editMessageText($chat_id = $chatid, $message_id = $messageid, $text = $os12, $replyMarkup = $os);}
+$telegram->alret($alretcall, $text = "new version of public games 🎮", $showAlert = false);
+$telegram->editMessageText($chat_id = $chatid, $message_id = $messageid, $text = $os12, $replyMarkup = $Games);}
 
 
 if($text == "/file"){
