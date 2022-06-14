@@ -78,4 +78,8 @@ $facebook ="Facebook: 369.0.0.18.103-313811870
 Android 6: MinAPI23(armeabi-v7a)(nodpi)
 <a href='https://www.apkmirror.com/apk/facebook-2/facebook/'>Facebook APKMirror Update</a>";
 
+$facebook_armv8 ="Facebook: 369.0.0.18.103-313811876
+Android 9: inAPI28(arm64-v8a)(nodpi)
+<a href='https://www.apkmirror.com/apk/facebook-2/facebook/'>Facebook APKMirror Update</a>";
+
 ?>
