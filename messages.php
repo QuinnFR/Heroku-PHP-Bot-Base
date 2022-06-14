@@ -66,7 +66,7 @@ Features:
                  2. Gapps
                  3. Free no need to pay";
 $whatsapp ="Whatsapp: 2.22.13.70-221370000
-MinAPI 16
+Android: Android 4.1+
 Arch (arm64-v8a,armeabi-v7a,x86,x86_64)(nodpi)
 <a href='https://www.apkmirror.com/apk/whatsapp-inc/whatsapp/'>Whatsapp APKMirror Update</a>";
 ?>
