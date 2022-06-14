@@ -200,7 +200,9 @@ $telegram->unpin($chat_id);
 sleep(2);
 $wl = $telegram->sendMessage($chat_id, $text = "Well, since you've joined, let's get started 🙂", $replyMarkup = $null)->result->message_id;
 sleep(3);
-$pin = $telegram->editMessageText($chat_id, $message_id = $wl, $text = $welcome_first, $replyMarkup = $welcome_key)->result->message_id;
+$welcome_edit = $telegram->editMessageText($chat_id, $message_id = $wl, $text = $welcome_first, $replyMarkup = $welcome_key)->result->message_id;
+sleep(2);
+$pin = $telegram->editMessageText($chat_id, $message_id = $wl, $text = $welcome_join, $replyMarkup = $welcome_key)->result->message_id;
 $telegram->pin($chat_id, $message_id = $pin);
 }
 
