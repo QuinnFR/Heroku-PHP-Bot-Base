@@ -278,10 +278,10 @@ $telegram->editMessageText($chat_id = $chatid, $message_id = $messageid, $text =
 if(isset($update) && $data == "Strategy"){
 $pubg = json_encode([
            'inline_keyboard'=>[
-           [['text'=>'My Group 💬','callback_data'=>'RSS_PUBG']]]]);
-$url = 'https://www.apkmirror.com/apk/level-infinite/pubgmobile/feed/';
-  $rss = simplexml_load_file($url);
-foreach ($rss->channel->item as $item){
+           [['text'=>'Check PUBG','callback_data'=>'RSS_PUBG']]]]);
+$url_PUBG = 'https://www.apkmirror.com/apk/level-infinite/pubgmobile/feed/';
+  $rss_PUBG = simplexml_load_file($url_PUBG);
+foreach ($rss_PUBG->channel->item as $item){
   $PUBG_RSS = $item->title;
   break;}  
 $telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAIBNWKoBJvmKyAg6a-kXuHm3SF43QnrAAJwEQACt1AYUb0hq-Y-e9i5JAQ", $caption = "PUBG Mobile from the official website\nBy: $firstname\nTime: $new_time", $replyMarkup = $pubg);
