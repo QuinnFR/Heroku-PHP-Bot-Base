@@ -282,7 +282,7 @@ $pubg = json_encode([
 
 $telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAIBNWKoBJvmKyAg6a-kXuHm3SF43QnrAAJwEQACt1AYUb0hq-Y-e9i5JAQ", $caption = "PUBG Mobile from the official website\nBy: $firstname\nTime: $new_time", $replyMarkup = $pubg);
 $telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAIEZmKpGHJhtqjpo0s-FvYNjvux9T5_AAL_DwACG6BJUVwO6MIaypcdJAQ", $caption = "Clash Of Clans: 14.555.11-1473\nAndroid +5: (arm64-v8a,armeabi-v7a)(nodpi)\nBy: $firstname\nTime: $new_time", $replyMarkup = $games);}
-$url = 'https://www.apkmirror.com/apk/facebook-2/feed';
+$url = 'https://www.apkmirror.com/apk/supercell/clash-of-clans/feed/';
   $rss = simplexml_load_file($url);
 foreach ($rss->channel->item as $item){
   $PUBGRSS = $item->title;
