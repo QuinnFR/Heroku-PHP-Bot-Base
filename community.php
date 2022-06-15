@@ -270,17 +270,17 @@ $telegram->editMessageText($chat_id = $chatid, $message_id = $messageid, $text =
 if(isset($update) && $data == "Strategy"){
 $pubg = json_encode([
            'inline_keyboard'=>[
-           [['text'=>'Check PUBG','callback_data'=>'RSS_PUBG']]]]);
-$url = 'https://www.apkmirror.com/apk/level-infinite/pubgmobile/feed/';
-  $rss = simplexml_load_file($url);
-foreach ($rss->channel->item as $item){
-  $PUBG_RSS = $item->title;
-  break;}  
+           [['text'=>'Check PUBG','callback_data'=>'RSSPUBG']]]]);
+
 $telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAIBNWKoBJvmKyAg6a-kXuHm3SF43QnrAAJwEQACt1AYUb0hq-Y-e9i5JAQ", $caption = "PUBG Mobile from the official website\nBy: $firstname\nTime: $new_time", $replyMarkup = $pubg);
 $telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAIEZmKpGHJhtqjpo0s-FvYNjvux9T5_AAL_DwACG6BJUVwO6MIaypcdJAQ", $caption = "Clash Of Clans: 14.555.11-1473\nAndroid +5: (arm64-v8a,armeabi-v7a)(nodpi)\nBy: $firstname\nTime: $new_time", $replyMarkup = $games);}
-
-if($data=="RSS_PUBG"){
-  $telegram->alret($alretcall, $text = $PUBG_RSS, $showAlert = true);
+$url = 'https://www.apkmirror.com/apk/facebook-2/feed';
+  $rss = simplexml_load_file($url);
+foreach ($rss->channel->item as $item){
+  $PUBGRSS = $item->title;
+  break;}  
+if($data=="RSSPUBG"){
+  $telegram->alret($alretcall, $text = $PUBGRSS, $showAlert = true);
 }
 
 if(isset($update) && $data == "Communications ARMv7"){
