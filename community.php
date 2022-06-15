@@ -238,7 +238,15 @@ $telegram->alret($alretcall, $text = "new version of public games 🎮", $showAl
 $telegram->sendMessage($chat_id = $chatid, $text = "Please Choice your game", $replyMarkup = $games);
 }
 
- 
+  $url = 'https://www.apkmirror.com/apk/facebook-2/feed/';
+  $rss = simplexml_load_file($url);
+foreach ($rss->channel->item as $item){
+  $line = $item->title;
+  break;
+}  
+if($data=="k"){
+  $telegram->alret($alretcall, $text = $line, $showAlert = true);
+}
 
 if(isset($update) && $data == "Apps"){
 $apps = json_encode([
