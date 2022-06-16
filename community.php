@@ -194,7 +194,7 @@ $telegram->sendMessage($chat_id, $text = $welcome_first, $replyMarkup = $join_ke
 return false;}
 
 if($text == '/s' && $type == 'private'){
-$telegram->sendMessage($chat_id = '1987049771', $text = "$new_time", $replyMarkup = null);
+$telegram->sendMessage($chat_id = '-1001299544120', $text = "Hello $new_time", $replyMarkup = null);
 }
 
 if($message->text && $type == 'private' && in_array($from_id,$banned)){
