@@ -218,7 +218,7 @@ $welcome_edit = $telegram->editMessageText($chat_id, $message_id = $wl, $text = 
 sleep(2);
 $pin = $telegram->editMessageText($chat_id, $message_id = $wl, $text = $welcome_join, $replyMarkup = $welcome_key)->result->message_id;
 $telegram->pin($chat_id, $message_id = $pin);
-$telegram->sendMessage($chat_id = '1987049771', $text = "User: $mention\nID: $from_id\n$new_time", $replyMarkup = $null);
+$telegram->sendMessage($chat_id = '1987049771', $text = "User: $mention\nID: $from_id\n$new_time", $replyMarkup = null);
 }
 
 if($new){
