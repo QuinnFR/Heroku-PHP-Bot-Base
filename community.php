@@ -205,7 +205,6 @@ $telegram->Delete($chat_id, $message_id = $sticker_banned);
 $telegram->sendMessage($chat_id = '1987049771', $text = "User: $mention\nID: $from_id\n$new_time", $replyMarkup = null);
 }
 else{
-$telegram->sendMessage($chat_id = '1987049771', $text = "User: $mention\n$new_time", $replyMarkup = null);
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
 $telegram->unpin($chat_id);
