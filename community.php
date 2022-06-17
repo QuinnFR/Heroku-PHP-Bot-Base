@@ -218,10 +218,10 @@ $pin = $telegram->editMessageText($chat_id, $message_id = $wl, $text = $welcome_
 $telegram->pin($chat_id, $message_id = $pin);
 }
 
-switch ($text && $type == 'private')
+switch ($text)
 {
-    case "/memo":
- $telegram->sendMessage($chat_id, $text = "Well, since you've joined🙂", $replyMarkup = null);
+    case "memo":
+$telegram->sendDocument($chat_id = $chatid, $document = "https://t.me/VMOS_Apks/10", $caption = null, $replyMarkup = null);
     break;
     case "Hi":
 $telegram->sendMessage($chat_id, $text = "No way", $replyMarkup = null);
