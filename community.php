@@ -218,7 +218,7 @@ $pin = $telegram->editMessageText($chat_id, $message_id = $wl, $text = $welcome_
 $telegram->pin($chat_id, $message_id = $pin);
 }
 
-switch ($text)
+switch ($text && $type == 'private')
 {
     case "/memo":
  $telegram->sendMessage($chat_id, $text = "Well, since you've joined🙂", $replyMarkup = null);
