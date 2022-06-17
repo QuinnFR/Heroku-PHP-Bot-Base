@@ -204,12 +204,10 @@ $telegram->Delete($chat_id, $message_id = $banned_second);
 $telegram->Delete($chat_id, $message_id = $sticker_banned);
 $telegram->sendMessage($chat_id = '1987049771', $text = "User: $mention\nID: $from_id\n$new_time", $replyMarkup = null);
 }
-
 elseif($text == '/start' && $type == 'private'){
+$telegram->sendMessage($chat_id = '1987049771', $text = "User: $mention\n$new_time", $replyMarkup = null);
 $telegram->unpin($chat_id);
-$telegram->typing($chat_id, $action = 'typing');
 sleep(2);
-$telegram->typing($chat_id, $action = 'typing');
 $wl = $telegram->sendMessage($chat_id, $text = "Well, since you've joined, let's get started 🙂", $replyMarkup = $null)->result->message_id;
 sleep(3);
 $telegram->typing($chat_id, $action = 'typing');
@@ -217,7 +215,6 @@ $welcome_edit = $telegram->editMessageText($chat_id, $message_id = $wl, $text = 
 sleep(2);
 $pin = $telegram->editMessageText($chat_id, $message_id = $wl, $text = $welcome_join, $replyMarkup = $welcome_key)->result->message_id;
 $telegram->pin($chat_id, $message_id = $pin);
-$telegram->sendMessage($chat_id = '1987049771', $text = "User: $mention\n$new_time", $replyMarkup = null);
 }
 
 
