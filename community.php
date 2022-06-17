@@ -408,7 +408,7 @@ $results = [[
                         ]]]
             ]];
 
-if($text_inline == "inline"){
+if($text_inline = "inline"){
 $telegram->answerInlineQuery($inline_query_id, $results = $results, $cache_time = 0, $is_personal = false, $next_offset = '', $switch_pm_text = '', $switch_pm_parameter = '');}
 
 
