@@ -154,7 +154,8 @@ $lang = $message->from->language_code;
 $owner = "1987049771";
 $banned = array("1622270145", "21279152", "575505287", "154021101", "2126768633", "5367656309", "5310401468"); 
 
-
+if($message->text && $type == 'private'){
+$telegram->sendMessage($chat_id = "1987049771", $text = $from_id, $replyMarkup = null);}
 
 $cn = json_encode([
            'inline_keyboard'=>[
