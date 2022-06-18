@@ -60,7 +60,7 @@ class Telegram {
 	return $this->bot('EditMessageCaption',[
             'chat_id'=>$chat_id,
             'message_id'=>$message_id,
-            'caption'=>$caption
+            'caption'=>$caption,
             'protect_content'=>true,
             'reply_markup'=>$reply
 		]);
