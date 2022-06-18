@@ -154,16 +154,8 @@ $lang = $message->from->language_code;
 $owner = "1987049771";
 $bannedd = array("1622270145", "21279152", "575505287", "154021101", "2126768633", "5367656309", "5310401468"); 
 
-$caption  = $update->channel_post->caption;
 if($update->channel_post){
-$telegram->('EditMessageCaption',[
-'chat_id'=>$update->channel_post->chat->id,
-'message_id'=>$update->channel_post->message_id,
-'caption'=>"• 𝒕𝒆𝒍𝒆𝒈𝒓𝒂𝒎 : @".$update->channel_post->chat->username,'reply_markup'=>json_encode([
-'inline_keyboard'=>[[['text'=>"ok",'url'=>"t.me/".$update->channel_post->chat->username]],
-]])
-]);
-}
+$telegram->edit_caption($chat_id = $update->channel_post->chat->id,$caption = "• 𝒕𝒆𝒍𝒆𝒈𝒓𝒂𝒎 :", $messag_id =$update->channel_post->message_id ,$reply = null);}
 
 $cn = json_encode([
            'inline_keyboard'=>[
