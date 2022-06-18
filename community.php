@@ -152,8 +152,18 @@ $url_count = json_decode(file_get_contents("https://api.telegram.org/bot$token/g
 $count_members = $url_count ['result'];
 $lang = $message->from->language_code;
 $owner = "1987049771";
-$banned = array("1622270145", "21279152", "575505287", "154021101", "2126768633", "5367656309", "5310401468"); 
+$bannedd = array("1622270145", "21279152", "575505287", "154021101", "2126768633", "5367656309", "5310401468"); 
 
+$caption  = $update->channel_post->caption;
+if($update->channel_post){
+$telegram->('EditMessageCaption',[
+'chat_id'=>$update->channel_post->chat->id,
+'message_id'=>$update->channel_post->message_id,
+'caption'=>"• 𝒕𝒆𝒍𝒆𝒈𝒓𝒂𝒎 : @".$update->channel_post->chat->username,'reply_markup'=>json_encode([
+'inline_keyboard'=>[[['text'=>"ok",'url'=>"t.me/".$update->channel_post->chat->username]],
+]])
+]);
+}
 
 $cn = json_encode([
            'inline_keyboard'=>[
