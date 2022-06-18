@@ -155,10 +155,12 @@ $owner = "1987049771";
 $bannedd = array("1622270145", "21279152", "575505287", "154021101", "2126768633", "5367656309", "5310401468"); 
 $banned = array("16222765545", "65662627"); 
 
-
 $caption_cn = $update->channel_post->caption;
 $id_cn = $update->channel_post->chat->id;
 $message_id_cn = $update->channel_post->message_id;
+
+if($update->channel_post){
+$telegram->edit_caption($chat_id = $id_cn, $caption = $caption_cn, $messag_id =$message_id_cn ,$reply = null);}
 
 
 $cn = json_encode([
