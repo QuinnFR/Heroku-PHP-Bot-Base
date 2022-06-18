@@ -28,8 +28,6 @@ if($update->channel_post){
 bot('EditMessageCaption',[
 'chat_id'=>$update->channel_post->chat->id,
 'message_id'=>$update->channel_post->message_id,
-'caption'=>"• 𝒕𝒆𝒍𝒆𝒈𝒓𝒂𝒎 : @".$update->channel_post->chat->username,'reply_markup'=>json_encode([
-'inline_keyboard'=>[[['text'=>"ok",'url'=>"t.me/".$update->channel_post->chat->username]],
-]])
+'caption'=>"• 𝒕𝒆𝒍𝒆𝒈𝒓𝒂𝒎 ',
 ]);
 }
