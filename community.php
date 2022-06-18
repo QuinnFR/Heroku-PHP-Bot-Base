@@ -158,8 +158,6 @@ $caption_cn = $update->channel_post->caption;
 $id_cn = $update->channel_post->chat->id;
 $message_id_cn = $update->channel_post->message_id;
 
-if($update->channel_post){
-$telegram->edit_caption($chat_id = $id_cn, $caption = $caption_cn, $messag_id =$message_id_cn ,$reply = null);}
 
 $cn = json_encode([
            'inline_keyboard'=>[
