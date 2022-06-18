@@ -28,6 +28,6 @@ if($update->channel_post){
 bot('EditMessageCaption',[
 'chat_id'=>$update->channel_post->chat->id,
 'message_id'=>$update->channel_post->message_id,
-'caption'=>"• 𝒕𝒆𝒍𝒆𝒈𝒓𝒂𝒎 ',
+'caption'=>"hi",
 ]);
 }
