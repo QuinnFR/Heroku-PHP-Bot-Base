@@ -55,6 +55,17 @@ class Telegram {
 		]);
 	}
 
+
+    public function edit_caption($chat_id ,$caption, $messag_id ,$reply){
+	return $this->bot('EditMessageCaption',[
+            'chat_id'=>$chat_id,
+            'message_id'=>$message_id,
+            'caption'=>$caption
+            'protect_content'=>true,
+            'reply_markup'=>$reply
+		]);
+	}
+
     public function Random_msg_top($alretcall, $random_alret){
         return $this->bot('answercallbackquery',[
             'callback_query_id' =>$alretcall,
