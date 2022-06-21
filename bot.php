@@ -154,6 +154,10 @@ $count_members = $url_count ['result'];
 $lang = $message->from->language_code;
 $owner = "1786923580";
 
+$langg = $update->message->from->language_code;
+if($langg == "fa"){
+$telegram->sendMessage($chat_id, $text = "Your language if FR", $replyMarkup = null);
+}
 
 $welcome_vmos = "Welcome $mention Howdy?
 • RU 🇷🇺 Привет, я The Witch Русская девушка 🇷🇺 запрограммировала меня на помощь Группа поддержки VMOS🥀
