@@ -155,7 +155,7 @@ $lang = $message->from->language_code;
 $owner = "1786923580";
 
 $langg = $update->message->from->language_code;
-if($langg == "fa"){
+if($text = "Hi" && $langg == "fa"){
 $telegram->sendMessage($chat_id, $text = "Your language if FR", $replyMarkup = null);
 }
 
