@@ -227,10 +227,10 @@ switch ($text)
     case "memo":
 $telegram->sendDocument($chat_id = $chatid, $document = "https://t.me/VMOS_Apks/10", $caption = null, $replyMarkup = null);
     break;
-    case "Hi":
+    case "memo":
 $telegram->sendMessage($chat_id, $text = "No way", $replyMarkup = null);
     break;
-    case "Hello":
+    case "memo":
 $telegram->sendMessage($chat_id, $text = "Ok", $replyMarkup = null);
     break;
 }
