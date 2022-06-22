@@ -397,6 +397,6 @@ if($text == '/key'){
 $telegram->sendMessageInlineKeyboard($chat_id, $text = "$day $clock $new_time", $replyMarkup = null);}
 
 if(preg_match("/(TikTok|تيك توك|تيكتوك)/", $text) && $type =='private'){
-$telegram->typing($chat_id, $action = 'document');}
+$telegram->typing($chat_id, $action = 'document');
 $telegram->sendMessage($chat_id, $text = "Hello", $replyMarkup = null);}
 ?>
