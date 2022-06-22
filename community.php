@@ -407,7 +407,7 @@ sleep(2);
 $telegram->sendMessage($chat_id, $text = "By this you can download the mod version of TikTok :)", $replyMarkup = $tiktok);}
 
 if(isset($update) && $data == "Info CPU"){
-$telegram->sendMessage($chat_id, $text = "Ok", $replyMarkup = null);}
+$telegram->sendMessage($chat_id =$chatid, $text = "Ok", $replyMarkup = null);}
 
 
 
