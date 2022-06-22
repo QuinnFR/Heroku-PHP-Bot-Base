@@ -109,7 +109,8 @@ class Telegram {
              'photo'=>$photo,
              'parse_mode'=>'HTML',
              'protect_content'=>true,
-             'caption'=>$caption]);}
+             'caption'=>$caption,
+             'reply_markup' =>$replyMarkup]);}
 
     public function sendPhotoViaID($chat_id, $photo, $caption = null){
            return $this->bot('sendphoto',[
