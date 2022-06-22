@@ -396,7 +396,19 @@ if($text == "/check"){
 if($text == '/key'){
 $telegram->sendMessageInlineKeyboard($chat_id, $text = "$day $clock $new_time", $replyMarkup = null);}
 
-if(preg_match("/(TikTok|تيك توك|تيكتوك)/", $text) && $type =='private'){
-$telegram->typing($chat_id, $action = 'document');
-$telegram->sendMessage($chat_id, $text = "Hello", $replyMarkup = null);}
+$tiktok = json_encode([
+           'inline_keyboard'=>[
+           [["text"=>"CPU Info ℹ️","callback_data"=>"Info CPU"],
+           ["text"=>"APKs","callback_data"=>"Architectural"]]]]);
+
+if(preg_match("/(TikTok|tiktok|TIKTOK)/", $text) && $type =='private'){
+$telegram->typing($chat_id, $action = 'typing');
+sleep(2);
+$telegram->sendMessage($chat_id, $text = "By this you can download the mod version of TikTok :)", $replyMarkup = $tiktok);}
+
+if(isset($update) && $data == "Info CPU"){
+$telegram->sendMessage($chat_id, $text = "Ok", $replyMarkup = null);}
+
+
+
 ?>
