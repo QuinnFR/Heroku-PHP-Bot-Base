@@ -396,7 +396,7 @@ if($text == "/check"){
 if($text == '/key'){
 $telegram->sendMessageInlineKeyboard($chat_id, $text = "$day $clock $new_time", $replyMarkup = null);}
 
-$tiktok = json_encode([
+$cpu_info = json_encode([
            'inline_keyboard'=>[
            [["text"=>"CPU Info ℹ️","callback_data"=>"Info CPU"],
            ["text"=>"APKs","callback_data"=>"Architectural"]]]]);
@@ -404,11 +404,15 @@ $tiktok = json_encode([
 if(preg_match("/(TikTok|tiktok|TIKTOK)/", $text) && $type =='private'){
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
-$telegram->sendMessage($chat_id, $text = "By this you can download the mod version of TikTok :)", $replyMarkup = $tiktok);}
+$dell = $telegram->sendMessage($chat_id, $text = "By this you can download the mod version of TikTok :)", $replyMarkup = $$cpu_info)->result->message_id;}
 
 if(isset($update) && $data == "Info CPU"){
-$telegram->sendMessage($chat_id =$chatid, $text = "Ok", $replyMarkup = null);}
+$telegram->Delete($chat_id = $chatid, $message_id = $dell);
 
+$telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAIG-2KzqcMriS2YLbJ0nVKN0hCpQTPVAAI1CwACCj7hUZbMdzITxrxbKQQ", $caption = "To know if your phone support Armv8a or Armv7a you need to download this app and check the photos", $replyMarkup = null);
 
+$telegram->sendPhoto($chat_id = $chatid, $photo = "AgACAgQAAxkBAAIG_2Kzqr6A8ik7g2BJ5PWWvHEoO9M-AALfuzEbFmyhUUieXS2MM-VKAQADAgADeQADKQQ", $caption = "Click on <U>CPU</U>\nYou will see like this means your phone support Armv8a 64-bit", $replyMarkup = null);
+
+$telegram->sendPhoto($chat_id = $chatid, $photo = "AgACAgQAAxkBAAIG_mKzqmSPhIBOXuiPzvncCdJjr5BGAALeuzEbFmyhUQAB9bP942HoIwEAAwIAA3kAAykE", $caption = "Click on <U>CPU</U>\nYou will see like this means your phone support Armv7a 32-bit", $replyMarkup = $cpu_info);}
 
 ?>
