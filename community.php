@@ -238,9 +238,6 @@ $telegram->sendMessage($chat_id, $text = "Ok", $replyMarkup = null);
 if($new){
 $telegram->Mute_New_Chat_Members($chat_id, $new_chat_member_id, $time);}
 
-if($new && in_array($from_id,$banned)){
-Banned($chat_id, $user_id, $time = null);}
-
 $pm = "Please <a href='tg://user?id=$user_id'>$first_name</a> click here";
 
 if(isset($update) && $data == "Games"){
