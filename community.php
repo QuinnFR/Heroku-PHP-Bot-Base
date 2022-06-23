@@ -404,7 +404,7 @@ $cpu_info = json_encode([
 if(preg_match("/(TikTok|tiktok|TIKTOK)/", $text) && $type =='private'){
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
-$dell = $telegram->sendMessage($chat_id, $text = "By this you can download the mod version of TikTok :)", $replyMarkup = $$cpu_info)->result->message_id;}
+$dell = $telegram->sendMessage($chat_id, $text = "By this you can download the mod version of TikTok :)", $replyMarkup = $cpu_info)->result->message_id;}
 
 if(isset($update) && $data == "Info CPU"){
 $telegram->Delete($chat_id = $chatid, $message_id = $dell);
