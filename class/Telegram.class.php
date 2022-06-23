@@ -184,6 +184,15 @@ public function sendsticker($chat_id, $sticker, $replyMarkup){
               'can_add_web_page_previews' => false
                                   ]);}
 
+   public function Banned($chat_id, $user_id, $time){
+           return $this->bot('banChatMember', [
+              'chat_id' => $chat_id,
+              'user_id' => $user_id,
+              'until_date' => $time,
+              'revoke_messages' => true
+                                  ]);}
+
+
    public function Delete($chat_id, $message_id){
           return $this->bot('deleteMessage', [
               'chat_id'=> $chat_id,
