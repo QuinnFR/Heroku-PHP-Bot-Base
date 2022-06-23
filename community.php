@@ -153,7 +153,7 @@ $count_members = $url_count ['result'];
 $lang = $message->from->language_code;
 $owner = "1987049771";
 $bannedd = array("1622270145", "21279152", "575505287", "154021101", "2126768633", "5367656309", "5310401468"); 
-$banned = array("16222765545", "65662627"); 
+$banned = array("989174330", "65662627"); 
 
 $caption_cn = $update->channel_post->caption;
 $id_cn = $update->channel_post->chat->id;
@@ -237,6 +237,9 @@ $telegram->sendMessage($chat_id, $text = "Ok", $replyMarkup = null);
 
 if($new){
 $telegram->Mute_New_Chat_Members($chat_id, $new_chat_member_id, $time);}
+
+if($new && in_array($from_id,$banned)){
+Banned($chat_id, $user_id, $time = null);}
 
 $pm = "Please <a href='tg://user?id=$user_id'>$first_name</a> click here";
 
