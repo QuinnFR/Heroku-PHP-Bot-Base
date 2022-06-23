@@ -88,6 +88,7 @@ class Telegram {
             'text'=>$text,
             'protect_content'=>true,
             'parse_mode'=> 'HTML',
+            'disable_web_page_preview'=>'flase',
             'reply_markup'=>$replyMarkup]);}
       
     public function sendMessageLite($chat_id, $text){
@@ -101,6 +102,7 @@ class Telegram {
             'text'=>$text,
             'protect_content'=>true,
             'parse_mode'=>'HTML',
+            'disable_web_page_preview'=>'flase',
             'reply_markup' =>$replyMarkup]);}
 
     public function sendPhoto($chat_id, $photo, $caption = null){
