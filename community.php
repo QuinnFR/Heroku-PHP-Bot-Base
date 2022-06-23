@@ -401,18 +401,23 @@ $cpu_info = json_encode([
            [["text"=>"CPU Info ℹ️","callback_data"=>"Info CPU"],
            ["text"=>"APKs","callback_data"=>"Architectural"]]]]);
 
+
 if(preg_match("/(TikTok|tiktok|TIKTOK)/", $text) && $type =='private'){
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
-$dell = $telegram->sendMessage($chat_id, $text = "By this you can download the mod version of TikTok :)", $replyMarkup = $cpu_info)->result->message_id;}
+$telegram->sendMessage($chat_id, $text = "By this you can download the mod version of TikTok :)", $replyMarkup = $$cpu_info);}
 
 if(isset($update) && $data == "Info CPU"){
-$telegram->Delete($chat_id = $chatid, $message_id = $dell);
 
-$telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAIG-2KzqcMriS2YLbJ0nVKN0hCpQTPVAAI1CwACCj7hUZbMdzITxrxbKQQ", $caption = "To know if your phone support Armv8a or Armv7a you need to download this app and check the photos", $replyMarkup = null);
+$aida64 $telegram->sendDocument($chat_id = $chatid, $document = "BQACAgQAAxkBAAIG-2KzqcMriS2YLbJ0nVKN0hCpQTPVAAI1CwACCj7hUZbMdzITxrxbKQQ", $caption = "To know if your phone support Armv8a or Armv7a you need to download this app and check the photos", $replyMarkup = null)->result->message_id;
 
-$telegram->sendPhoto($chat_id = $chatid, $photo = "AgACAgQAAxkBAAIG_2Kzqr6A8ik7g2BJ5PWWvHEoO9M-AALfuzEbFmyhUUieXS2MM-VKAQADAgADeQADKQQ", $caption = "Click on <U>CPU</U>\nYou will see like this means your phone support Armv8a 64-bit", $replyMarkup = null);
+$pic1 = $telegram->sendPhoto($chat_id = $chatid, $photo = "AgACAgQAAxkBAAIG_2Kzqr6A8ik7g2BJ5PWWvHEoO9M-AALfuzEbFmyhUUieXS2MM-VKAQADAgADeQADKQQ", $caption = "Click on <U>CPU</U>\nYou will see like this means your phone support Armv8a 64-bit", $replyMarkup = null)->result->message_id;
 
-$telegram->sendPhoto($chat_id = $chatid, $photo = "AgACAgQAAxkBAAIG_mKzqmSPhIBOXuiPzvncCdJjr5BGAALeuzEbFmyhUQAB9bP942HoIwEAAwIAA3kAAykE", $caption = "Click on <U>CPU</U>\nYou will see like this means your phone support Armv7a 32-bit", $replyMarkup = $cpu_info);}
+$pic2 = $telegram->sendPhoto($chat_id = $chatid, $photo = "AgACAgQAAxkBAAIG_mKzqmSPhIBOXuiPzvncCdJjr5BGAALeuzEbFmyhUQAB9bP942HoIwEAAwIAA3kAAykE", $caption = "Click on <U>CPU</U>\nYou will see like this means your phone support Armv7a 32-bit", $replyMarkup = $cpu_info)->result->message_id;
+sleep(6);
+$telegram->Delete($chat_id, $message_id = $aida64);
+$telegram->Delete($chat_id, $message_id = $pic1);
+$telegram->Delete($chat_id, $message_id = $pic2);
 
+}
 ?>
