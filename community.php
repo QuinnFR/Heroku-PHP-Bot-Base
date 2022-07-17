@@ -421,4 +421,9 @@ if(isset($update) && $data == "TikTok"){
 $telegram->alret($alretcall, $text = "By this button you can know information ℹ️ about your arch if support 64-bit or 32-bit", $showAlert = true);
 }
 
+if(isset($update) && $data == "estry"){
+$telegram->alret($alretcall, $text = "new version of public games 🎮", $showAlert = false);
+$telegram->sendMessage($chat_id = $chatid, $text = "Please Choice your game", $replyMarkup = $games);
+}
+
 ?>
