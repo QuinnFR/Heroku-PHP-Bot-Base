@@ -423,7 +423,7 @@ $telegram->alret($alretcall, $text = "By this button you can know information â„
 
 if(isset($update) && $data == "estry"){
 $telegram->alret($alretcall, $text = "new version of public games ðŸŽ®", $showAlert = false);
-$telegram->editMessageText($chat_id = $chatid, $message_id, $text = "Hello", $replyMarkup = null);
+$telegram->editMessageText($chat_id = $chatid, $message_id = "9", $text = "Hello", $replyMarkup = null);
 }
 
 ?>
