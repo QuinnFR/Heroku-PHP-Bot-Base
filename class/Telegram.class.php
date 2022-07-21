@@ -277,8 +277,70 @@ public function sendsticker($chat_id, $sticker, $replyMarkup){
         return this->bot('getChatMember', [
             'chat_id' => $chat_id,
             'user_id' => $user_id]); }
-    
-
 }
+
+
+	// Web App Inline Keyboard
+	
+	public function buildWebAppInlineKeyboardButton($text, $web_app = "") {
+		$replyMarkup = array(
+			'text' => $text
+		);
+        if ($web_app != "") {
+			$replyMarkup['web_app'] = $web_app;
+		}
+		return $replyMarkup;
+	}	
+
+	/// Create a KeyboardButton
+	/** This object represents one button of an inline keyboard. You must use exactly one of the optional fields.
+	 * \param $text String; Array of button rows, each represented by an Array of Strings
+	 * \param $request_contact Boolean Optional. If True, the user's phone number will be sent as a contact when the button is pressed. Available in private chats only
+	 * \param $request_location Boolean Optional. If True, the user's current location will be sent when the button is pressed. Available in private chats only
+	 * \return the requested button as Array
+	 */
+	public function buildKeyboardButton($text, $request_contact = false, $request_location = false) {
+		$replyMarkup = array(
+			'text' => $text,
+			'request_contact' => $request_contact,
+			'request_location' => $request_location
+		);
+		return $replyMarkup;
+	}
+
+	/// Hide a custom keyboard
+	/** Upon receiving a message with this object, Telegram clients will hide the current custom keyboard and display the default letter-keyboard. By default, custom keyboards are displayed until a new keyboard is sent by a bot. An exception is made for one-time keyboards that are hidden immediately after the user presses a button.
+	 * \param $selective Boolean Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot's message is a reply (has reply_to_message_id), sender of the original message.
+	 * \return the requested keyboard hide as Array
+	 */
+	public function buildKeyBoardHide($selective = true) {
+		$replyMarkup = array(
+			'remove_keyboard' => true,
+			'selective' => $selective
+		);
+		$encodedMarkup = json_encode($replyMarkup, true);
+		return $encodedMarkup;
+	}
+
+	/// Set a custom keyboard
+	/** This object represents a custom keyboard with reply options
+	 * \param $options Array of Array of String; Array of button rows, each represented by an Array of Strings
+	 * \param $onetime Boolean Requests clients to hide the keyboard as soon as it's been used. Defaults to false.
+	 * \param $resize Boolean Requests clients to resize the keyboard vertically for optimal fit (e.g., make the keyboard smaller if there are just two rows of buttons). Defaults to false, in which case the custom keyboard is always of the same height as the app's standard keyboard.
+	 * \param $selective Boolean Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the text of the Message object; 2) if the bot's message is a reply (has reply_to_message_id), sender of the original message.
+	 * \return the requested keyboard as Json
+	 */
+	public function buildKeyBoard(array $options, $onetime = false, $resize = false, $selective = true) {
+		$replyMarkup = array(
+			'keyboard' => $options,
+			'one_time_keyboard' => $onetime,
+			'resize_keyboard' => $resize,
+			'selective' => $selective
+		);
+		$encodedMarkup = json_encode($replyMarkup, true);
+		return $encodedMarkup;
+	}
+
+
 
 ?>
