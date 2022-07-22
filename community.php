@@ -446,7 +446,7 @@ if(strtolower($text) == 'test'){
 if($text =="/startt"){
 $o = json_encode([
            'inline_keyboard'=>[
-           [["text"=>"CPU Info ℹ️","callback_data"=>"Info CPU"],
+           [["text"=>"CPU Info ℹ️","web_app"=>"Info CPU"],
            ["text"=>"APKs","callback_data"=>"Architectural"]]]]);
 
 $telegram->sendMessage($chat_id = $chat_id, $text = "Please Choice your game", $replyMarkup = $o);
