@@ -42,9 +42,8 @@ if(strtolower($text) == 'test'){
 
 	$option = array( 
 		array(
-			$telegram->buildWebAppInlineKeyboardButton("♻️ Test Web", $web_app),
-                        $telegram->buildWebAppInlineKeyboardButton("♻️ Test Web 2", $web_app),
-		)
+		$telegram->buildKeyboardButton("free original books"), $telegram->buildKeyboardButton("download youtube videos")),
+)
 	);
 
 	$keyb = $telegram->buildKeyBoard($option);
