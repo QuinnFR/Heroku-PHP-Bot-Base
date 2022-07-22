@@ -444,7 +444,7 @@ if(strtolower($text) == 'test'){
 }
 
 
-if(isset($update) && $data == "test"){
+if($text == "test"){
 $gamess = json_encode([
            'inline_keyboard'=>[
            [["text"=>"Strategy Games"],
