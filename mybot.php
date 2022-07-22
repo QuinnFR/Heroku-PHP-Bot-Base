@@ -38,15 +38,13 @@ $msgType = $telegram->getUpdateType();
 
 
 if(strtolower($text) == 'test'){
-  $web_app = (object)['url' => "https://medico.mibmedicalism.com"];
-$web_app2 = (object)['url' => "https://www.google.com"];
+      $web_app = (object)['url' => "https://www.google.com"];
 
 	$option = array( 
 		array(
-			$telegram->buildWebAppInlineKeyboardButton("🔎  medicalism site ♻️", $web_app),$telegram->buildWebAppInlineKeyboardButton("🔎  medicalism site ♻️", $web_app2),
+			$telegram->buildWebAppInlineKeyboardButton("♻️ باز کردن صفحه!", $web_app),
 		)
 	);
-
 	$keyb = $telegram->buildKeyBoard($option);
 
 	$finishText = 'Show Me!';
