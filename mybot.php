@@ -46,7 +46,7 @@ if(strtolower($text) == 'test'){
 		)
 	);
 
-	$keyb = $telegram->buildInlineKeyBoardButton($option);
+	$keyb = $telegram->buildInlineKeyBoard($option);
 
 	$finishText = 'Show Me!';
 
