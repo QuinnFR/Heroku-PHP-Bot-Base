@@ -444,15 +444,12 @@ if(strtolower($text) == 'test'){
 }
 
 
-if($text == "test"){
-$gamess = json_encode([
+$o = json_encode([
            'inline_keyboard'=>[
-           [["text"=>"Strategy Games"],
-           ["text"=>"Android 11 and less"]],
-           [["text"=>"Share 🗑"],
-           ["text"=>"Delete"]]]]);
+           [["text"=>"CPU Info ℹ️","callback_data"=>"Info CPU"],
+           ["text"=>"APKs","callback_data"=>"Architectural"]]]]);
 
-$telegram->sendMessage($chat_id = $chat_id, $text = "Please Choice your game", $replyMarkup = $gamess);
+$telegram->sendMessage($chat_id = $chat_id, $text = "Please Choice your game", $replyMarkup = $o);
 }
 
 
