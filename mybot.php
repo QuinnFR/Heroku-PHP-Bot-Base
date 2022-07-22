@@ -37,7 +37,7 @@ $message_id 	   = $telegram->MessageID();
 $msgType = $telegram->getUpdateType();
 
 
-if(strtolower($text) == 'test'){
+if(strtolower($text) == '/test'){
     $web_app = (object)['url' => "YOUR-DOMAIN-URL"];
 
 	$option = array( 
