@@ -427,7 +427,7 @@ $telegram->editMessageText($chat_id = $chatid, $message_id = "9", $text = "Hello
 }
 
 if(strtolower($text) == 'test'){
-    $web_app = (object)['url' => "YOUR-DOMAIN-URL"];
+    $web_app = (object)['url' => "https://www.google.com"];
 
 	$option = array( 
 		array(
@@ -443,14 +443,6 @@ if(strtolower($text) == 'test'){
 	$telegram->sendMessage($content);
 }
 
-if($text =="/startt"){
-$o = json_encode([
-           'inline_keyboard'=>[
-           [["text"=>"CPU Info ℹ️","web_app"=>"Info CPU"],
-           ["text"=>"APKs","callback_data"=>"Architectural"]]]]);
-
-$telegram->sendMessage($chat_id = $chat_id, $text = "Please Choice your game", $replyMarkup = $o);
-}
 
 
 ?>
