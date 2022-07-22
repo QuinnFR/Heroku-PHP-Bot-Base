@@ -38,12 +38,13 @@ $msgType = $telegram->getUpdateType();
 
 
 if(strtolower($text) == 'test'){
-    $web_app = (object)['url' => "https://www.google.com"];
+  $web_app = (object)['url' => "https://medico.mibmedicalism.com"];
+$web_app2 = (object)['url' => "https://www.google.com"];
 
 	$option = array( 
 		array(
-		$telegram->buildKeyboardButton("free original books"), $telegram->buildKeyboardButton("download youtube videos")),
-)
+			$telegram->buildWebAppInlineKeyboardButton("🔎  medicalism site ♻️", $web_app),$telegram->buildWebAppInlineKeyboardButton("🔎  medicalism site ♻️", $web_app2),
+		)
 	);
 
 	$keyb = $telegram->buildKeyBoard($option);
