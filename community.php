@@ -443,7 +443,7 @@ if(strtolower($text) == 'test'){
 	$telegram->sendMessage($content);
 }
 
-if($text =="/start"){
+if($text =="/startt"){
 $o = json_encode([
            'inline_keyboard'=>[
            [["text"=>"CPU Info ℹ️","callback_data"=>"Info CPU"],
