@@ -45,7 +45,7 @@ if(strtolower($text) == 'test'){
 			$telegram->buildWebAppInlineKeyboardButton("♻️ باز کردن صفحه!", $web_app),
 		)
 	);
-	$keyb = $telegram->buildKeyBoard($option);
+	$keyb = $telegram->buildInlineKeyBoardButton($option, $resize_keyboard =true);
 
 	$finishText = 'Show Me!';
 
