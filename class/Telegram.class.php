@@ -280,30 +280,6 @@ public function sendsticker($chat_id, $sticker, $replyMarkup){
 }
 
 
-	
-
-
-	public function buildKeyboardButton($text, $request_contact = false, $request_location = false) {
-		$replyMarkup = array(
-			'text' => $text,
-			'request_contact' => $request_contact,
-			'request_location' => $request_location
-		);
-		return $replyMarkup;
-	}
-
-	public function buildKeyBoard(array $options, $onetime = false, $resize = false, $selective = true) {
-		$replyMarkup = array(
-			'keyboard' => $options,
-			'one_time_keyboard' => $onetime,
-			'resize_keyboard' => $resize,
-			'selective' => $selective
-		);
-		$encodedMarkup = json_encode($replyMarkup, true);
-		return $encodedMarkup;
-	}
-
-
 
 
 ?>
