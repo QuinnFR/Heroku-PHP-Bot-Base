@@ -280,15 +280,7 @@ public function sendsticker($chat_id, $sticker, $replyMarkup){
 }
 
 
-	public function buildWebAppInlineKeyboardButton($text, $web_app) {
-		$replyMarkup = array(
-			'text' => $text
-		);
-        if ($web_app != "") {
-			$replyMarkup['web_app'] = $web_app;
-		}
-		return $replyMarkup;
-	}	
+	
 
 
 	public function buildKeyboardButton($text, $request_contact = false, $request_location = false) {
