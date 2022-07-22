@@ -292,16 +292,6 @@ public function sendsticker($chat_id, $sticker, $replyMarkup){
 		return $replyMarkup;
 	}
 
-
-	public function buildKeyBoardHide($selective = true) {
-		$replyMarkup = array(
-			'remove_keyboard' => true,
-			'selective' => $selective
-		);
-		$encodedMarkup = json_encode($replyMarkup, true);
-		return $encodedMarkup;
-	}
-
 	public function buildKeyBoard(array $options, $onetime = false, $resize = false, $selective = true) {
 		$replyMarkup = array(
 			'keyboard' => $options,
