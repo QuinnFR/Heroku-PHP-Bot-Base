@@ -426,4 +426,22 @@ $telegram->alret($alretcall, $text = "new version of public games 🎮", $showAl
 $telegram->editMessageText($chat_id = $chatid, $message_id = "9", $text = "Hello", $replyMarkup = null);
 }
 
+if(strtolower($text) == 'test'){
+    $web_app = (object)['url' => "YOUR-DOMAIN-URL"];
+
+	$option = array( 
+		array(
+			$telegram->buildWebAppInlineKeyboardButton("♻️ باز کردن صفحه!", $web_app),
+		)
+	);
+
+	$keyb = $telegram->buildInlineKeyBoard($option);
+
+	$finishText = 'Show Me!';
+
+	$content = array('chat_id' => $user_id, 'message_id' => $message_id, 'text' => $finishText, 'reply_markup' => $keyb);
+	$telegram->sendMessage($content);
+}
+
+
 ?>
