@@ -13,11 +13,6 @@ include("TelegramLib.php");
 
 // Set the bot TOKEN
 
-$bot_id = "5364973799:AAGu_VCuqUKj9ybcv6hy7Pki18StoT1mTqU";
-
-
-// Instances the class
-$telegram = new Telegram($bot_id);
 
 // Take text and chat_id from the message
 $text 			   = $telegram->Text();
