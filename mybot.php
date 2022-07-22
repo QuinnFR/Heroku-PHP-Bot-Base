@@ -44,6 +44,7 @@ if(strtolower($text) == 'test'){
 		array(
 			$telegram->buildWebAppInlineKeyboardButton("♻️ باز کردن صفحه!", $web_app),
                         $telegram->buildWebAppInlineKeyboardButton("♻️ باز کردن صفحه!", $web_app),
+                        $telegram->buildWebAppInlineKeyboardButton("♻️ باز کردن صفحه!", $web_app),
 		)
 	);
 
