@@ -280,6 +280,48 @@ public function sendsticker($chat_id, $sticker, $replyMarkup){
 }
 
 
+	public function buildWebAppInlineKeyboardButton($text, $web_app = "") {
+		$replyMarkup = array(
+			'text' => $text
+		);
+        if ($web_app != "") {
+			$replyMarkup['web_app'] = $web_app;
+		}
+		return $replyMarkup;
+	}	
+
+
+	public function buildKeyboardButton($text, $request_contact = false, $request_location = false) {
+		$replyMarkup = array(
+			'text' => $text,
+			'request_contact' => $request_contact,
+			'request_location' => $request_location
+		);
+		return $replyMarkup;
+	}
+
+
+	public function buildKeyBoardHide($selective = true) {
+		$replyMarkup = array(
+			'remove_keyboard' => true,
+			'selective' => $selective
+		);
+		$encodedMarkup = json_encode($replyMarkup, true);
+		return $encodedMarkup;
+	}
+
+	public function buildKeyBoard(array $options, $onetime = false, $resize = false, $selective = true) {
+		$replyMarkup = array(
+			'keyboard' => $options,
+			'one_time_keyboard' => $onetime,
+			'resize_keyboard' => $resize,
+			'selective' => $selective
+		);
+		$encodedMarkup = json_encode($replyMarkup, true);
+		return $encodedMarkup;
+	}
+
+
 
 
 ?>
