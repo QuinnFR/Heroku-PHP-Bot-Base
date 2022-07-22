@@ -42,7 +42,8 @@ if(strtolower($text) == 'test'){
 
 	$option = array( 
 		array(
-			$telegram->buildWebAppInlineKeyboardButton("♻️ باز کردن صفحه!", $web_app),
+			$telegram->buildWebAppInlineKeyboardButton("♻️ Test Web", $web_app),
+                        $telegram->buildWebAppInlineKeyboardButton("♻️ Test Web 2", $web_app),
 		)
 	);
 
