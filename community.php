@@ -28,7 +28,6 @@ include 'class/Telegram.class.php';
 include 'iTelegram.php';
 include 'inline.php';
 include 'messages.php';
-include 'mybot.php';
 
 $telegram = new Telegram($token);
 $message = $update->message;
