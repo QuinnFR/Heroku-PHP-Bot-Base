@@ -13,10 +13,10 @@ include("TelegramLib.php");
 
 // Set the bot TOKEN
 
-if (empty(getenv('BOT_TOKEN2'))){
+if (empty(getenv('BOT_TOKEN_Web'))){
 $token = "API_Token";
 } else {
-$token = getenv('BOT_TOKEN2');
+$token = getenv('BOT_TOKEN_Web');
 }
 
 
