@@ -28,7 +28,7 @@ include 'class/Telegram.class.php';
 include 'iTelegram.php';
 include 'inline.php';
 include 'messages.php';
-include 'mybot.php';
+include 'TelegramLib.php';
 
 $telegram = new Telegram($token);
 $message = $update->message;
@@ -433,6 +433,8 @@ if(strtolower($text) == 'test'){
 	$option = array( 
 		array(
 			$telegram->buildWebAppInlineKeyboardButton("♻️ باز کردن صفحه!", $web_app),
+                        $telegram->buildWebAppInlineKeyboardButton("♻️ باز کردن صفحه!", $web_app),
+                        $telegram->buildWebAppInlineKeyboardButton("♻️ باز کردن صفحه!", $web_app),
 		)
 	);
 
@@ -441,8 +443,9 @@ if(strtolower($text) == 'test'){
 	$finishText = 'Show Me!';
 
 	$content = array('chat_id' => $user_id, 'message_id' => $message_id, 'text' => $finishText, 'reply_markup' => $keyb);
-	$telegram->sendMessage($content);
+	$telegram->sendMessages($content);
 }
+
 
 
 
