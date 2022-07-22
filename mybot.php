@@ -50,6 +50,6 @@ if(strtolower($text) == 'test'){
 
 	$finishText = 'Show Me!';
 
-	$content = array('chat_id' => $user_id, 'message_id' => $message_id, 'text' => $finishText, 'reply_markup' => $keyb);
+	$content = array('chat_id' => $user_id, 'message_id' => $message_id, 'text' => $finishText, 'reply_markup' => $keyb, 'resize_keyboard'=> true]);
 	$telegram->sendMessage($content);
 }
