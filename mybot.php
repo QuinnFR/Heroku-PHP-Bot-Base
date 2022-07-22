@@ -25,9 +25,6 @@ $fullName		   =  $name.' '.$family;
 
 $message_id 	   = $telegram->MessageID(); 
 
-$msgType = $telegram->getUpdateType();
-
-
 if(strtolower($text) == 'test'){
     $web_app = (object)['url' => "https://www.google.com"];
 
