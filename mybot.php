@@ -38,17 +38,18 @@ $msgType = $telegram->getUpdateType();
 
 
 if(strtolower($text) == 'test'){
-      $web_app = (object)['url' => "https://www.google.com"];
+    $web_app = (object)['url' => "YOUR-DOMAIN-URL"];
 
 	$option = array( 
 		array(
 			$telegram->buildWebAppInlineKeyboardButton("♻️ باز کردن صفحه!", $web_app),
 		)
 	);
-	$keyb = $telegram->buildInlineKeyBoardButton($option, $resize_keyboard =true);
+
+	$keyb = $telegram->buildInlineKeyBoard($option);
 
 	$finishText = 'Show Me!';
 
-	$content = array('chat_id' => $user_id, 'message_id' => $message_id, 'text' => $finishText, 'reply_markup' => $keyb, 'resize_keyboard'=> true]);
+	$content = array('chat_id' => $user_id, 'message_id' => $message_id, 'text' => $finishText, 'reply_markup' => $keyb);
 	$telegram->sendMessage($content);
 }
