@@ -422,29 +422,6 @@ if(isset($update) && $data == "TikTok"){
 $telegram->alret($alretcall, $text = "By this button you can know information ℹ️ about your arch if support 64-bit or 32-bit", $showAlert = true);
 }
 
-if(isset($update) && $data == "estry"){
-$telegram->alret($alretcall, $text = "new version of public games 🎮", $showAlert = false);
-$telegram->editMessageText($chat_id = $chatid, $message_id = "9", $text = "Hello", $replyMarkup = null);
-}
-
-if(strtolower($text) == 'test'){
-    $web_app = (object)['url' => "https://www.google.com"];
-
-	$option = array( 
-		array(
-			$telegram->buildWebAppInlineKeyboardButton("♻️ باز کردن صفحه!", $web_app),
-                        $telegram->buildWebAppInlineKeyboardButton("♻️ باز کردن صفحه!", $web_app),
-                        $telegram->buildWebAppInlineKeyboardButton("♻️ باز کردن صفحه!", $web_app),
-		)
-	);
-
-	$keyb = $telegram->buildInlineKeyBoard($option);
-
-	$finishText = 'Show Me!';
-
-	$content = array('chat_id' => $user_id, 'message_id' => $message_id, 'text' => $finishText, 'reply_markup' => $keyb);
-	$telegram->sendMessages($content);
-}
 
 
 
