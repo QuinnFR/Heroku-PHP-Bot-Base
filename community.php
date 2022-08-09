@@ -449,7 +449,7 @@ if($bio == null){
 $bio = "No Bio ❗";
 }
      if($photo == null){
-         bot('sendMessage', [
+         $telegram->('sendMessage', [
              'chat_id'=>$chat_id,
              'text'=>"
 Sorry you don't have a profile pic
@@ -480,7 +480,7 @@ $s
 $true
 ",'parse_mode'=>"MarkDown",]);}
 }else{
-bot('sendMessage', [
+$telegram->('sendMessage', [
 'chat_id'=>$chat_id,
 'text'=>"
 Sorry Can't find the user
