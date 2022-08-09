@@ -421,7 +421,7 @@ $telegram->Delete($chat_id, $message_id = $pic2);
 $media = [[
        'type' => 'document', 'media' => 'BQACAgQAAxkBAAMqYvJ3tj0cUR__xZaEQ85uubdV3DwAAvYNAALc75lT26P7gVNzbLMpBA', 'caption'=>"TikTok ARMv7 25.6.3 + [TikTok Plugin 2.5.1](https://t.me/nephobot?start=GFgC2OYcgIoTCdtPsYDVSYTe184RFCMcJuXFdolYD3oL24MSlrCQJT-cEFSFBvRV)", 'parse_mode'=>'markdown'],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAIGcmKw6Fq82CV0HuJHPxhq3YMwfDXNAALWDgACkCOIUcuzMSpPNDkUKAQ', 'caption'=>"TikTok ARMv8 25.6.2 + [TikTok Plugin 2.5.1](https://t.me/nephobot?start=GFgC2OYcgIoTCdtPsYDVSYTe184RFCMcJuXFdolYD3oL24MSlrCQJT-cEFSFBvRV)", 'parse_mode'=>'markdown']];
-if($text == "/tiktok"){
+if($text == "/t"){
 $telegram->sendMediaGroup($chat_id = $chat_id, $media, $disable_notification = null, $reply_to_message_id = $message_id);
 }
 
