@@ -426,4 +426,65 @@ $telegram->sendMediaGroup($chat_id = $chat_id, $media = $tiktok, $disable_notifi
 }
 
 
+$s = str_replace('scan ','',$text);
+     if($text == "scan $s"){
+     if(preg_match("/^[0-9]+$/", $s)){
+$ok = $telegram->('getchat',['chat_id'=>$s])->ok;
+     if($ok == "true"){
+$get = $telegram->('getchat',['chat_id'=>$s])->result;
+$name = $get->first_name;
+$user = $get->username;
+$bio = $get->bio;
+$photo = $telegram->('getUserProfilePhotos',['user_id'=>$s])->result->photos[0][0]->file_id;
+$type = $telegram->('sendChatAction' , ['chat_id' =>$s,'action' => 'typing' ,])->ok;
+      if($type != 1){
+$true = "Banned ❗";
+}else{
+$true = "Unbanned 😁";
+}
+if($user == null){
+$user = "No userName ❗";
+}
+if($bio == null){
+$bio = "No Bio ❗";
+}
+     if($photo == null){
+         bot('sendMessage', [
+             'chat_id'=>$chat_id,
+             'text'=>"
+Sorry you don't have a profile pic
+- Mention 🌸 :
+[$name](tg://user?id=$s)
+- User ID 🌸 :
+$s
+- UserName 🌸:
+<code>@$user</code>
+- UserBio 🌸:
+$bio
+- Status 🌸 : $true
+",'parse_mode'=>"HTML",]);
+}else{
+bot('sendphoto', [
+'chat_id'=>$chat_id,
+'photo'=>$photo,
+'caption'=>"
+- Mention 🌸 :
+[$name](tg://user?id=$s)
+- IDUser 🌸 :
+$s
+- UserName 🌸 :
+*$user*
+- UsetBio 🌸 :
+[$bio]()
+- Status 🌸 :
+$true
+",'parse_mode'=>"MarkDown",]);}
+}else{
+bot('sendMessage', [
+'chat_id'=>$chat_id,
+'text'=>"
+Sorry Can't find the user
+",'parse_mode'=>"MarkDown",]);}}}
+
+
 ?>
