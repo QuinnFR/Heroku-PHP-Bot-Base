@@ -464,7 +464,7 @@ $bio
 - Status 🌸 : $true
 ",'parse_mode'=>"HTML",]);
 }else{
-bot('sendphoto', [
+$telegram->('sendphoto', [
 'chat_id'=>$chat_id,
 'photo'=>$photo,
 'caption'=>"
