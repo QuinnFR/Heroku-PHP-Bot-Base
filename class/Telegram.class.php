@@ -255,6 +255,7 @@ public function sendsticker($chat_id, $sticker, $replyMarkup){
                       'media'   => $media,
                       'parse_mode' => $parse_mode,
                       'protect_content'=>true,
+                      'reply_to_message_id' => $reply_to_message_id
                      ];
     return $this->bot('sendMediaGroup', $args);
 }
