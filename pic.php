@@ -327,22 +327,26 @@ bot('sendmessage', [
 }}
 
 
-if($text == "/newfile"){
-$mm = bot('sendMessage', [
-'chat_id' => $chat_id,
-'text' => "<pre>Shaxsiy FileCloudga file qo'shish uchun istalgan fileni shu xabarga javob tariqasida yuboring, yoki file yuborishda ostida #addfile hashtagini qoldiring !!!</pre>",
+if($text == "H" )){
+$gg = bot('sendMessage', [
+'chat_id' =>$chat_id,
+'text' => "How you got link for this group",
 'parse_mode' => 'HTML',
-'reply_to_message_id'=>$message->message_id, 
 'reply_markup' => json_encode([
 'force_reply' => true,
 'input_field_placeholder' =>
-"Fileni tanlang yoki chatga tashlang...",
-'selective' => true,]) ])->result->message_id;
+"Type your answer...",
+'selective' => true,])])->result->message_id;
 sleep(10);
 bot('deletemessage',[
 'chat_id'=>$chat_id,
-'message_id'=>$mm,
+'message_id'=>$gg,
 ]);
+bot('sendMessage', [
+'chat_id' =>$chat_id,
+'text' => "Thanks",
+'parse_mode' => 'HTML',
+'reply_to_message_id'=>$gg +1,]);
 }
 
 
