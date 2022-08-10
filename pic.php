@@ -1,7 +1,7 @@
 <?php
 ob_start();
 
-$API_KEY = "5364973799:AAGHkxfQMTrooCxFxlXOvLHyNY7JsnLaNP8"; 
+$API_KEY = getenv('BOT_TOKEN3');
 
 define('API_KEY',$API_KEY);
 function bot($method,$datas=[]){
