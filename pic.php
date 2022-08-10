@@ -343,7 +343,7 @@ bot('sendMessage', [
 if($text == "/s" ){
 bot('sendMessage', [
 'chat_id' =>$chat_id,
-'text' => "How you got link for this group",
+'text' => "<pre>How you got link for this group</pre>",
 'parse_mode' => 'HTML',
 'reply_markup' => json_encode([
 'force_reply' => true,
@@ -357,12 +357,13 @@ bot('sendMessage', [
 if($text == "H" ){
 $gg = bot('sendMessage', [
 'chat_id' =>$chat_id,
-'text' => "How you got link for this group",
+'text' => "<pre>How you got link for this group</pre>",
 'parse_mode' => 'HTML',
 'reply_markup' => json_encode([
 'force_reply' => true,
 'input_field_placeholder' =>
 "Type your answer...",
+'reply_to_message_id'=>$message->message_id, 
 'selective' => true,])])->result->message_id;
 sleep(10);
 bot('deletemessage',[
