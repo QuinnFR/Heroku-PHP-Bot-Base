@@ -424,6 +424,10 @@ if($text == "/t"){
 $telegram->sendMediaGroup($chat_id = $chat_id, $media = $tiktok, $disable_notification = null, $reply_to_message_id = $replyid);
 }
 
+if($text == "/m"){
+$telegram->forcereply($chat_id, $text = "Replay", $message_id, $replyMarkup = null, $input = "Ji");
+}
+
 
 
 ?>
