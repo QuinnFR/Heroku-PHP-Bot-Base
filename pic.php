@@ -366,26 +366,30 @@ if($bio == null){
 $bio = "No Bio ❗";
 }
 if($photo == null){
+bot('deletemessage',[
+'chat_id'=>$chat_id,
+'message_id'=>$message->message_id,
+]);
 bot('sendMessage', [
 'chat_id'=>$chat_id,
 'text'=>"
-Sorry you don't have a profile pic
-- Mention 🌸 : [$name](tg://user?id=$user_id)
-- User ID 🌸 : $s
-- UserName 🌸: *$user*
-- UserBio 🌸: [$bio]()
-- Status 🌸 : *$true*
+Sorry you don't have a profile pic please add Profile Pic
+- Mention: [$name](tg://user?id=$user_id)
+- User ID: $s
+- UserName: $user
+- UserBio: [$bio]()
+- Status: $true
 ",'parse_mode'=>"MarkDown",]);
 }else{
 bot('sendphoto', [
 'chat_id'=>$chat_id,
 'photo'=>$photo,
 'caption'=>"
-- Mention 🌸 : [$name](tg://user?id=$s)
-- IDUser 🌸 : $user_id
-- UserName 🌸 : *$user*
-- UsetBio 🌸 : [$bio]()
-- Status 🌸 : *$true*
+- Mention: [$name](tg://user?id=$s)
+- IDUser: $user_id
+- UserName: $user
+- UsetBio: [$bio]()
+- Status: $true
 ",'parse_mode'=>"MarkDown",]);
 }
 }else{
