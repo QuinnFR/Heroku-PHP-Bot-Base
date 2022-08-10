@@ -472,7 +472,6 @@ $o
 [$bio]()
 - Status 🌸 :
 $true", $replyMarkup = null);
-}else{
-$telegram->sendMessage($chat_id = $chat_id, $text = "Sorry Can't find the user", $replyMarkup = null);}}}
+}}}
 
 ?>
