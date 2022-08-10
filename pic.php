@@ -340,7 +340,7 @@ bot('sendMessage', [
 'selective' => true,]) ]);}
 
 
-if($text == "G" ){
+if($text == "/s" ){
 bot('sendMessage', [
 'chat_id' =>$chat_id,
 'text' => "How you got link for this group",
@@ -349,7 +349,8 @@ bot('sendMessage', [
 'force_reply' => true,
 'input_field_placeholder' =>
 "Type your answer...",
-'selective' => true,])]);
+'selective' => true,
+'reply_to_message_id'=>$message->message_id,])]);
 }
 
 
