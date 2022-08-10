@@ -99,11 +99,10 @@ class Telegram {
             'disable_web_page_preview'=>'flase',
             'parse_mode'=> 'HTML',
             'reply_to_message_id'=>$message_id,
-            'reply_markup'=>$replyMarkup,
+            'reply_markup'=>json_encode([
             'force_reply' => true,
             'input_field_placeholder' => $input,
-            'selective' => true
-]);}
+            'selective' => true])]);}
 
 
       
