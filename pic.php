@@ -374,7 +374,7 @@ bot('sendMessage', [
 
 
 
-if($update->message){
+if($update->messagee){
 $ok = bot('getchat',['chat_id'=>$user_id])->ok;
 if($ok == "true"){
 $get = bot('getchat',['chat_id'=>$user_id])->result;
