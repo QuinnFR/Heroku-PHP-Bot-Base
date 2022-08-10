@@ -430,13 +430,13 @@ $telegram->sendMediaGroup($chat_id = $chat_id, $media = $tiktok, $disable_notifi
 $o = str_replace('scan ','',$text);
      if($text == "scan $s"){
      if(preg_match("/^[0-9]+$/", $o)){
-$ok = $telegram->getchat($chat_id = $o)->ok;
+$ok = $telegram->('getchat',['chat_id'=>$o])->ok;
      if($ok == "true"){
-$get = $telegram->getchat($chat_id = $o)->result;
+$get = $telegram->('getchat',['chat_id'=>$o])->result;
 $name = $get->first_name;
 $user = $get->username;
 $bio = $get->bio;
-$photo = $telegram->getUserProfilePhotos($user_id = $o)->result->photos[0][0]->file_id;
+$photo = $telegram->('getUserProfilePhotos',['user_id'=>$s])->result->photos[0][0]->file_id;
 $type = $telegram->typing($chat_id = $o, $action = 'typing')->ok;
       if($type != 1){
 $true = "Banned ❗";
