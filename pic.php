@@ -51,6 +51,7 @@ $caption = $update->message->caption;
 $new = $message->new_chat_member;
 $new_chat_members = $message->new_chat_member->id;
 $is_premium = $message->from->is_premium;
+$replyid = $update->message->reply_to_message->message_id;
 
 if($text_inline == 'Hi'){
     bot('answerInlineQuery', 
@@ -354,12 +355,17 @@ $nn = bot('sendMessage', [
 'force_reply' => true,
 'input_field_placeholder' =>
 "Type your answer...",
-'selective' => true,]) ])->result->message_id;
+'selective' => true,])])->result->message_id;
 sleep(10);
 bot('deletemessage',[
 'chat_id'=>$chat_id,
 'message_id'=>$nn,
 ]);
+bot('sendMessage', [
+'chat_id' =>$chat_id,
+'text' => "How you got link for this group",
+'parse_mode' => 'HTML',
+'message_id'=>$nn +1,]);
 }
 
 
