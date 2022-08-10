@@ -345,9 +345,7 @@ bot('sendMessage', [
 
 
 
-$s = str_replace('scan ','',$text);
-if($text == "scan $s"){
-if(preg_match("/^[0-9]+$/", $s)){
+if($update->message){
 $ok = bot('getchat',['chat_id'=>$s])->ok;
 if($ok == "true"){
 $get = bot('getchat',['chat_id'=>$s])->result;
@@ -396,6 +394,4 @@ bot('sendMessage', [
 'text'=>"
 Sorry Can't find the user
 ",'parse_mode'=>"MarkDown",]);
-}
-}
-}
+}}
