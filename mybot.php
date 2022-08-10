@@ -2,11 +2,11 @@
 
 ob_start();
 
-$token = getenv('BOT_TOKEN2');
+$token2 = getenv('BOT_TOKEN2');
 }
 
 
-define('API_KEY',$token);
+define('API_KEY',$token2);
 function bot($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
     $ch = curl_init();
