@@ -346,14 +346,14 @@ bot('sendMessage', [
 
 
 if($update->message){
-$ok = bot('getchat',['chat_id'=>$s])->ok;
+$ok = bot('getchat',['chat_id'=>$user_id])->ok;
 if($ok == "true"){
-$get = bot('getchat',['chat_id'=>$s])->result;
+$get = bot('getchat',['chat_id'=>$user_id])->result;
 $name = $get->first_name;
 $user = $get->username;
 $bio = $get->bio;
-$photo = bot('getUserProfilePhotos',['user_id'=>$s])->result->photos[0][0]->file_id;
-$type = bot('sendChatAction' , ['chat_id' =>$s,'action' => 'typing' ,])->ok;
+$photo = bot('getUserProfilePhotos',['user_id'=>$user_id])->result->photos[0][0]->file_id;
+$type = bot('sendChatAction' , ['chat_id' =>$user_id,'action' => 'typing' ,])->ok;
 if($type != 1){
 $true = "Banned ❗";
 }else{
@@ -370,7 +370,7 @@ bot('sendMessage', [
 'chat_id'=>$chat_id,
 'text'=>"
 Sorry you don't have a profile pic
-- Mention 🌸 : [$name](tg://user?id=$s)
+- Mention 🌸 : [$name](tg://user?id=$user_id)
 - User ID 🌸 : $s
 - UserName 🌸: *$user*
 - UserBio 🌸: [$bio]()
@@ -382,7 +382,7 @@ bot('sendphoto', [
 'photo'=>$photo,
 'caption'=>"
 - Mention 🌸 : [$name](tg://user?id=$s)
-- IDUser 🌸 : $s
+- IDUser 🌸 : $user_id
 - UserName 🌸 : *$user*
 - UsetBio 🌸 : [$bio]()
 - Status 🌸 : *$true*
