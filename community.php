@@ -454,7 +454,7 @@ $telegram->sendMessage($chat_id, $text = "Sorry you don't have a profile pic
 - Mention 🌸 :
 [$name](tg://user?id=$o)
 - User ID 🌸 :
-$s
+$o
 - UserName 🌸:
 <code>@$user</code>
 - UserBio 🌸:
