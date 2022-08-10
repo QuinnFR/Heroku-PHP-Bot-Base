@@ -91,7 +91,7 @@ class Telegram {
             'disable_web_page_preview'=>'flase',
             'reply_markup'=>$replyMarkup]);}
 
-     public function forcereply($chat_id, $text, $message_id, $replyMarkup, $input){
+     public function forcereply($chat_id, $text, $message_id, $input){
          return $this->bot('sendMessage',[
             'chat_id'=>$chat_id,
             'text'=>$text,
