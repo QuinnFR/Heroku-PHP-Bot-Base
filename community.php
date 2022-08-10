@@ -472,6 +472,5 @@ $o
 [$bio]()
 - Status 🌸 :
 $true", $replyMarkup = null);
-}}}
-
+}}}}
 ?>
