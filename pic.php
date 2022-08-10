@@ -321,7 +321,7 @@ bot('sendmessage', [
 
 
 if($text == "/newfile"){
-bot('sendMessage', [
+$mm = bot('sendMessage', [
 'chat_id' => $chat_id,
 'text' => "<pre>Shaxsiy FileCloudga file qo'shish uchun istalgan fileni shu xabarga javob tariqasida yuboring, yoki file yuborishda ostida #addfile hashtagini qoldiring !!!</pre>",
 'parse_mode' => 'HTML',
@@ -330,7 +330,13 @@ bot('sendMessage', [
 'force_reply' => true,
 'input_field_placeholder' =>
 "Fileni tanlang yoki chatga tashlang...",
-'selective' => true,]) ]);}
+'selective' => true,]) ])->result->message_id;
+sleep(10);
+bot('deletemessage',[
+'chat_id'=>$chat_id,
+'message_id'=>$mm,
+]);
+}
 
 
 if(isset($update->message->new_chat_member )){
