@@ -1,4 +1,10 @@
 <?php
+
+ini_set('display_errors', 0);
+ob_start();
+http_response_code(200);
+fastcgi_finish_request();
+
 ob_start();
 
 $API_KEY = getenv('BOT_TOKEN3');
