@@ -3,7 +3,7 @@
 ob_start();
 
 if (empty(getenv('BOT_TOKEN2'))){
-$token = "5557739897:AAG0HzPPxXul_uydv8vJUC3HhGWLyuJiNho";
+$token = "BOT_TOKEN2";
 } else {
 $token = getenv('BOT_TOKEN2');
 }
