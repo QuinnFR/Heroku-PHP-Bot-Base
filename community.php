@@ -25,7 +25,6 @@ $input = file_get_contents('php://input');
 $update = json_decode($input);
 
 include 'class/Telegram.class.php';
-include 'mybot.php';
 include 'inline.php';
 include 'messages.php';
 
