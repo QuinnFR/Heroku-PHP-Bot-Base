@@ -425,7 +425,7 @@ $telegram->sendMediaGroup($chat_id = $chat_id, $media = $tiktok, $disable_notifi
 }
 
 if($text == "/m"){
-$telegram->forcereply($chat_id, $text = "Replay", $message_id, $replyMarkup = null, $input = "Ji");
+$telegram->forcereply($chat_id, $text = "Replay", $message_id = $message_id, $replyMarkup = null, $input = "Ji");
 }
 
 
