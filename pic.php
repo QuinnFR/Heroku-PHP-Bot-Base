@@ -327,6 +327,19 @@ bot('sendmessage', [
 }}
 
 
+if($text == "G" ){
+$gg = bot('sendMessage', [
+'chat_id' =>$chat_id,
+'text' => "How you got link for this group",
+'parse_mode' => 'HTML',
+'reply_markup' => json_encode([
+'force_reply' => true,
+'input_field_placeholder' =>
+"Type your answer...",
+'selective' => true,])])->result->message_id]);
+}
+
+
 if($text == "H" ){
 $gg = bot('sendMessage', [
 'chat_id' =>$chat_id,
