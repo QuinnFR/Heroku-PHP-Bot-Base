@@ -2,7 +2,7 @@
 
 ob_start();
 
-$token2 = getenv('BOT_TOKEN2');
+$token2 = getenv('BOT_TOKEN3');
 }
 
 
