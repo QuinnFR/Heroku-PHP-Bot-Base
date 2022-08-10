@@ -90,6 +90,22 @@ class Telegram {
             'parse_mode'=> 'HTML',
             'disable_web_page_preview'=>'flase',
             'reply_markup'=>$replyMarkup]);}
+
+     public function forcereply($chat_id, $text, $message_id, $replyMarkup, $input){
+         return $this->bot('sendMessage',[
+            'chat_id'=>$chat_id,
+            'text'=>$text,
+            'protect_content'=>true,
+            'disable_web_page_preview'=>'flase',
+            'parse_mode'=> 'HTML',
+            'reply_to_message_id'=>$message_id,
+            'reply_markup'=>$replyMarkup,
+            'force_reply' => true,
+            'input_field_placeholder' => $input,
+            'selective' => true
+]);}
+
+
       
     public function sendMessageLite($chat_id, $text){
          return $this->bot('sendMessage',[
