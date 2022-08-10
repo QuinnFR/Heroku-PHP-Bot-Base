@@ -426,17 +426,18 @@ $telegram->sendMediaGroup($chat_id = $chat_id, $media = $tiktok, $disable_notifi
 }
 
 
-$s = str_replace('scan ','',$text);
+
+$o = str_replace('fix ','',$text);
      if($text == "scan $s"){
-     if(preg_match("/^[0-9]+$/", $s)){
-$ok = $telegram->('getchat',['chat_id'=>$s])->ok;
+     if(preg_match("/^[0-9]+$/", $o)){
+$ok = $telegram->getchat($chat_id = $o)->ok;
      if($ok == "true"){
-$get = $telegram->('getchat',['chat_id'=>$s])->result;
+$get = $telegram->getchat($chat_id = $o)->result;
 $name = $get->first_name;
 $user = $get->username;
 $bio = $get->bio;
-$photo = $telegram->('getUserProfilePhotos',['user_id'=>$s])->result->photos[0][0]->file_id;
-$type = $telegram->('sendChatAction' , ['chat_id' =>$s,'action' => 'typing' ,])->ok;
+$photo = $telegram->getUserProfilePhotos($user_id = $o)->result->photos[0][0]->file_id;
+$type = $telegram->typing($chat_id = $o, $action = 'typing')->ok;
       if($type != 1){
 $true = "Banned ❗";
 }else{
@@ -449,42 +450,29 @@ if($bio == null){
 $bio = "No Bio ❗";
 }
      if($photo == null){
-         $telegram->('sendMessage', [
-             'chat_id'=>$chat_id,
-             'text'=>"
-Sorry you don't have a profile pic
+$telegram->sendMessage($chat_id, $text = "Sorry you don't have a profile pic
 - Mention 🌸 :
-[$name](tg://user?id=$s)
+[$name](tg://user?id=$o)
 - User ID 🌸 :
 $s
 - UserName 🌸:
 <code>@$user</code>
 - UserBio 🌸:
 $bio
-- Status 🌸 : $true
-",'parse_mode'=>"HTML",]);
+- Status 🌸 : $true", $replyMarkup = null);
+       
 }else{
-$telegram->('sendphoto', [
-'chat_id'=>$chat_id,
-'photo'=>$photo,
-'caption'=>"
-- Mention 🌸 :
-[$name](tg://user?id=$s)
+$telegram->sendPhoto($chat_id = $chat_id, $photo = $photo, $caption = "- Mention 🌸 :
+[$name](tg://user?id=$o)
 - IDUser 🌸 :
-$s
+$o
 - UserName 🌸 :
 *$user*
 - UsetBio 🌸 :
 [$bio]()
 - Status 🌸 :
-$true
-",'parse_mode'=>"MarkDown",]);}
+$true", $replyMarkup = null);
 }else{
-$telegram->('sendMessage', [
-'chat_id'=>$chat_id,
-'text'=>"
-Sorry Can't find the user
-",'parse_mode'=>"MarkDown",]);}}}
-
+$telegram->sendMessage($chat_id = $chat_id, $text = "Sorry Can't find the user", $replyMarkup = null);}}}
 
 ?>
