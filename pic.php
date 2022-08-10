@@ -365,7 +365,7 @@ bot('sendMessage', [
 'chat_id' =>$chat_id,
 'text' => "How you got link for this group",
 'parse_mode' => 'HTML',
-'message_id'=>$nn +1,]);
+'reply_to_message_id'=>$nn +1,]);
 }
 
 
