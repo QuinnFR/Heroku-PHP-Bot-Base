@@ -334,7 +334,7 @@ bot('sendMessage', [
 
 
 if(isset($update->message-> new_chat_member )){
-bot('sendMessage', [
+$nn = bot('sendMessage', [
 'chat_id' =>$chat_id,
 'text' => "<pre>How you got link for this group</pre>",
 'parse_mode' => 'HTML',
@@ -342,7 +342,13 @@ bot('sendMessage', [
 'force_reply' => true,
 'input_field_placeholder' =>
 "Type your answer...",
-'selective' => true,]) ]);}
+'selective' => true,]) ])->result->message_id;
+sleep(4);
+bot('deletemessage',[
+'chat_id'=>$chat_id,
+'message_id'=>$nn,
+]);
+}
 
 
 
