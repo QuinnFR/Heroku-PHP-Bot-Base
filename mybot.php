@@ -7,16 +7,6 @@ $token = "BOT_TOKEN2";
 } else {
 $token = getenv('BOT_TOKEN2');
 }
-if (empty(getenv('ADMIN'))){
-$ADMIN = "ID_ADMIN";
-} else {
-$ADMIN = getenv('ADMIN');
-}
-if (empty(getenv('Channel_ID'))){
-$Channel_ID = "Channel_ID";
-} else {
-$Channel_ID = getenv('Channel_ID');
-}
 
 
 define('API_KEY',$token);
