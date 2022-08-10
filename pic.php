@@ -43,7 +43,8 @@ $id_inline = $update->inline_query->id;
 $title = $message->chat->title;
 $caption = $update->message->caption;
 $new = $message->new_chat_member;
-
+$new_chat_members = $message->new_chat_member->id;
+$is_premium = $message->from->is_premium;
 
 if($text_inline == 'Hi'){
     bot('answerInlineQuery', 
@@ -399,3 +400,10 @@ bot('sendMessage', [
 Sorry Can't find the user
 ",'parse_mode'=>"MarkDown",]);
 }}
+
+if($text == "Hi" and $is_premium){
+bot('deletemessage',[
+'chat_id'=>$chat_id,
+'message_id'=>$message->message_id,
+]);
+}
