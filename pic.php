@@ -336,7 +336,7 @@ $gg = bot('sendMessage', [
 'force_reply' => true,
 'input_field_placeholder' =>
 "Type your answer...",
-'selective' => true,])])->result->message_id]);
+'selective' => true,])])->result->message_id;
 }
 
 
