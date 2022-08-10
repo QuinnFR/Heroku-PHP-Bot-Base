@@ -327,7 +327,7 @@ bot('sendmessage', [
 }}
 
 
-if($text == "H" )){
+if($text == "H" ){
 $gg = bot('sendMessage', [
 'chat_id' =>$chat_id,
 'text' => "How you got link for this group",
