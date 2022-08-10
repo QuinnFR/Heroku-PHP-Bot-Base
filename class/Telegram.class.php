@@ -240,6 +240,16 @@ public function sendsticker($chat_id, $sticker, $replyMarkup){
             $st = $getstatus->result->status;}
 
 
+ public function getUserProfilePhotos($chat_id, $user_id){
+      return  $this->bot('getUserProfilePhotos', [
+            'user_id'=> $user_id]);}
+
+
+ public function getchat($chat_id, $user_id){
+      return $this->bot('getchat', [
+            'chat_id'=> $chat_id,]);}
+
+
    public function rss($line){
       return $url = 'https://daryo.uz/feed/';
              $rss = simplexml_load_file($url);
