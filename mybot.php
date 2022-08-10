@@ -24,11 +24,6 @@ function bot($method,$datas=[]){
     }
 }
 
-include "messages.php";
-include "Telegram.php";
-include "random.php";
-
-
 $s = str_replace('scan ','',$text);
      if($text == "scan $s"){
      if(preg_match("/^[0-9]+$/", $s)){
