@@ -212,7 +212,7 @@ bot('sendmessage', [
 'text' => $hi_text, 'parse_mode' => 'HTML',
 'reply_markup' => json_encode([
 'inline_keyboard' => [[[
-'text' => "Facebook 📖", 'web_app' => ['url' => 'https://www.facebook.com']], [ 'text' => "Youtube 🔥", 'web_app' => ['url' => 'https://m.youtube.com']]], ] ]) ]); }
+'text' => "Facebook 📖", 'web_app' => ['url' => 'https://browserleaks.com/ip']], [ 'text' => "Youtube 🔥", 'web_app' => ['url' => 'https://m.youtube.com']]], ] ]) ]); }
 
 
 
