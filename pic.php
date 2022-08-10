@@ -363,7 +363,7 @@ bot('deletemessage',[
 ]);
 bot('sendMessage', [
 'chat_id' =>$chat_id,
-'text' => "How you got link for this group",
+'text' => "Thanks",
 'parse_mode' => 'HTML',
 'reply_to_message_id'=>$nn +1,]);
 }
