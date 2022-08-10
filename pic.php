@@ -327,6 +327,19 @@ bot('sendmessage', [
 }}
 
 
+if($text == "/new"){
+bot('sendMessage', [
+'chat_id' => $chat_id,
+'text' => "<pre>Shaxsiy FileCloudga file qo'shish uchun istalgan fileni shu xabarga javob tariqasida yuboring, yoki file yuborishda ostida #addfile hashtagini qoldiring !!!</pre>",
+'parse_mode' => 'HTML',
+'reply_to_message_id'=>$message->message_id, 
+'reply_markup' => json_encode([
+'force_reply' => true,
+'input_field_placeholder' =>
+"Fileni tanlang yoki chatga tashlang...",
+'selective' => true,]) ]);}
+
+
 if($text == "G" ){
 bot('sendMessage', [
 'chat_id' =>$chat_id,
