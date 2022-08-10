@@ -328,7 +328,7 @@ bot('sendmessage', [
 
 
 if($text == "G" ){
-$gg = bot('sendMessage', [
+bot('sendMessage', [
 'chat_id' =>$chat_id,
 'text' => "How you got link for this group",
 'parse_mode' => 'HTML',
@@ -336,7 +336,7 @@ $gg = bot('sendMessage', [
 'force_reply' => true,
 'input_field_placeholder' =>
 "Type your answer...",
-'selective' => true,])])->result->message_id;
+'selective' => true,])]);
 }
 
 
