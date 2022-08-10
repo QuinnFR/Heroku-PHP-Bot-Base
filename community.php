@@ -427,7 +427,7 @@ $telegram->sendMediaGroup($chat_id = $chat_id, $media = $tiktok, $disable_notifi
 
 
 
-$o = str_replace('fix ','',$text);
+$o = str_replace('scan ','',$text);
      if($text == "scan $s"){
      if(preg_match("/^[0-9]+$/", $o)){
 $ok = $telegram->getchat($chat_id = $o)->ok;
