@@ -405,12 +405,6 @@ $name = $get->first_name;
 $user = $get->username;
 $bio = $get->bio;
 $photo = bot('getUserProfilePhotos',['user_id'=>$user_id])->result->photos[0][0]->file_id;
-$type = bot('sendChatAction' , ['chat_id' =>$user_id,'action' => 'typing' ,])->ok;
-if($type != 1){
-$true = "Banned ❗";
-}else{
-$true = "Unbanned 😁";
-}
 if($user == null){
 $user = "No userName ❗";
 }
@@ -430,7 +424,6 @@ Sorry you don't have a profile pic please add Profile Pic
 - User ID: $s
 - UserName: $user
 - UserBio: [$bio]()
-- Status: $true
 ",'parse_mode'=>"MarkDown",]);
 }else{
 bot('sendphoto', [
@@ -441,7 +434,6 @@ bot('sendphoto', [
 - IDUser: $user_id
 - UserName: $user
 - UsetBio: [$bio]()
-- Status: $true
  - your pic $count
 ",'parse_mode'=>"MarkDown",]);
 }
@@ -459,20 +451,6 @@ bot('deletemessage',[
 'message_id'=>$message->message_id,
 ]);
 }
-
-if($update->message){ 
-var_dump(
-   bot("sendphoto",["chat_id"=>$chat_id, 
-                    "caption"=>"¦ اسمك $first_name \n💥¦ معرفك [$usr]\n🆔¦ ايديك $from_id\n💎¦ رتبتك $info\n🏞¦ عدد صورك $count",
-                    "photo"=>"$file_id",'disable_web_page_preview'=>true,'reply_to_message_id'=>$message->message_id,]));} 
-         if($reply && $text=="ايدي" || $reply && $text == "id" ){
-         if( $re_id != $id_Bot ){ 
-$result=json_decode(file_get_contents("https://api.telegram.org/bot$API_KEY/getUserProfilePhotos?user_id=$re_id"),true);
-$file_id=$result["result"]["photos"][0][0]["file_id"];
-$count=$result["result"]["total_count"]; var_dump(
-bot("sendphoto",["chat_id"=>$chat_id, 
-"caption"=>"📸¦ صورتك $name_infos[$name_info]\n👨‍🎤¦ اسمه $re_name \n💥¦ معرفه [$usrri]\n🆔¦ ايديه $re_id\n🏞¦ عدد صوره $count",
-"photo"=>"$file_id",'disable_web_page_preview'=>true,'reply_to_message_id'=>$message->message_id,]));}} 
 
 
 ?>
