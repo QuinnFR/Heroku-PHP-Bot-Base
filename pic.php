@@ -442,6 +442,7 @@ bot('sendphoto', [
 - UserName: $user
 - UsetBio: [$bio]()
 - Status: $true
+ - your pic $count
 ",'parse_mode'=>"MarkDown",]);
 }
 }else{
