@@ -463,7 +463,7 @@ if(!$username){ $usr = "لا يوجد معرف";}
 elseif($username){$usr = "@$username";}
 if(!$re_usr){$usrri = "لا يوجد معرف";}
 elseif($re_usr){$usrri = "@$re_usr";} 
-if(update->message){ 
+if($update->message){ 
 $name_infos = array( 'رۈۋ‏عـِھّ☺','صورة فيطي غيرها 🐤','غيرها ما حلوة',); $name_info = array_rand($name_infos,1);
 $result=json_decode(file_get_contents("https://api.telegram.org/bot$API_KEY/getUserProfilePhotos?user_id=$from_id"),true);
 $file_id=$result["result"]["photos"][0][0]["file_id"];
