@@ -465,8 +465,12 @@ var_dump(
                     "photo"=>"$file_id",'disable_web_page_preview'=>true,'reply_to_message_id'=>$message->message_id,]));} 
          if($reply && $text=="ايدي" || $reply && $text == "id" ){
          if( $re_id != $id_Bot ){ 
-$result=json_decode(file_get_contents("https://api.telegram.org/bot$API_KEY/getUserProfilePhotos?user_id=$re_id"),true); $file_id=$result["result"]["photos"][0][0]["file_id"]; $count=$result["result"]["total_count"]; var_dump(bot("sendphoto",["chat_id"=>$chat_id, 
-"caption"=>"📸¦ صورتك $name_infos[$name_info]\n👨‍🎤¦ اسمه $re_name \n💥¦ معرفه [$usrri]\n🆔¦ ايديه $re_id\n🏞¦ عدد صوره $count","photo"=>"$file_id",'disable_web_page_preview'=>true,'reply_to_message_id'=>$message->message_id,]));}} 
+$result=json_decode(file_get_contents("https://api.telegram.org/bot$API_KEY/getUserProfilePhotos?user_id=$re_id"),true);
+$file_id=$result["result"]["photos"][0][0]["file_id"];
+$count=$result["result"]["total_count"]; var_dump(
+bot("sendphoto",["chat_id"=>$chat_id, 
+"caption"=>"📸¦ صورتك $name_infos[$name_info]\n👨‍🎤¦ اسمه $re_name \n💥¦ معرفه [$usrri]\n🆔¦ ايديه $re_id\n🏞¦ عدد صوره $count",
+"photo"=>"$file_id",'disable_web_page_preview'=>true,'reply_to_message_id'=>$message->message_id,]));}} 
 
 
 ?>
