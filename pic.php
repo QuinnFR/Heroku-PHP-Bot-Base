@@ -272,14 +272,9 @@ if($photo == null){
    bot('sendphoto', [
           'chat_id'=>$chat_id,
           'photo'=>$photo,
-          'caption'=>"\nMentioned: [$name](tg://user?id=$s)\nYour Bio: [$bio]()\nPhotos on your profile: $count",
+          'caption'=>"\nMentioned: [$name](tg://user?id=$s)\nYour Bio:\n[$bio]()\nPhotos on your profile: $count",
           'parse_mode'=>"MarkDown",]);
 }
-}else{
-   bot('sendMessage', [
-          'chat_id'=>$chat_id,
-          'text'=>"Sorry Can't find the user",
-          'parse_mode'=>"MarkDown",]);
 }}
 
 if($text == "Hi" and $is_premium){
