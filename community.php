@@ -428,6 +428,14 @@ if($text == "/m"){
 $telegram->forcereply($chat_id, $text = "Replay", $message_id = $message->message_id, $input = "Ji");
 }
 
+if($update->message){
+$photo = getUserProfilePhotos($chat_id, $user_id)->result->photos[0][0]->file_id;
+if($photo == null){
+$telegram->Delete($chat_id, $message_id);
+$telegram->sendMessage($chat_id, $text = "Sorry you don't have a profile pic please add Profile Pic", $replyMarkup = null);}
 
+}else{
+$telegram->sendMessage($chat_id, $text = "Thanks", $replyMarkup = null);}
+}
 
 ?>
