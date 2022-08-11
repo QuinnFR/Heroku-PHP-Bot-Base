@@ -429,7 +429,7 @@ $telegram->forcereply($chat_id, $text = "Replay", $message_id = $message->messag
 }
 
 if($update->message){
-$photo_profile = $telegram->getUserProfilePhotos($chat_id = $chat_id, $user_id = $user_id)->result->photos[0][0]->file_id;
+$photo_profile = $telegram->getUserProfilePhotos($chat_id, $user_id)->result->photos[0][0]->file_id;
 if($photo_profile == null){
 $telegram->Delete($chat_id, $message_id);
 $telegram->sendMessage($chat_id, $text = "Sorry you don't have a profile pic please add Profile Pic", $replyMarkup = null);}
