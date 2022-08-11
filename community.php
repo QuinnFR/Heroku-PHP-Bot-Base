@@ -449,4 +449,7 @@ else{
 $telegram->sendMessage($chat_id, $text = "Thanks", $replyMarkup = null);}
 }
 
+if($text == "how"){
+$telegram->sendMessage($chat_id, $text = $count_pic, $replyMarkup = null);}
+
 ?>
