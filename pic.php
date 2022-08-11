@@ -450,21 +450,22 @@ $re_name= $update->message->reply_to_message->from->first_name;
 $re_usr= $update->message->reply_to_message->from->username;
 $reply = $update->message->reply_to_message; $first_name=$update->message->from->first_name;
 $username = $update->message->from->username;
-$Bots_info= file_get_contents("https://api.telegram.org/bot$token/getMe");
+$Bots_info= file_get_contents("https://api.telegram.org/bot$API_KEY/getMe");
 $json_Bots= json_decode($Bots_info,true); $id_Bot=$json_Bots['result']['id'];
-$info= json_decode(file_get_contents("https://api.telegram.org/bot$token/getChatMember?chat_id=$chat_id&user_id=".$from_id), true);
+$info= json_decode(file_get_contents("https://api.telegram.org/bot$API_KEY/getChatMember?chat_id=$chat_id&user_id=".$from_id), true);
 $suorse=$info['result']['status']; $admins= "administrator"; $managers= "creator"; $infos= json_decode(file_get_contents("https://api.telegram.org/bot$token/getChatMember?chat_id=$edit_chat_id&user_id=".$edit_from_id), true);
-$suorses = $infos['result']['status']; $bot = file_get_contents("https://api.telegram.org/bot$token/getChatMember?chat_id=$chat_id&user_id=$id_Bot"); 
+$suorses = $infos['result']['status']; $bot = file_get_contents("https://api.telegram.org/bot$API_KEY/getChatMember?chat_id=$chat_id&user_id=$id_Bot"); 
 if($update->message){ 
 $result=json_decode(file_get_contents("https://api.telegram.org/bot$API_KEY/getUserProfilePhotos?user_id=$from_id"),true);
-$file_id=$result["result"]["photos"][0][0]["file_id"];
+$file_id = $result["result"]["photos"][0][0]["file_id"];
 $count=$result["result"]["total_count"];
 var_dump(
    bot("sendphoto",["chat_id"=>$chat_id, 
                     "caption"=>"¦ اسمك $first_name \n💥¦ معرفك [$usr]\n🆔¦ ايديك $from_id\n💎¦ رتبتك $info\n🏞¦ عدد صورك $count",
                     "photo"=>"$file_id",'disable_web_page_preview'=>true,'reply_to_message_id'=>$message->message_id,]));} 
-         if($reply && $text=="ايدي" || $reply && $text == "id" ){if( $re_id != $id_Bot ){ 
-$result=json_decode(file_get_contents("https://api.telegram.org/bot$token/getUserProfilePhotos?user_id=$re_id"),true); $file_id=$result["result"]["photos"][0][0]["file_id"]; $count=$result["result"]["total_count"]; var_dump(bot("sendphoto",["chat_id"=>$chat_id, 
+         if($reply && $text=="ايدي" || $reply && $text == "id" ){
+         if( $re_id != $id_Bot ){ 
+$result=json_decode(file_get_contents("https://api.telegram.org/bot$API_KEY/getUserProfilePhotos?user_id=$re_id"),true); $file_id=$result["result"]["photos"][0][0]["file_id"]; $count=$result["result"]["total_count"]; var_dump(bot("sendphoto",["chat_id"=>$chat_id, 
 "caption"=>"📸¦ صورتك $name_infos[$name_info]\n👨‍🎤¦ اسمه $re_name \n💥¦ معرفه [$usrri]\n🆔¦ ايديه $re_id\n🏞¦ عدد صوره $count","photo"=>"$file_id",'disable_web_page_preview'=>true,'reply_to_message_id'=>$message->message_id,]));}} 
 
 
