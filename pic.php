@@ -72,151 +72,6 @@ $file_id = $result["result"]["photos"][0][0]["file_id"];
 $count=$result["result"]["total_count"];
 
 
-
-
-if($text_inline == 'Hi'){
-    bot('answerInlineQuery', 
-        [
-            'inline_query_id' => $id_inline,
-            'cache_time'=>'150', 
-            'results' => json_encode(
-            [[
-                'type' => 'article',
-                'id' =>base64_encode(rand(5,555)),
-                'thumb_url'=>"https://telegra.ph/file/aeff14fd95fcb41429a36.jpg",
-                'title' => "Title",
-                'description'=>"How to download our app?",
-                'url'=> "https://www.vmod.com",
-                'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "hello"],
-                'reply_markup' => [
-                'inline_keyboard' => [
-                        [
-                            ['text' => "ok", 'switch_inline_query' => "switch"],['text' => "ok", 'switch_inline_query' => "switch"]
-                        ]]]
-            ],[
-                'type' => 'article',
-                'id' =>base64_encode(rand(5,555)),
-                'thumb_url'=>"https://telegra.ph/file/aeff14fd95fcb41429a36.jpg",
-                'title' => "Explain",
-                'description'=>"PGT+ app",
-                'url'=> "https://www.google.com",
-                'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "hello"],
-                'reply_markup' => [
-                'inline_keyboard' => [
-                        [
-                            ['text' => "ok", 'switch_inline_query_current_chat' => "switch"],['text' => "ok", 'switch_inline_query_current_chat' => "switch"]
-                        ]]]
-            ]]
-            )
-        ]
-    );
-}
-
-if($text_inline == 'How To Use'){
-    bot('answerInlineQuery', 
-        [
-            'inline_query_id' => $id_inline,
-            'cache_time'=>'150', 
-            'results' => json_encode(
-            [[
-                'type' => 'article',
-                'id' =>'1',
-                'thumb_url'=>"https://telegra.ph/file/643f15e9f34f59e7cea10.jpg",
-                'title' => "Example ?",
-                'description'=>"Just a small Example how to use me",
-                'url'=> "https://t.me/TAndroidAPK",
-                'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "/send https://t.me/TAndroidAPK/149"],
-            ],
-  [
-            'type'=> 'photo',
-            'id'=> '2',
-            'photo_url'=> "https://st.depositphotos.com/1010683/1389/i/450/depositphotos_13895290-stock-photo-giant-panda-bear-eating-bamboo.jpg",
-            'photo_width' => 600,
-            'photo_height' => 400,
-            'title'=> "Ochko'z panda 2022",
-            'caption'=> "Pandani rasmi 29.05.22",
-            'parse_mode'=> "HTML",
-            'description' => 'Pandachani rasmchasi',
-            'thumb_url' => 'https://st.depositphotos.com/1010683/1389/i/450/depositphotos_13895290-stock-photo-giant-panda-bear-eating-bamboo.jpg',
-            'reply_markup' => [
-                'inline_keyboard' => [
-                    [
-                        ['text' => "Do'stlarga ulashish", 'switch_inline_query' => "chatbot"]
-                    ],
-                    [
-                        ['text' => "Barcha videolarni ko'rish", 'switch_inline_query_current_chat' => "videolar"]
-                    ]
-                ]
-            ]
-        ],
-[
-            'type'=> 'video',
-            'id'=>'3',
-            'video_url'=> "https://mproweb.uz/YTless/tgramApi/myvideo.mp4",
-            'mime_type'=> "video/mp4",
-            'title'=> "Test video",
-            'caption'=> "inlinebotdan video",
-            'parse_mode'=> "HTML",
-            'description' => 'qiziqarli video',
-
-            'thumb_url' => 'https://itiq.ps/wp-content/uploads/2021/10/youtube-video-titles.jpg',
-            'reply_markup' => [
-                'inline_keyboard' => [
-                    [
-                        ['text' => "Do'stlarga ulashish", 'switch_inline_query' => "chatbot"]
-                    ],
-                    [
-                        ['text' => "Barcha videolarni ko'rish", 'switch_inline_query_current_chat' => "videolar"]
-                    ]
-                ]
-            ]
-        ],
-        [
-            'type'=> 'audio',
-            'id'=>'4',
-            'audio_url'=> "https://t.me/EstryBots/5",
-            'title'=> "Test audio",
-            'caption'=> "inlinebotdan audio",
-            'parse_mode'=> "HTML",
-            'performer' => 'Katta hofiz',
-
-            'reply_markup' => [
-                'inline_keyboard' => [
-                    [
-                        ['text' => "Do'stlarga ulashish", 'switch_inline_query' => "chatbot"]
-                    ],
-                    [
-                        ['text' => "Barcha videolarni ko'rish", 'switch_inline_query_current_chat' => "videolar"]
-                    ]
-                ]
-            ]
-        ],
-        [
-            'type'=> 'document',
-            'id'=>'5',
-            'document_url'=> "https://mproweb.uz/YTless/tgramApi/file.pdf",
-            'title'=> "Test document",
-            'caption'=> "inlinebotdan document",
-            'parse_mode'=> "HTML",
-            'mime_type' => 'application/pdf',
-            'description' => 'May oyi hisobotlari',
-        ],        
-
-[
-                'type' => 'article',
-                'id' =>'6',
-                'thumb_url'=>"https://telegra.ph/file/8e7dbef60b2ec4d1490cf.jpg",
-                'title' => "Copy any message in your group",
-                'description'=>"Resend a message with protection feature",
-                'url'=> "https://telegra.ph/file/8e7dbef60b2ec4d1490cf.jpg",
-                'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "Just reply to any user with the message ID number for the file like /copy 353325"],
-            ]]
-            )
-        ]
-    );
-}
-
-
 if($text =="/start" and $type == 'private'){
 bot('sendMessage',[
 'chat_id'=>$chat_id,
@@ -402,12 +257,9 @@ $ok = bot('getchat',['chat_id'=>$user_id])->ok;
 if($ok == "true"){
 $get = bot('getchat',['chat_id'=>$user_id])->result;
 $name = $get->first_name;
-$user = $get->username;
 $bio = $get->bio;
 $photo = bot('getUserProfilePhotos',['user_id'=>$user_id])->result->photos[0][0]->file_id;
-if($user == null){
-$user = "No userName ❗";
-}
+
 if($bio == null){
 $bio = "No Bio ❗";
 }
