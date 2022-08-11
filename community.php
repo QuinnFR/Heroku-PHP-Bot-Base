@@ -450,7 +450,7 @@ $telegram->sendMessage($chat_id, $text = "Thanks", $replyMarkup = null);}
 }
 
 if($text == "how"){
-$telegram->sendMessage($chat_id, $text = $count_pic, $replyMarkup = null);
-$telegram->sendPhoto($chat_id, $photo = $photo_profile, $caption = "Click on <U>CPU</U>\nYou will see like this means your phone support Armv7a 32-bit", $replyMarkup = null);}
+$telegram->sendMessage($chat_id, $text = "$count_pic", $replyMarkup = null);
+$telegram->sendPhoto($chat_id, $photo = "$photo_profile", $caption = "Click on <U>CPU</U>\nYou will see like this means your phone support Armv7a 32-bit", $replyMarkup = null);}
 
 ?>
