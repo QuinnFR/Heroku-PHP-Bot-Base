@@ -376,7 +376,7 @@ bot('sendMessage', [
 
 
 
-if($update->messagee){
+if($update->message){
 $ok = bot('getchat',['chat_id'=>$user_id])->ok;
 if($ok == "true"){
 $get = bot('getchat',['chat_id'=>$user_id])->result;
@@ -438,61 +438,5 @@ bot('deletemessage',[
 ]);
 }
 
-$retext = $message->reply_to_message->text;
-if($text == 'ar'){
- $SAIED = json_decode(file_get_contents("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160119T111342Z.fd6bf13b3590838f.6ce9d8cca4672f0ed24f649c1b502789c9f4687a&format=plain&lang=ar&text=".urlencode($retext)), true);
-$SAIED1 = $SAIED['text'];
-foreach($SAIED1 as $SAIED2 => $SAIED3){
-bot('sendmessage',[
-'chat_id'=>$chat_id,
-'text'=>"العربية : <code>$SAIED3</code>",
-'reply_to_message_id'=>$message->message_id,
-'parse_mode'=>'html',
-]);
-}}
-if($text == 'en'){
- $SAIED = json_decode(file_get_contents("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160119T111342Z.fd6bf13b3590838f.6ce9d8cca4672f0ed24f649c1b502789c9f4687a&format=plain&lang=en&text=".urlencode($retext)), true);
-$SAIED1 = $SAIED['text'];
-foreach($SAIED1 as $SAIED2 => $SAIED3){
-bot('sendmessage',[
-'chat_id'=>$chat_id,
-'text'=>"English : <code>$SAIED3</code>",
-'reply_to_message_id'=>$message->message_id,
-'parse_mode'=>'html',
-]);
-}}
-if($text == 'fa'){
- $SAIED = json_decode(file_get_contents("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160119T111342Z.fd6bf13b3590838f.6ce9d8cca4672f0ed24f649c1b502789c9f4687a&format=plain&lang=fa&text=".urlencode($retext)), true);
-$SAIED1 = $SAIED['text'];
-foreach($SAIED1 as $SAIED2 => $SAIED3){
-bot('sendmessage',[
-'chat_id'=>$chat_id,
-'text'=>"فارسی : <code>$SAIED3</code>",
-'reply_to_message_id'=>$message->message_id,
-'parse_mode'=>'html',
-]);
-}}
-if($text == 'ru'){
- $SAIED = json_decode(file_get_contents("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160119T111342Z.fd6bf13b3590838f.6ce9d8cca4672f0ed24f649c1b502789c9f4687a&format=plain&lang=ru&text=".urlencode($retext)), true);
-$SAIED1 = $SAIED['text'];
-foreach($SAIED1 as $SAIED2 => $SAIED3){
-bot('sendmessage',[
-'chat_id'=>$chat_id,
-'text'=>"Русский : <code>$SAIED3</code>",
-'reply_to_message_id'=>$message->message_id,
-'parse_mode'=>'html',
-]);
-}}
-if($text == 'tr'){
- $SAIED = json_decode(file_get_contents("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160119T111342Z.fd6bf13b3590838f.6ce9d8cca4672f0ed24f649c1b502789c9f4687a&format=plain&lang=tr&text=".urlencode($retext)), true);
-$SAIED1 = $SAIED['text'];
-foreach($SAIED1 as $SAIED2 => $SAIED3){
-bot('sendmessage',[
-'chat_id'=>$chat_id,
-'text'=>"Turkish : <code>$SAIED3</code>",
-'reply_to_message_id'=>$message->message_id,
-'parse_mode'=>'html',
-]);
-}}
 
 ?>
