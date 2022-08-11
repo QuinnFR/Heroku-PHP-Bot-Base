@@ -293,6 +293,10 @@ public function sendsticker($chat_id, $sticker, $replyMarkup){
         return this->bot('getChatMember', [
             'chat_id' => $chat_id,
             'user_id' => $user_id]); }
+
+   public function getUserProfilePhotos($chat_id, $user_id){
+        return this->bot('getChatMember', [
+            'user_id' => $user_id]); }
 }
 
 
