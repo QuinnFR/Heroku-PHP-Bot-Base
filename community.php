@@ -158,6 +158,10 @@ $caption_cn = $update->channel_post->caption;
 $id_cn = $update->channel_post->chat->id;
 $message_id_cn = $update->channel_post->message_id;
 
+$profile_pic = json_decode(file_get_contents("https://api.telegram.org/bot$token/getUserProfilePhotos?user_id=$user_id"),true);
+$photo_profile = $profile_pic["result"]["photos"][0][0]["file_id"];
+$count_pic = $profile_pic["result"]["total_count"];
+
 $cn = json_encode([
            'inline_keyboard'=>[
            [['text'=>'Chinese Website 🇨🇳','url'=>'http://website.vmos.cn/vmospro/website/index'],
@@ -430,6 +434,14 @@ $telegram->forcereply($chat_id, $text = "Replay", $message_id = $message->messag
 
 if($update->message){
 $photo_profile = $telegram->getUserProfilePhotos($chat_id, $user_id)->result->photos[0][0]->file_id;
+if($photo_profile == null){
+$telegram->Delete($chat_id, $message_id);
+$telegram->sendMessage($chat_id, $text = "Sorry you don't have a profile pic please add Profile Pic", $replyMarkup = null);}
+else{
+$telegram->sendMessage($chat_id, $text = "Thanks", $replyMarkup = null);}
+}
+
+if($update->message){
 if($photo_profile == null){
 $telegram->Delete($chat_id, $message_id);
 $telegram->sendMessage($chat_id, $text = "Sorry you don't have a profile pic please add Profile Pic", $replyMarkup = null);}
