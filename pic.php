@@ -228,6 +228,20 @@ bot('deletemessage',[
 }}
 
 
+
+ if($update->message->new_chat_member){
+  $wlcome_pic = bot('sendphoto', [
+          'chat_id'=>$chat_id,
+          'photo'=>$photo,
+          'caption'=>"[$name](tg://user?id=$s)\n[$bio]()\nPhotos on your profile: $count",
+          'parse_mode'=>"MarkDown",]);
+ sleep(20);
+   bot('deletemessage',[
+          'chat_id'=>$chat_id,
+          'message_id'=>$wlcome_pic,
+]);
+}
+
 if($text == "Hi" and $is_premium){
    bot('deletemessage',[
           'chat_id'=>$chat_id,
