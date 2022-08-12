@@ -425,11 +425,16 @@ $tiktok = [[
        'type' => 'document', 'media' => 'BQACAgQAAxkBAAMpYvJ3tndG9sxzvNmSQ35JXt_KOWkAAvUNAALc75lTvA9-LrSDcIspBA', 'caption'=>"TikTok ARMv7 25.6.2 + [TikTok Plugin 2.5.1](https://t.me/nephobot?start=GFgC2OYcgIoTCdtPsYDVSYTe184RFCMcJuXFdolYD3oL24MSlrCQJT-cEFSFBvRV)", 'parse_mode'=>'markdown'],
       ['type' => 'document', 'media' => 'BQACAgQAAxkBAAMqYvJ3tj0cUR__xZaEQ85uubdV3DwAAvYNAALc75lT26P7gVNzbLMpBA', 'caption'=>"TikTok ARMv8 25.6.2 + [TikTok Plugin 2.5.1](https://t.me/nephobot?start=GFgC2OYcgIoTCdtPsYDVSYTe184RFCMcJuXFdolYD3oL24MSlrCQJT-cEFSFBvRV)", 'parse_mode'=>'markdown']];
 if($text == "/t"){
-$ss = $telegram->sendMediaGroup($chat_id = $chat_id, $media = $tiktok, $disable_notification = null, $reply_to_message_id = $replyid);
-sleep(2);
-$telegram->Delete($chat_id, $message_id = $ss);
-
+$telegram->sendMediaGroup($chat_id = $chat_id, $media = $tiktok, $disable_notification = null, $reply_to_message_id = $replyid);
 }
+
+$instagram = [[
+       'type' => 'document', 'media' => 'BQACAgQAAxkBAAIBnmL2LToYHMlBeo8yGk8xj9mfQjbQAAKnCQAC9bixU2X3Nn4z0dLJKQQ', 'caption'=>"TikTok ARMv7 25.6.2 + [TikTok Plugin 2.5.1](https://t.me/nephobot?start=GFgC2OYcgIoTCdtPsYDVSYTe184RFCMcJuXFdolYD3oL24MSlrCQJT-cEFSFBvRV)", 'parse_mode'=>'markdown'],
+      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAIBn2L2La7NeXxAzDe6fhKkUtLKWHNvAAKoCQAC9bixU1yFNeWqYx3jKQQ', 'caption'=>"TikTok ARMv8 25.6.2 + [TikTok Plugin 2.5.1](https://t.me/nephobot?start=GFgC2OYcgIoTCdtPsYDVSYTe184RFCMcJuXFdolYD3oL24MSlrCQJT-cEFSFBvRV)", 'parse_mode'=>'markdown']];
+if($text == "/instagram"){
+$telegram->sendMediaGroup($chat_id = $chat_id, $media = $tiktok, $disable_notification = null, $reply_to_message_id = $replyid);
+}
+
 
 if($text == "/m"){
 $telegram->forcereply($chat_id, $text = "Replay", $message_id = $message->message_id, $input = "Ji");
