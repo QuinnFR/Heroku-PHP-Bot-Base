@@ -224,7 +224,7 @@ if($text == "H" ){
 }
 
 
-if(isset($update->message->new_chat_member )){
+if(isset($update->message->new_chat_memberr )){
      $nn = bot('sendMessage', [
           'chat_id' =>$chat_id,
           'text' => "How you got link for this group",
@@ -268,13 +268,26 @@ if($photo == null){
           'chat_id'=>$chat_id,
           'text'=>"Sorry you don't have a profile pic please add Profile Pic\nMention: [$name](tg://user?id=$user_id)\nYour Bio: [$bio]()",
 'parse_mode'=>"MarkDown",])->result->message_id;
-sleep(10);
+sleep(20);
 bot('deletemessage',[
           'chat_id'=>$chat_id,
           'message_id'=>$sorry_profile,
 ]);
 }
 }}
+
+ if($update->message->new_chat_membe){
+  $wlcome_profile = bot('sendphoto', [
+          'chat_id'=>$chat_id,
+          'photo'=>$photo,
+          'caption'=>"[$name](tg://user?id=$s)\n[$bio]()\nPhotos on your profile: $count",
+          'parse_mode'=>"MarkDown",]);
+ sleep(20);
+   bot('deletemessage',[
+          'chat_id'=>$chat_id,
+          'message_id'=>$wlcome_profile,
+]);
+}
 
 if($text == "Hi" and $is_premium){
    bot('deletemessage',[
