@@ -199,7 +199,7 @@ if(isset($update->message->new_chat )){
 
 
 
-if($message->text){
+if($text == "ch"){
   $ok = bot('getchat',['chat_id'=>$user_id])->ok;
 if($ok == "true"){
 $get = bot('getchat',['chat_id'=>$user_id])->result;
@@ -229,7 +229,7 @@ bot('deletemessage',[
 
 
 
- if(isset($update->message->new_chat_membr)){
+ if($new){
   $wlcome_pic = bot('sendphoto', [
           'chat_id'=>$chat_id,
           'photo'=>$photo,
