@@ -7,7 +7,7 @@ fastcgi_finish_request();
 
 ob_start();
 
-$API_KEY = getenv('BOT_TOKEN2');
+$API_KEY = getenv('BOT_TOKEN3');
 
 define('API_KEY',$API_KEY);
 function bot($method,$datas=[]){
