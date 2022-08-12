@@ -429,8 +429,8 @@ $telegram->sendMediaGroup($chat_id = $chat_id, $media = $tiktok, $disable_notifi
 }
 
 $instagram = [[
-       'type' => 'document', 'media' => 'BQACAgQAAxkBAAIBnmL2LToYHMlBeo8yGk8xj9mfQjbQAAKnCQAC9bixU2X3Nn4z0dLJKQQ', 'caption'=>"TikTok ARMv7 25.6.2 + [TikTok Plugin 2.5.1](https://t.me/nephobot?start=GFgC2OYcgIoTCdtPsYDVSYTe184RFCMcJuXFdolYD3oL24MSlrCQJT-cEFSFBvRV)", 'parse_mode'=>'markdown'],
-      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAIBn2L2La7NeXxAzDe6fhKkUtLKWHNvAAKoCQAC9bixU1yFNeWqYx3jKQQ', 'caption'=>"TikTok ARMv8 25.6.2 + [TikTok Plugin 2.5.1](https://t.me/nephobot?start=GFgC2OYcgIoTCdtPsYDVSYTe184RFCMcJuXFdolYD3oL24MSlrCQJT-cEFSFBvRV)", 'parse_mode'=>'markdown']];
+       'type' => 'document', 'media' => 'BQACAgQAAxkBAAIBnmL2LToYHMlBeo8yGk8xj9mfQjbQAAKnCQAC9bixU2X3Nn4z0dLJKQQ', 'caption'=>"AeroInsta_V20.0.1_UNClone_DEFAULT_Hazar.apk [Unclone](https://aeroinsta.com/download-insta-aero/package-1/?lang=en)", 'parse_mode'=>'markdown'],
+      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAIBn2L2La7NeXxAzDe6fhKkUtLKWHNvAAKoCQAC9bixU1yFNeWqYx3jKQQ', 'caption'=>"AeroInsta_V20.0.1_Clone_DEFAULT_Hazar.apk [Clone](https://aeroinsta.com/download-insta-aero/package-2/?lang=en)", 'parse_mode'=>'markdown']];
 if($text == "/instagram"){
 $telegram->sendMediaGroup($chat_id = $chat_id, $media = $instagram, $disable_notification = null, $reply_to_message_id = $replyid);
 }
