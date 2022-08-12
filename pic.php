@@ -272,7 +272,7 @@ if($photo == null){
    bot('sendphoto', [
           'chat_id'=>$chat_id,
           'photo'=>$photo,
-          'caption'=>"\nMentioned: [$name](tg://user?id=$s)\nYour Bio:\n[$bio]()\nPhotos on your profile: $count",
+          'caption'=>"[$name](tg://user?id=$s)\n[$bio]()\nPhotos on your profile: $count",
           'parse_mode'=>"MarkDown",]);
 }
 }}
