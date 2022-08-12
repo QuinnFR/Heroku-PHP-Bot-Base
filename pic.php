@@ -264,16 +264,15 @@ if($photo == null){
           'chat_id'=>$chat_id,
           'message_id'=>$message->message_id,
 ]);
-   bot('sendMessage', [
+   $sorry_profile = bot('sendMessage', [
           'chat_id'=>$chat_id,
           'text'=>"Sorry you don't have a profile pic please add Profile Pic\nMention: [$name](tg://user?id=$user_id)\nYour Bio: [$bio]()",
-'parse_mode'=>"MarkDown",]);
-}else{
-   bot('sendphoto', [
+'parse_mode'=>"MarkDown",])->result->message_id;
+sleep(10);
+bot('deletemessage',[
           'chat_id'=>$chat_id,
-          'photo'=>$photo,
-          'caption'=>"[$name](tg://user?id=$s)\n[$bio]()\nPhotos on your profile: $count",
-          'parse_mode'=>"MarkDown",]);
+          'message_id'=>$sorry_profile,
+]);
 }
 }}
 
