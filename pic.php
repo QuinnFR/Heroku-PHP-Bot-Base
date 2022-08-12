@@ -276,8 +276,8 @@ bot('deletemessage',[
 }
 }}
 
- if($update->message->new_chat_membe){
-  $wlcome_profile = bot('sendphoto', [
+ if($update->message->new_chat_membe && $photo != null){
+  $wlcome_sorry = bot('sendphoto', [
           'chat_id'=>$chat_id,
           'photo'=>$photo,
           'caption'=>"[$name](tg://user?id=$s)\n[$bio]()\nPhotos on your profile: $count",
@@ -285,9 +285,19 @@ bot('deletemessage',[
  sleep(20);
    bot('deletemessage',[
           'chat_id'=>$chat_id,
-          'message_id'=>$wlcome_profile,
+          'message_id'=>$wlcome_sorry,
 ]);
-}
+}else{
+$welcome_sorry2 = bot('sendMessage', [
+          'chat_id'=>$chat_id,
+          'text'=>"Sorry you don't have a profile pic please add Profile Pic\nMention: [$name](tg://user?id=$user_id)\nYour Bio: [$bio]()",
+'parse_mode'=>"MarkDown",])->result->message_id;
+sleep(20);
+bot('deletemessage',[
+          'chat_id'=>$chat_id,
+          'message_id'=>$welcome_sorry2,
+]);
+}}
 
 if($text == "Hi" and $is_premium){
    bot('deletemessage',[
