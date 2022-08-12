@@ -457,26 +457,6 @@ else{
 $telegram->sendMessage($chat_id, $text = "Thanks", $replyMarkup = null);}
 }
 
-if($text_inline == 'Hi'){
-    $telegram->('answerInlineQuery', 
-        [
-            'inline_query_id' => $inline_query_id,
-            'cache_time'=>'150', 
-            'results' => json_encode(
-            [[
-                'type' => 'article',
-                'id' =>base64_encode(rand(5,555)),
-                'thumb_url'=>"https://telegra.ph/file/aeff14fd95fcb41429a36.jpg",
-                'title' => "Title",
-                'description'=>"How to download our app?",
-                'url'=> "https://www.vmod.com",
-                'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "hello"],
-             
-            ]])
-        ]
-    );
-}
-
 
 
 ?>
