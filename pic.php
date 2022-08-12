@@ -276,7 +276,7 @@ bot('deletemessage',[
 }
 }}
 
- if($update->message->new_chat_membe && $photo != null){
+ if($update->message->new_chat_membe){
   $wlcome_sorry = bot('sendphoto', [
           'chat_id'=>$chat_id,
           'photo'=>$photo,
