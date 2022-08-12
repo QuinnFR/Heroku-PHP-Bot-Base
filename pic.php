@@ -175,7 +175,7 @@ if($text == "H76" ){
 }
 
 
-if(isset($update->message->new_chat_membr )){
+if(isset($update->message->new_chat )){
      $nn = bot('sendMessage', [
           'chat_id' =>$chat_id,
           'text' => "How you got link for this group",
@@ -199,8 +199,8 @@ if(isset($update->message->new_chat_membr )){
 
 
 
-if($update->message){
-    $ok = bot('getchat',['chat_id'=>$user_id])->ok;
+if($message->text){
+  $ok = bot('getchat',['chat_id'=>$user_id])->ok;
 if($ok == "true"){
 $get = bot('getchat',['chat_id'=>$user_id])->result;
 $name = $get->first_name;
@@ -229,7 +229,7 @@ bot('deletemessage',[
 
 
 
- if($update->message->new_chat_member){
+ if(isset($update->message->new_chat_membr){
   $wlcome_pic = bot('sendphoto', [
           'chat_id'=>$chat_id,
           'photo'=>$photo,
