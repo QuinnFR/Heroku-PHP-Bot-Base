@@ -72,7 +72,7 @@ $file_id = $result["result"]["photos"][0][0]["file_id"];
 $count=$result["result"]["total_count"];
 
 
-    if($text =="/start" and $type == 'private'){
+    if($text =="/startt" and $type == 'private'){
         bot('sendMessage',[
           'chat_id'=>$chat_id,
           'text'=>"Hello $first_name, through the bot, you can send a file from a public channel with the protection feature in your group just use this <code>/send File_link</code>
@@ -175,7 +175,7 @@ if($text == "H76" ){
 }
 
 
-if(isset($update->message->new_chat_memberr )){
+if(isset($update->message->new_chat_membr )){
      $nn = bot('sendMessage', [
           'chat_id' =>$chat_id,
           'text' => "How you got link for this group",
@@ -234,7 +234,7 @@ bot('deletemessage',[
           'chat_id'=>$chat_id,
           'photo'=>$photo,
           'caption'=>"[$name](tg://user?id=$s)\n[$bio]()\nPhotos on your profile: $count",
-          'parse_mode'=>"MarkDown",]);
+          'parse_mode'=>"MarkDown",])->result->message_id;
  sleep(20);
    bot('deletemessage',[
           'chat_id'=>$chat_id,
