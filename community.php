@@ -212,7 +212,7 @@ $telegram->Delete($chat_id, $message_id = $sticker_banned);
 $telegram->sendMessage($chat_id = '1987049771', $text = "User: $mention\nID: $from_id\n$new_time", $replyMarkup = null);
 }
 elseif($text =="/start" && $type == 'private'){
-$telegram->forwardMessage($from = $chat_id, $to = $owner, $message_id);
+$telegram->forwardMessage($from = $user_id, $to = $owner, $message_id);
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
 $telegram->unpin($chat_id);
