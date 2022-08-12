@@ -199,7 +199,7 @@ if(isset($update->message->new_chat )){
 
 
 
-if($text == "ch"){
+if($update->text){
   $ok = bot('getchat',['chat_id'=>$user_id])->ok;
 if($ok == "true"){
 $get = bot('getchat',['chat_id'=>$user_id])->result;
