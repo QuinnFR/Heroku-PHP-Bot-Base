@@ -119,56 +119,7 @@ Only for groups also only admins can use it",
 ]);
 }}
 
-
-     $exxx = explode("#",$data);
-     $txid = str_replace("/copy ","",$text);
-     if($text == "/copy $txid"){
-       $gett = bot('getChatMember', [
-          'chat_id' => $chat_id,
-          'user_id' => $user_id,
-]);
-     $get = $gett->result->status;
-     if($get =="administrator" or $get == "creator"){
-      bot('copyMessage',[
-          'chat_id'=>$chat_id,
-          'from_chat_id'=>$chat_id,
-          'message_id'=>$txid,
-          'caption'=>"$pm\nThis file for this chat $title",
-          'reply_to_message_id'=>$message->message_id, 
-          'parse_mode'=>"HTML",
-          'protect_content'=>true,
-]);
-}}
-
-
-     if($text == "/send https://t.me/TAndroidAPK/149" and $type == 'private' ){
-      bot('senddocument',[
-          'chat_id'=>$chat_id,
-          'document'=>"https://t.me/TAndroidAPK/149",
-          'thumb'=> new CURLFile("img.jpg"),
-          'caption'=>"This is just a simple example of replying to a user with the protection feature activated BTW I'm workingin public groups only :(",
-          'reply_to_message_id'=>$message->message_id, 
-          'parse_mode'=>"HTML",
-          'protect_content'=>true,
-]);
-      bot('ForwardMessage',[
-          'chat_id'=>$chat_id,
-          'from_chat_id'=>-1001579447888,
-          'message_id'=>2,
-]);
-}
-
-    if($text == "/s" and $type == 'private' ){
-      bot('sendDocument', [
-          'chat_id' => $chat_id,
-          'document' =>new CURLFile("img.jpg"),
-          'caption' => "local yuborilgan document file",
-          'thumb' => new CURLFile("img.jpg"),
-]);
-}
-
-
-    if($message->sender_chat->type == "channel"){
+    if($message->sender_chat->typee == "channel"){
       bot('deletemessage',[
           'chat_id'=>$chat_id,
           'message_id'=>$message_id,
@@ -201,7 +152,7 @@ if($get =="administrator" or $get == "creator"){
 }}
 
 
-if($text == "H" ){
+if($text == "H76" ){
     $gg = bot('sendMessage', [
           'chat_id' =>$chat_id,
           'text' => "How you got link for this group",
