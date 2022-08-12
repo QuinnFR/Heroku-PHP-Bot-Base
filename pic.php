@@ -229,7 +229,7 @@ bot('deletemessage',[
 
 
 
- if(isset($update->message->new_chat_membr){
+ if(isset($update->message->new_chat_membr)){
   $wlcome_pic = bot('sendphoto', [
           'chat_id'=>$chat_id,
           'photo'=>$photo,
