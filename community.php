@@ -436,6 +436,16 @@ if($text == "/instagram"){
 $telegram->sendMediaGroup($chat_id = $chat_id, $media = $instagram, $disable_notification = null, $reply_to_message_id = $replyid);
 }
 
+if($text == "/vpn"){
+$media = [[
+       'type' => 'document', 'media' => 'BQACAgQAAxkBAAICHWL4Hki4RvCIYcTYSaOi7LaQIVyoAAIJDgACeWTAUyJDw-8CTSLUKQQ', 'caption'=>"VPNHub", 'parse_mode'=>'HTML'],
+      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICHmL4ItjUytnaIrINakW-aqxVNsVKAALWCwACi7vAUyjKlOvqpjKxKQQ', 'caption'=>"BitMask", 'parse_mode'=>'markdown'],
+      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICH2L4I09yD3Z7CCI4qdqJ5oo95-txAALXCwACi7vAU_N4gJPDnQVcKQQ', 'caption'=>"RiseupVPN 1.1.4", 'parse_mode'=>'HTML'],
+      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICJWL4I9lkk0Grw2twicpyhbzdm7lZAALZCwACi7vAU-6coQUV_HDzKQQ', 'caption'=>"PowerVPN", 'parse_mode'=>'HTML'],
+      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICJ2L4JF6kZm3nZD8evJPUOxW5Br30AALbCwACi7vAU3EHTE99z-K5KQQ', 'caption'=>"VPNIfy", 'parse_mode'=>'HTML'],
+      ['type' => 'document', 'media' => 'BQACAgQAAxkBAAICKGL4JLF_hMfj78yKMftnCfQZi9t5AALcCwACi7vAU3Xzd2ABlsZ9KQQ', 'caption'=>"VPN Lat", 'parse_mode'=>'HTML']];
+$telegram->sendMediaGroup($chat_id, $media, $disable_notification = null, $reply_to_message_id = $replyid);}
+
 
 if($text == "/m"){
 $telegram->forcereply($chat_id, $text = "Replay", $message_id = $message->message_id, $input = "Ji");
