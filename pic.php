@@ -252,7 +252,7 @@ if($photo == null){
           'chat_id'=>$chat_id,
           'text'=>"Sorry you don't have a profile pic please add Profile Pic\nMention: [$name](tg://user?id=$user_id)\nYour Bio: [$bio]()",
 'parse_mode'=>"MarkDown",])->result->message_id;
-sleep(20);
+sleep(10);
 bot('deletemessage',[
           'chat_id'=>$chat_id,
           'message_id'=>$sorry_profile,
@@ -268,7 +268,7 @@ bot('deletemessage',[
           'photo'=>$photo,
           'caption'=>"[$name](tg://user?id=$s)\n[$bio]()\nPhotos on your profile: $count",
           'parse_mode'=>"MarkDown",])->result->message_id;
- sleep(20);
+ sleep(10);
    bot('deletemessage',[
           'chat_id'=>$chat_id,
           'message_id'=>$wlcome_pic,
