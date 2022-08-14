@@ -92,6 +92,7 @@ sleep(2);
 $pin_not = bot('sendmessage',[
 'chat_id'=>$chat_id,
 'text'=>$leave,
+'parse_mode'=>"HTML",
 'reply_markup' => $join_key,
 ])->result->message_id;
 sleep(3);
