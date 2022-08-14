@@ -233,7 +233,7 @@ if(isset($update->message->new_chat )){
 
 
 if($update->message){
-  $ok = bot('getchat',['chat_id'=>$user_id])->ok;
+ $ok = bot('getchat',['chat_id'=>$user_id])->ok;
 if($ok == "true"){
 $get = bot('getchat',['chat_id'=>$user_id])->result;
 $name = $get->first_name;
@@ -268,7 +268,7 @@ bot('deletemessage',[
           'photo'=>$photo,
           'caption'=>"[$name](tg://user?id=$s)\n[$bio]()\nPhotos on your profile: $count",
           'parse_mode'=>"MarkDown",])->result->message_id;
- sleep(10);
+ sleep(15);
    bot('deletemessage',[
           'chat_id'=>$chat_id,
           'message_id'=>$wlcome_pic,
