@@ -24,6 +24,10 @@ function bot($method,$datas=[]){
     }
 }
 
+include 'class/Telegram.class.php';
+include 'messages.php';
+
+
 $update = json_decode(file_get_contents('php://input'));
 $message = $update->message;
 $id = $message->from->id;
@@ -52,7 +56,7 @@ $new = $message->new_chat_member;
 $new_chat_members = $message->new_chat_member->id;
 $is_premium = $message->from->is_premium;
 $replyid = $update->message->reply_to_message->message_id;
-
+$owner = "1987049771";
 $edit_chat_id=$update->edited_message->chat->id;
 $edit_from_id=$update->edited_message->message->from->id;
 $chat_id=$update->message->chat->id;
@@ -71,6 +75,33 @@ $result=json_decode(file_get_contents("https://api.telegram.org/bot$API_KEY/getU
 $file_id = $result["result"]["photos"][0][0]["file_id"];
 $count=$result["result"]["total_count"];
 
+$join_key = json_encode([
+           'inline_keyboard'=>[
+           [['text'=>'Join to Community & Ideas 💻🧠','url'=>'https://t.me/+WSXAm6DJiKw2MDVk'],
+           ['text'=>'Dev 👩‍💻','url'=>'tg://openmessage?user_id=1987049771']],
+           [['text'=>'Share 🔗','url'=>'https://telegram.me/share/url?url=&text=This%20bot%20has%20been%20development%20by%20OwO%20%F0%9F%A6%8B%20Misa%20Amane%20%F0%9F%A6%8B%20UwU%0AIf%20you%20like%20it%2C%20share%20it%20%3A%29%0Ahttps%3A%2F%2Ft.me%2FCommunity_Ideas_Robot']]]]);
+
+
+$sorry = file_get_contents("https://api.telegram.org/bot$token/getChatMember?chat_id=$chat_id&user_id=".$owner);
+if($type == 'group' or $type == 'supergroup' && (strpos($sorry,'"status":"left"') or strpos($sorry,'"Bad Request: USER_ID_INVALID"') or strpos($sorry,'"status":"kicked"'))!== false){
+bot('sendChatAction', [
+  'chat_id'=>$chat_id,
+  'action'=>'typing',  
+]);
+sleep(2);
+$pin_not = bot('sendmessage',[
+'chat_id'=>$chat_id,
+'text'=>$leave,
+])->result->message_id;
+sleep(3);
+bot('pinChatMessage',[
+'chat_id'=>$chat_id,
+'text'=>$pin_not,
+])->result->message_id;
+bot('LeaveChat',[
+'chat_id'=>$chat_id,
+]);
+return false;}
 
     if($text =="/startt" and $type == 'private'){
         bot('sendMessage',[
