@@ -282,5 +282,10 @@ if($text == "Hi" and $is_premium){
 ]);
 }
 
-
+if($update->chat_join_request){
+bot('sendMessage,[
+          'chat_id'=>$user_id,
+          'text'=>"Hello",
+]);
+}
 ?>
