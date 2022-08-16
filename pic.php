@@ -250,9 +250,12 @@ if($photo == null){
 ]);
    $sorry_profile = bot('sendMessage', [
           'chat_id'=>$chat_id,
-          'text'=>"Sorry you don't have a profile pic please add Profile Pic\nMention: [$name](tg://user?id=$user_id)\nYour Bio: [$bio]()",
+          'text'=>"
+آسفة لا يسمح إلا لمن لديهم صورة في ملفهم الشخصي بإرسال رسائل هنا ومن الواضح أن حسابك لا يحتوي صورة الرجاء تحميل صورة واعادة ارسال سؤالك مجددا
+ارتباط: [$name](tg://user?id=$user_id)
+التعريف الخاص بك: [$bio]()",
 'parse_mode'=>"MarkDown",])->result->message_id;
-sleep(10);
+sleep(15);
 bot('deletemessage',[
           'chat_id'=>$chat_id,
           'message_id'=>$sorry_profile,
