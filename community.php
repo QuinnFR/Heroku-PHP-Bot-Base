@@ -152,7 +152,8 @@ $count_members = $url_count ['result'];
 $lang = $message->from->language_code;
 $owner = "1987049771";
 $bannedd = array("1622270145", "21279152", "575505287", "154021101", "2126768633", "5367656309", "5310401468"); 
-$banned = array("989174330", "65662627"); 
+$banned = array("989174330", "65662627");
+$whitelist = array("-691214669", "-691214669"); 
 
 $caption_cn = $update->channel_post->caption;
 $id_cn = $update->channel_post->chat->id;
@@ -183,7 +184,7 @@ $join_key = json_encode([
            [['text'=>'Share 🔗','url'=>'https://telegram.me/share/url?url=&text=This%20bot%20has%20been%20development%20by%20OwO%20%F0%9F%A6%8B%20Misa%20Amane%20%F0%9F%A6%8B%20UwU%0AIf%20you%20like%20it%2C%20share%20it%20%3A%29%0Ahttps%3A%2F%2Ft.me%2FCommunity_Ideas_Robot']]]]);
 
 $sorry = file_get_contents("https://api.telegram.org/bot$token/getChatMember?chat_id=$chat_id&user_id=".$owner);
-if($type == 'group' or $type == 'supergroup' && (strpos($sorry,'"status":"left"') or strpos($sorry,'"Bad Request: USER_ID_INVALID"') or strpos($sorry,'"status":"kicked"'))!== false){
+if($type == 'group' or $type == 'supergroup' or && !in_array($from_id, $whitelist) && (strpos($sorry,'"status":"left"') or strpos($sorry,'"Bad Request: USER_ID_INVALID"') or strpos($sorry,'"status":"kicked"'))!== false){
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
 $pin_not = $telegram->sendMessage($chat_id, $text = $leave, $replyMarkup = $join_key)->result->message_id;
