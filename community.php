@@ -153,7 +153,7 @@ $lang = $message->from->language_code;
 $owner = "1987049771";
 $bannedd = array("1622270145", "21279152", "575505287", "154021101", "2126768633", "5367656309", "5310401468"); 
 $banned = array("989174330", "65662627");
-$whitelist = array("-691214669", "-691214669"); 
+$whitelist = array("-749152637", "-749152637"); 
 
 $caption_cn = $update->channel_post->caption;
 $id_cn = $update->channel_post->chat->id;
