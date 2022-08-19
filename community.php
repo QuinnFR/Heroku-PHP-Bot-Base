@@ -451,10 +451,6 @@ if($text == "/m"){
 $telegram->forcereply($chat_id, $text = "Replay", $message_id = $message->message_id, $input = "Ji");
 }
 
-if($update->join_by_request){
-$telegram->declineChatJoinRequest($chat_id, $user_id);
-$telegram->sendMessage($chat_id, $text = "Sorry", $replyMarkup = null);}
-
 
 
 ?>
