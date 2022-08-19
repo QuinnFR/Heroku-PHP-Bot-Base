@@ -152,7 +152,7 @@ $lang = $message->from->language_code;
 $owner = "1987049771";
 $bannedd = array("1622270145", "21279152", "575505287", "154021101", "2126768633", "5367656309", "5310401468"); 
 $banned = array("989174330", "65662627");
-$whitelist = array("-749152637", "-749152637"); 
+$whitelist = array("-1001586066436", "-1001586066436"); 
 
 $caption_cn = $update->channel_post->caption;
 $id_cn = $update->channel_post->chat->id;
@@ -450,6 +450,10 @@ $telegram->sendMediaGroup($chat_id, $media, $disable_notification = null, $reply
 if($text == "/m"){
 $telegram->forcereply($chat_id, $text = "Replay", $message_id = $message->message_id, $input = "Ji");
 }
+
+if($update->join_by_request){
+$telegram->declineChatJoinRequest($chat_id, $user_id);
+$telegram->sendMessage($chat_id, $text = "Sorry", $replyMarkup = null);}
 
 
 
