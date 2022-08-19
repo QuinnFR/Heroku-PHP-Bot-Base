@@ -300,5 +300,12 @@ public function sendsticker($chat_id, $sticker, $replyMarkup){
 }
 
 
+   
+   public function approveChatJoinRequest($chat_id, $user_id){
+        return this->bot('approveChatJoinRequest', [
+            'chat_id' => $chat_id,
+            'user_id' => $user_id]); }
+
+   
 
 ?>
