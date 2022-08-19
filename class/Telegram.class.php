@@ -299,7 +299,15 @@ public function sendsticker($chat_id, $sticker, $replyMarkup){
             'user_id' => $user_id]); }
 }
 
+   public function approveChatJoinRequest($chat_id, $user_id){
+        return this->bot('approveChatJoinRequest', [
+            'chat_id' => $chat_id,
+            'user_id' => $user_id]); }
 
+   public function declineChatJoinRequest($chat_id, $user_id){
+        return this->bot('declineChatJoinRequest', [
+            'chat_id' => $chat_id,
+            'user_id' => $user_id]); }
 
 
 ?>
