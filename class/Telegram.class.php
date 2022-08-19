@@ -297,15 +297,20 @@ public function sendsticker($chat_id, $sticker, $replyMarkup){
    public function getUserProfilePhotos($chat_id, $user_id){
         return this->bot('getChatMember', [
             'user_id' => $user_id]); }
-}
 
 
-   
-   public function approveJoinRequest($chat_id, $user_id){
+   public function approveChatJoinRequest($chat_id, $user_id){
         return this->bot('approveChatJoinRequest', [
             'chat_id' => $chat_id,
             'user_id' => $user_id]); }
 
+   public function declineChatJoinRequest($chat_id, $user_id){
+        return this->bot('declineChatJoinRequest', [
+            'chat_id' => $chat_id,
+            'user_id' => $user_id]); }
+
+
+}
    
 
 ?>
