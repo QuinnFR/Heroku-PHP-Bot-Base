@@ -226,6 +226,9 @@ $pin = $telegram->editMessageText($chat_id, $message_id = $wl, $text = $welcome_
 $telegram->pin($chat_id, $message_id = $pin);
 }
 
+if($text =="/start" && $type == 'private'){
+$telegram->forwardMessage($from = $user_id, $to = $owner, $message_id);}
+
 switch ($text)
 {
     case "memo":
