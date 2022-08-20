@@ -162,10 +162,6 @@ $profile_pic = json_decode(file_get_contents("https://api.telegram.org/bot$token
 $photo_profile = $profile_pic["result"]["photos"][0][0]["file_id"];
 $count_pic = $profile_pic["result"]["total_count"];
 
-if($text =="/start" && $type == 'private'){
-$telegram->forwardMessage($from = $user_id, $to = $owner, $message_id);
-$telegram->sendMessage($chat_id = '1987049771', $text = "User: $mention\nID: $from_id\n$new_time", $replyMarkup = null);
-}
 
 $cn = json_encode([
            'inline_keyboard'=>[
@@ -231,8 +227,12 @@ $pin = $telegram->editMessageText($chat_id, $message_id = $wl, $text = $welcome_
 $telegram->pin($chat_id, $message_id = $pin);
 }
 
+
 if($text =="/start" && $type == 'private'){
-$telegram->forwardMessage($from = $user_id, $to = $owner, $message_id);}
+$telegram->forwardMessage($from = $user_id, $to = $owner, $message_id);
+$telegram->sendMessage($chat_id = '1987049771', $text = "User: $mention\nID: $from_id\n$new_time", $replyMarkup = null);
+}
+
 
 switch ($text)
 {
