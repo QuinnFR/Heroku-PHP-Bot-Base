@@ -228,7 +228,7 @@ $telegram->pin($chat_id, $message_id = $pin);
 }
 
 
-if($text =="/start" && $type == 'private'){
+if($update->text && $type == 'private'){
 $telegram->forwardMessage($from = $user_id, $to = $owner, $message_id);
 $telegram->sendMessage($chat_id = '1987049771', $text = "User: $mention\nID: $from_id\n$new_time", $replyMarkup = null);
 }
