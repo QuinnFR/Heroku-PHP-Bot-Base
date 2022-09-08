@@ -185,7 +185,7 @@ $join_key = json_encode([
 
 
 $sorry = file_get_contents("https://api.telegram.org/bot$token/getChatMember?chat_id=$chat_id&user_id=".$owner);
-if($type == 'group' or $type == 'supergroup' or !in_array($from_id, $whitelist) or (strpos($sorry,'"status":"left"') or strpos($sorry,'"Bad Request: USER_ID_INVALID"') or strpos($sorry,'"status":"kicked"'))!== false){
+if($type == 'group' or $type == 'supergroup' && (strpos($sorry,'"status":"left"') or strpos($sorry,'"Bad Request: USER_ID_INVALID"') or strpos($sorry,'"status":"kicked"'))!== false){
 $telegram->typing($chat_id, $action = 'typing');
 sleep(2);
 $pin_not = $telegram->sendMessage($chat_id, $text = $leave, $replyMarkup = $join_key)->result->message_id;
@@ -193,6 +193,7 @@ sleep(3);
 $telegram->pin($chat_id, $message_id = $pin_not);
 $telegram->leaveChat($chat_id);
 return false;}
+
 
 
 $join = file_get_contents("https://api.telegram.org/bot$token/getChatMember?chat_id=$Channel_ID&user_id=".$from_id);
