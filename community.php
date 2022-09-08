@@ -183,16 +183,6 @@ $join_key = json_encode([
            ['text'=>'Dev 👩‍💻','url'=>'tg://openmessage?user_id=1987049771']],
            [['text'=>'Share 🔗','url'=>'https://telegram.me/share/url?url=&text=This%20bot%20has%20been%20development%20by%20OwO%20%F0%9F%A6%8B%20Misa%20Amane%20%F0%9F%A6%8B%20UwU%0AIf%20you%20like%20it%2C%20share%20it%20%3A%29%0Ahttps%3A%2F%2Ft.me%2FCommunity_Ideas_Robot']]]]);
 
-$sorry = file_get_contents("https://api.telegram.org/bot$token/getChatMember?chat_id=$chat_id&user_id=".$owner);
-if($type == 'group' or $type == 'supergroup' or !in_array($from_id, $whitelist) or (strpos($sorry,'"status":"left"') or strpos($sorry,'"Bad Request: USER_ID_INVALID"') or strpos($sorry,'"status":"kicked"'))!== false){
-$telegram->typing($chat_id, $action = 'typing');
-sleep(2);
-$pin_not = $telegram->sendMessage($chat_id, $text = $leave, $replyMarkup = $join_key)->result->message_id;
-sleep(3);
-$telegram->pin($chat_id, $message_id = $pin_not);
-$telegram->leaveChat($chat_id);
-return false;}
-
 $join = file_get_contents("https://api.telegram.org/bot$token/getChatMember?chat_id=$Channel_ID&user_id=".$from_id);
 if($text == '/start' && $type == 'private' && (strpos($join,'"status":"left"') or strpos($join,'"Bad Request: USER_ID_INVALID"') or strpos($join,'"status":"kicked"'))!== false){
 $telegram->typing($chat_id, $action = 'typing');
